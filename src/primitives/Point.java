@@ -3,22 +3,44 @@ package primitives;
 /**
  * Class Point is the basic class representing a Point of Euclidean geometry in Cartesian
  * 3-Dimensional coordinate system.
+ *
  * @author Shneor and Emanuel
  */
 public class Point {
+    /**
+     * the coordinates that stored in the point
+     */
     protected final Double3 xyz;
 
-    public Point (double x,double y,double z){
-        this.xyz=new Double3(x,y,z);
+    /**
+     * get three double coordinates and construct a three-dimensional point (x,y,z)
+     *
+     * @param x the value of the x-axis of the point
+     * @param y the value of the y-axis of the point
+     * @param z the value of the z-axis of the point
+     */
+    public Point(double x, double y, double z) {
+        this.xyz = new Double3(x, y, z);
     }
+
+    /**
+     * get the coordinates already stored in a Double3 and construct a point of these coordinates
+     *
+     * @param xyz the coordinates
+     */
     Point(Double3 xyz) {
         this.xyz = xyz;
     }
 
     /**
-     * @author Shneor and Emanuel
+     * Zero point (0,0,0)
+     */
+    public static final Point ZERO = new Point(Double3.ZERO);
+
+    /**
      * @param obj the object we are comparing to the calling object
      * @return whether the calling object and obj are equal
+     * @author Shneor and Emanuel
      */
     @Override
     public boolean equals(Object obj) {
@@ -28,28 +50,47 @@ public class Point {
     }
 
     /**
+     * @return (x, y, z)
      * @author Shneor and Emanuel
-     * @return (x,y,z)
      */
     @Override
     public String toString() {
         return xyz.toString();
     }
 
-    public Point add(Vector vector){
+    /**
+     * @param vector the vector that needs to be added to the point
+     * @return the point that will be at the tip of the vector if it starts from the calling point
+     */
+    public Point add(Vector vector) {
         return new Point(xyz.add(vector.xyz));
     }
 
-    public Vector subtract(Point point){
+    /**
+     * @param point the point from which the vector supposed to go to the calling point
+     * @return the vector that goes from the called point to the calling point
+     */
+    public Vector subtract(Point point) {
         return new Vector(xyz.subtract(point.xyz));
     }
 
-    public double distance(Point point){
+    /**
+     * @param point the point from which we will measure the distance
+     * @return the distance between the called point and the calling point
+     */
+    public double distance(Point point) {
         return Math.sqrt(distanceSquared(point));
     }
-    public double distanceSquared(Point point){
-        return (xyz.d1-point.xyz.d1)*(xyz.d1-point.xyz.d1)+
-         (xyz.d2-point.xyz.d2)*(xyz.d2-point.xyz.d2)+
-         (xyz.d3-point.xyz.d3)*(xyz.d3-point.xyz.d3);
+
+    /**
+     * @param point the point from which we will measure the distance
+     * @return the squared distance between the called point and the calling point
+     */
+    public double distanceSquared(Point point) {
+        return (xyz.d1 - point.xyz.d1) * (xyz.d1 - point.xyz.d1) +
+                (xyz.d2 - point.xyz.d2) * (xyz.d2 - point.xyz.d2) +
+                (xyz.d3 - point.xyz.d3) * (xyz.d3 - point.xyz.d3);
     }
+
+
 }
