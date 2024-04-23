@@ -89,9 +89,7 @@ public class Vector extends Point {
      * @return the dot-product of the two vectors x1*s2+y1*y2+z1*z2
      */
     public double dotProduct(Vector vector) {
-        return vector.xyz.d1 * this.xyz.d1 +
-                vector.xyz.d2 * this.xyz.d2 +
-                vector.xyz.d3 * this.xyz.d3;
+        return vector.xyz.d1 * this.xyz.d1 + vector.xyz.d2 * this.xyz.d2 + vector.xyz.d3 * this.xyz.d3;
     }
 
     /**
@@ -100,9 +98,7 @@ public class Vector extends Point {
      * @throws IllegalArgumentException if the two vectors are parallel and the vector is zero
      */
     public Vector crossProduct(Vector vector) throws IllegalArgumentException {
-        return new Vector(new Double3(this.xyz.d2 * vector.xyz.d3 - vector.xyz.d2 * this.xyz.d3,
-                this.xyz.d3 * vector.xyz.d1 - vector.xyz.d3 * this.xyz.d1,
-                this.xyz.d1 * vector.xyz.d2 - vector.xyz.d1 * this.xyz.d2));
+        return new Vector(new Double3(this.xyz.d2 * vector.xyz.d3 - vector.xyz.d2 * this.xyz.d3, this.xyz.d3 * vector.xyz.d1 - vector.xyz.d3 * this.xyz.d1, this.xyz.d1 * vector.xyz.d2 - vector.xyz.d1 * this.xyz.d2));
     }
 
     /**
