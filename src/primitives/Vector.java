@@ -10,6 +10,7 @@ public class Vector extends Point {
 
     /**
      * construct a vector from a triad
+     *
      * @param xyz the triad from which the vector will be constructed
      * @throws IllegalArgumentException if we try to construct the zero vector
      */
@@ -34,7 +35,6 @@ public class Vector extends Point {
     }
 
     /**
-     *
      * @param obj the object we are comparing to the calling object
      * @return whether the calling vector is equal to obj
      */
@@ -45,8 +45,7 @@ public class Vector extends Point {
     }
 
     /**
-     *
-     * @return (x,y,z)
+     * @return (x, y, z)
      */
     @Override
     public String toString() {
@@ -54,7 +53,6 @@ public class Vector extends Point {
     }
 
     /**
-     *
      * @return the squared length of the vector (x^2+y^2+z^2)
      */
     public double lengthSquared() {
@@ -62,7 +60,6 @@ public class Vector extends Point {
     }
 
     /**
-     *
      * @return the length of the vector sqrt(x^2+y^2+z^2)
      */
     public double length() {
@@ -70,7 +67,6 @@ public class Vector extends Point {
     }
 
     /**
-     *
      * @param vector the vector that needs to be added to the vector
      * @return the vector-sum of the two vectors (the calling vector and the called vector)
      * @throws IllegalArgumentException if the sum  is of the vector is zero
@@ -91,7 +87,7 @@ public class Vector extends Point {
     /**
      * @param vector the vector that will be dot-producted with
      * @return the dot-product of the two vectors x1*s2+y1*y2+z1*z2
-     * */
+     */
     public double dotProduct(Vector vector) {
         return vector.xyz.d1 * this.xyz.d1 +
                 vector.xyz.d2 * this.xyz.d2 +
@@ -99,7 +95,6 @@ public class Vector extends Point {
     }
 
     /**
-     *
      * @param vector the vector that this vector will be cross-producted with
      * @return the cross product of the two vectors (y1*z2-y2*z1,z1*x2-z2*x1,x1*y2-x2*y1)
      * @throws IllegalArgumentException if the two vectors are parallel and the vector is zero
@@ -111,13 +106,19 @@ public class Vector extends Point {
     }
 
     /**
-     *
      * @return the normalized vector v/|v|
      */
     public Vector normalize() {
+        //the try needed since the constructor might throw.
+        // but it is also needed that every path will return,
+        // so we will return this in the catch even though it will never actually happen
+
         try {
+            //this will never actually throw;
             return new Vector(this.xyz.reduce(this.length()));
         } catch (IllegalArgumentException ex) {
+            //this is needed just for compilation
+            return this;
         }
     }
 }
