@@ -30,7 +30,8 @@ public final class Main {
       // test zero vector =====================================================
       try {
          new Vector(0, 0, 0);
-         new Vector(Double3.ZERO);
+         //we were told that the constructor that takes Double3 is package not public
+         //new Vector(Double3.ZERO);
          out.println("ERROR: zero vector does not throw an exception");
       } catch (IllegalArgumentException ignore) {} catch (Exception ignore) {
          out.println("ERROR: zero vector throws wrong exception");
