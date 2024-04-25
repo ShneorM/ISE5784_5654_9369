@@ -35,6 +35,7 @@ public class Point {
     /**
      * Zero point (0,0,0)
      */
+    //this was added since the main file used this static point, and we weren't allowed to change it
     public static final Point ZERO = new Point(Double3.ZERO);
 
     /**
