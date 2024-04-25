@@ -35,6 +35,7 @@ public class Point {
     /**
      * Zero point (0,0,0)
      */
+    //this was needed because in the main there was usage of this.
     public static final Point ZERO = new Point(Double3.ZERO);
 
     /**

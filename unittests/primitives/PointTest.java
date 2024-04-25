@@ -15,8 +15,6 @@ class PointTest {
         assertEquals(p3,new Point(3,4,5),"that add method not work currently, check Again!");
     }
 
-
-
     @Test
     void testDistance() {
     }
