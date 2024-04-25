@@ -1,5 +1,7 @@
 package geometries;
+import primitives.Point;
 import primitives.Ray;
+import primitives.Vector;
 
 
 /**
@@ -22,6 +24,12 @@ public class Cylinder extends Tube {
      */
     public Cylinder(double radius, Ray axis, double height) throws IllegalArgumentException {
         super(radius, axis);
+        if(height<0) throw new IllegalArgumentException("height "+height+ " can't be negative.");
         this.height = height;
+    }
+
+    @Override
+    public Vector getNormal(Point point) {
+        return null;
     }
 }
