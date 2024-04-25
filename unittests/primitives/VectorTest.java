@@ -8,7 +8,6 @@ import static primitives.Util.isZero;
 
 /**
  * Unit test for primitives.Vector class
- *
  * @author Shneor and Emanuel
  */
 class VectorTest {
