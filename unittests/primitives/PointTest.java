@@ -52,19 +52,13 @@ class PointTest {
         // ============ Equivalence Partitions Tests ==============
 
         //TC01 tests the method subtract for (5,2,3)-(1,2,3)=(4,0,0)
-        assertEquals(new Vector(4, 0, 0), p523.subtract(p123),"ERROR: subtract method doesn't work properly");
 
+        assertEquals(new Vector(4, 0, 0), p523.subtract(p123),"ERROR: subtract method doesn't work properly");
 
         // =============== Boundary Values Tests ==================
 
         //TC02 tests the method subtract, for (p1-p1)=0 that should throw an exception of vector 0
-//        try {
-//            p523.subtract(p523);
-//            fail("ERROR: subtract method doesn't throw an exception");
-//        } catch (IllegalArgumentException ex) {
-//        } catch (Exception ex) {
-//            fail("ERROR: subtract method throw the wrong exception");
-//        }
+
         assertThrows(IllegalArgumentException.class,()->p523.subtract(p523),"ERROR: subtraction of two similar points doesn't throw or throws the wrong exception");
     }
 

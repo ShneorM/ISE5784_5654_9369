@@ -141,7 +141,6 @@ class VectorTest {
         //TC01: Cross product test between two vectors
         assertEquals(new Vector(22,-4,-10),v2.crossProduct(v3),"ERROR: The CrossProduct function does not work properly");
 
-
         // =============== Boundary Values Tests ==================
         //TC02: Cross product test between two perpendicular vectors
         assertEquals(v1.length()*v4.length(),vr.length(),0.01,"ERROR: A cross product between two perpendicular vectors does not work properly");
