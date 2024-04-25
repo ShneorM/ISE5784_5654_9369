@@ -11,6 +11,5 @@ class PlaneTest {
      */
     @Test
     void testGetNormal() {
-
     }
 }
