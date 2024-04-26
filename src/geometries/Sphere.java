@@ -26,7 +26,11 @@ public class Sphere extends RadialGeometry {
     }
 
     @Override
-    public Vector getNormal(Point point) {
-        return null;
+    public Vector getNormal(Point point) throws IllegalArgumentException{
+        //to avoid from creating a zero vector
+        if (point.equals(center))
+            throw new IllegalArgumentException("the point can't be center");
+        Vector v1 = point.subtract(center);
+        return v1.normalize();
     }
 }

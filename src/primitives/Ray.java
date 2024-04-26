@@ -46,4 +46,20 @@ public class Ray {
                 ", direction=" + direction.toString() +
                 '}';
     }
+
+    /**
+     * get the head of the tube
+     * @return the head
+     */
+    public Point getHead() {
+        return head;
+    }
+
+    /**
+     * get the direction of the tube
+     * @return the direction
+     */
+    public Vector getDirection() {
+        return direction;
+    }
 }
