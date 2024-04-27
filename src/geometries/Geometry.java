@@ -9,11 +9,11 @@ import primitives.Vector;
  *
  * @author Shneor and Emanuel
  */
-public interface Geometry {
+public interface Geometry extends Intersectable {
     /**
      * @param point the point on the surface of the geometry body
      * @return the normal vector to the point on the surface
      */
-    public Vector getNormal(Point point);
+    Vector getNormal(Point point);
 }
 
