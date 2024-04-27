@@ -1,7 +1,10 @@
 package geometries;
 
 import primitives.Point;
+import primitives.Ray;
 import primitives.Vector;
+
+import java.util.List;
 
 /**
  * Class Sphere is the basic class representing a Sphere of Euclidean geometry in Cartesian
@@ -32,5 +35,10 @@ public class Sphere extends RadialGeometry {
             throw new IllegalArgumentException("the point can't be center");
         Vector v1 = point.subtract(center);
         return v1.normalize();
+    }
+
+    @Override
+    public List<Point> findIntersections(Ray ray) {
+        return null;
     }
 }

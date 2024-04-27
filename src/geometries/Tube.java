@@ -4,6 +4,8 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
+import java.util.List;
+
 /**
  * Represents a tube in a three-dimensional coordinate system.
  * A tube is a type of radial geometry extended along a given axis.
@@ -42,5 +44,10 @@ public class Tube extends RadialGeometry {
             //if t=0 we don't need to create the point o, we already have the closest point on the axis to the given point
             return point.subtract(axis.getHead());
         }
+    }
+
+    @Override
+    public List<Point> findIntersections(Ray ray) {
+        return null;
     }
 }
