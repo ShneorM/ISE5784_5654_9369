@@ -120,9 +120,9 @@ class SphereTest {
                 "ERROR: No intersection expected for tangential intersection when the ray starts before the sphere (TC14)");
 
         //TC15: Test for tangential intersection of a ray with a sphere, where the ray starts exactly from the sphere's surface.
-        assertEquals(List.of(new Point(-0.5, 0, Math.sqrt(0.75))),
+        assertEquals(List.of(),
                 s1.findIntersections(new Ray(new Point(-2, 0, 0), new Vector(1.5, 0, Math.sqrt(0.75)))),
-                "ERROR: Expected one intersection point for tangential intersection when the ray starts exactly from the sphere's surface (TC15)");
+                "ERROR: No intersection expected for tangential intersection when the ray starts exactly from the sphere's surface (TC15)");
 
         //TC16: Test for tangential intersection of a ray with a sphere, where the ray starts after the sphere.
         assertEquals(List.of(),
