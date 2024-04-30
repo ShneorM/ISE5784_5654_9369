@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="start of testing of findintersection in sphere">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_04_2024_03_45_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_04_2024_03_45__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_22_2024_3_04_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_22_2024_3_04_AM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="add test of FindIntersections in Sphere">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/geometries/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/SphereTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,17 +18,10 @@
       <list>
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
-      </GitPushTagMode>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -63,7 +51,6 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.CylinderTest.executor": "Run",
     "JUnit.CylinderTest.testGetNormal.executor": "Run",
     "JUnit.PlaneTest.executor": "Run",
     "JUnit.PlaneTest.testGetNormal.executor": "Run",
@@ -83,7 +70,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/imanuel/machon lev/projects/year 2 semester 2 introduction to software engineering/stages/Stage0",
+    "last_opened_file_path": "C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369",
     "onboarding.tips.debug.path": "C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
@@ -98,7 +85,7 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TriangleTest.testConstructor">
     <configuration name="PlaneTest.testGetNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
@@ -254,29 +241,29 @@
       <option name="project" value="LOCAL‎" />
       <updated>1714057820080</updated>
     </task>
-    <task id="LOCAL-00008" summary="cylinder test and getNormal">
+    <task id="LOCAL‎-00008" summary="TDD with geometries Shapes">
       <option name="closed" value="true" />
-      <created>1714142900405</created>
+      <created>1714073333083</created>
       <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1714142900406</updated>
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1714073333083</updated>
     </task>
-    <task id="LOCAL-00009" summary="before tag 2">
+    <task id="LOCAL‎-00009" summary="JTP">
       <option name="closed" value="true" />
-      <created>1714251844454</created>
+      <created>1714143071404</created>
       <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1714251844454</updated>
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1714143071404</updated>
     </task>
-    <task id="LOCAL-00010" summary="start of testing of findintersection in sphere">
+    <task id="LOCAL‎-00010" summary="add test of FindIntersections in Sphere">
       <option name="closed" value="true" />
-      <created>1714257893810</created>
+      <created>1714498596079</created>
       <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1714257893810</updated>
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1714498596079</updated>
     </task>
     <option name="localTasksCounter" value="11" />
     <servers />
@@ -299,9 +286,9 @@
     <MESSAGE value="PR01" />
     <MESSAGE value="add Test" />
     <MESSAGE value="Stage1" />
-    <MESSAGE value="cylinder test and getNormal" />
-    <MESSAGE value="before tag 2" />
-    <MESSAGE value="start of testing of findintersection in sphere" />
-    <option name="LAST_COMMIT_MESSAGE" value="start of testing of findintersection in sphere" />
+    <MESSAGE value="TDD with geometries Shapes" />
+    <MESSAGE value="JTP" />
+    <MESSAGE value="add test of FindIntersections in Sphere" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test of FindIntersections in Sphere" />
   </component>
 </project>

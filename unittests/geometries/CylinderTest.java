@@ -31,6 +31,5 @@ class CylinderTest {
         assertEquals(new Vector(1/Math.sqrt(2),1/Math.sqrt(2),0),cyl1.getNormal(new Point(0,0,1)),"ERROR: the getNormal with the point on the corner of the cylinder");
         //TC03: testing the getNormal with the point on the center, of the base  of the cylinder
         assertEquals(new Vector(1/Math.sqrt(2),1/Math.sqrt(2),0),cyl1.getNormal(new Point(0,0,0)),"ERROR: the getNormal with the point on the center of the base  of the cylinder");
-
     }
 }
