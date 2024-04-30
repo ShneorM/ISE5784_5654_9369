@@ -24,6 +24,9 @@ public class Ray {
         this.direction = direction;
     }
 
+
+
+
     /**
      * @param obj the parameter that will be compared to the calling object
      * @return whether the calling object and obj have the same head and direction

@@ -43,24 +43,44 @@ class SphereTest {
         //TC01
         Sphere s1=new Sphere(1,new Point(0,0,0));
         assertEquals(List.of(),
-                s1.findIntersections(new Ray(new Point(2,2,2),new Vector(0,0,2)))
+                s1.findIntersections(new Ray(new Point(2,2,2),new Vector(0,-1,2)))
                 ,"ERROR: ");
 
-        //TC02
+
+        // =============== Boundary Values Tests ==================
+
+        //TC05
         assertEquals(List.of(new Point(0,0,-1),new Point(0,0,1)),
                 s1.findIntersections(new Ray(new Point(0,0,-4),new Vector(0,0,2))),
                 "ERROR: ");
 
-        //TC03
+        //TC06
         assertEquals(List.of(new Point(0,0,1)),
                 s1.findIntersections(new Ray(new Point(0,0,0),new Vector(0,0,2))),
                 "ERROR: ");
 
-        //TC04
+        //TC07
         assertEquals(List.of(),
                 s1.findIntersections(new Ray(new Point(0,0,4),new Vector(0,0,2))),
                 "ERROR: ");
+        //TC08
+        assertEquals(List.of(new Point(0,0,1)),
+                s1.findIntersections(new Ray(new Point(0,0,-1),new Vector(0,0,2))),
+                "ERROR: ");
 
-        // =============== Boundary Values Tests ==================
+        //TC09
+        assertEquals(List.of(),
+                s1.findIntersections(new Ray(new Point(0,0,1),new Vector(0,0,2))),
+                "ERROR: ");
+
+        //TC10
+        assertEquals(List.of(new Point(0,0,1)),
+                s1.findIntersections(new Ray(new Point(0,0,0.5),new Vector(0,0,2))),
+                "ERROR: ");
+
+        //TC11 testing the getIntersections when the line is out of the sphere and perpendicular to the vector between the center of the sphere and the start of the ray
+        assertEquals(List.of(),
+                s1.findIntersections(new Ray(new Point(0,2,0),new Vector(0,0,2))),
+                "ERROR: when the line is out of the sphere and perpendicular to the vector between the center of the sphere and the start of the ray");
     }
 }
