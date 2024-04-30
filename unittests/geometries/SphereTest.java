@@ -49,23 +49,24 @@ class SphereTest {
         List<Point> onePoint = List.of(p2);
 
         // ============ Equivalence Partitions Tests ==============
-//~~~~~~~ page 7 number 1
-        //TC01
+
+        // TC01: Test for intersection of a ray with a sphere when the ray is outside the sphere, resulting in no intersection.
         assertEquals(List.of(),
                 s1.findIntersections(new Ray(new Point(2, 2, 2), new Vector(0, -1, 2)))
-                , "ERROR: ");
-//~~~~~~~ page 7 number 2
-        //TC02
+                , "ERROR: No intersection expected when the ray is outside the sphere (TC01)");
+
+        // TC02: Test for intersection of a ray with a sphere when the ray originates before the sphere and intersects it.
         assertEquals(towPoints, s1.findIntersections(new Ray(new Point(-2, 0, 0.5), v1)),
-                "ERROR:");
-//~~~~~~~ page 7 number 3
-        //TC03
+                "ERROR: Expected two intersection points when the ray originates before the sphere and intersects it (TC02)");
+
+        //TC03: Test for intersection of a ray with a sphere when the ray originates inside the sphere and intersects it.
         assertEquals(onePoint, s1.findIntersections(new Ray(new Point(0, 0, 0.5), v1)),
-                "ERROR:");
-//~~~~~~~ page 7 number 4
-        //TC04
+                "ERROR: Expected one intersection point when the ray originates inside the sphere and intersects it (TC03)");
+
+        //TC04: Test for intersection of a ray with a sphere when the ray originates after the sphere and does not intersect it.
         assertEquals(List.of(), s1.findIntersections(new Ray(new Point(2, 0, 0.5), v1)),
-                "ERROR:");
+                "ERROR: No intersection expected when the ray originates after the sphere and does not intersect it (TC04)");
+
 
 
         // =============== Boundary Values Tests ==================
@@ -99,35 +100,35 @@ class SphereTest {
                 s1.findIntersections(new Ray(new Point(0, 0, 0.5), new Vector(0, 0, 2))),
                 "ERROR: ");
 
-//~~~~~~~~~~~~~~~page 8 number 4
-        //TC11 testing the getIntersections when the line is out of the sphere and perpendicular to the vector between the center of the sphere and the start of the ray
+
+        //TC11: testing the getIntersections when the line is out of the sphere and perpendicular to the vector between the center of the sphere and the start of the ray
         assertEquals(List.of(),
                 s1.findIntersections(new Ray(new Point(0, 2, 0), new Vector(0, 0, 2))),
-                "ERROR: when the line is out of the sphere and perpendicular to the vector between the center of the sphere and the start of the ray");
+                "ERROR: No intersection expected when the line is outside of the sphere and perpendicular to the vector between the center of the sphere and the start of the ray (TC11)");
 
-//~~~~~~~ page 8 number 2
-        //TC12
+        //TC12: Test for ray passing through a sphere, starting exactly at the beginning of the sphere.
         assertEquals(onePoint, s1.findIntersections(new Ray(p1, v1)),
-                "ERROR:");
-        //TC13
-        assertEquals(List.of(), s1.findIntersections(new Ray(p2, v1)),
-                "ERROR:");
+                "ERROR: Expected one intersection point when the ray passes through the sphere and starts exactly at the beginning of the sphere (TC12)");
 
-//~~~~~~~~~~~~~~~page 8 number 3
-        //TC14: A ray on the straight tangent to the ball that starts before the ball
+        //TC13: Test for ray passing through a sphere, starting inside the sphere.
+        assertEquals(List.of(), s1.findIntersections(new Ray(p2, v1)),
+                "ERROR: No intersection expected when the ray passes through the sphere and starts inside the sphere (TC13)");
+
+        //TC14: Test for tangential intersection of a ray with a sphere, where the ray starts before the sphere.
         assertEquals(List.of(),
                 s1.findIntersections(new Ray(new Point(-0.5, 0, Math.sqrt(0.75)), new Vector(1.5, 0, Math.sqrt(0.75)))),
-                "ERROR: ");
+                "ERROR: No intersection expected for tangential intersection when the ray starts before the sphere (TC14)");
 
-        //TC15: A ray on the straight tangent to the ball that starts in the ball
+        //TC15: Test for tangential intersection of a ray with a sphere, where the ray starts exactly from the sphere's surface.
         assertEquals(List.of(new Point(-0.5, 0, Math.sqrt(0.75))),
                 s1.findIntersections(new Ray(new Point(-2, 0, 0), new Vector(1.5, 0, Math.sqrt(0.75)))),
-                "ERROR: ");
+                "ERROR: Expected one intersection point for tangential intersection when the ray starts exactly from the sphere's surface (TC15)");
 
-        //TC16: A ray on the straight tangent to the ball that starts after the ball
+        //TC16: Test for tangential intersection of a ray with a sphere, where the ray starts after the sphere.
         assertEquals(List.of(),
                 s1.findIntersections(new Ray(new Point(0, 0, Math.sqrt((double) 4 / 3)), new Vector(1.5, 0, Math.sqrt(0.75)))),
-                "ERROR: ");
+                "ERROR: No intersection expected for tangential intersection when the ray starts after the sphere (TC16)");
+
     }
 
 }
