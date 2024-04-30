@@ -76,7 +76,6 @@ class SphereTest {
                 s1.findIntersections(new Ray(new Point(0, 0, -4), new Vector(0, 0, 2))),
                 "ERROR: getIntersections when ray passing through the center axis and intersects the sphere at two points ");
 
-
         //TC06 testing getIntersections when ray passing through the center axis and intersects the sphere at one point
         assertEquals(List.of(new Point(0, 0, 1)),
                 s1.findIntersections(new Ray(new Point(0, 0, 0), new Vector(0, 0, 1))),
