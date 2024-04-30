@@ -24,7 +24,17 @@ public class Ray {
         this.direction = direction;
     }
 
-
+    /**
+     * Computes the point on the ray based on the given parameter.
+     *
+     * @param t The parameter determining the position of the point along the ray.
+     * @return The point on the ray corresponding to the given parameter.
+     */
+    public Point getPoint(double t){
+        if(Util.isZero(t))
+            return getHead();
+        return getHead().add(getDirection().scale(t));
+    }
 
 
     /**
