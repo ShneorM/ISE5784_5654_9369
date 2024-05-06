@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="add test of findIntersections in Triangle">
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="implemtned findIntersections in PLane">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +52,7 @@
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.CylinderTest.testGetNormal.executor": "Run",
     "JUnit.PlaneTest.executor": "Run",
+    "JUnit.PlaneTest.testFindIntersections.executor": "Run",
     "JUnit.PlaneTest.testGetNormal.executor": "Run",
     "JUnit.PlaneTest.testPlaneConstructor.executor": "Run",
     "JUnit.PolygonTest.testConstructor.executor": "Run",
@@ -69,7 +70,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369",
+    "last_opened_file_path": "C:/Users/shneor/Desktop/Stage0",
     "onboarding.tips.debug.path": "C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
@@ -84,8 +85,8 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TriangleTest.testConstructor">
-    <configuration name="PlaneTest.testGetNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlaneTest.testFindIntersections">
+    <configuration name="PlaneTest.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
@@ -95,7 +96,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="geometries" />
       <option name="MAIN_CLASS_NAME" value="geometries.PlaneTest" />
-      <option name="METHOD_NAME" value="testGetNormal" />
+      <option name="METHOD_NAME" value="testFindIntersections" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlaneTest.testFindIntersections" />
         <item itemvalue="JUnit.TriangleTest.testConstructor" />
         <item itemvalue="JUnit.PolygonTest.testConstructor" />
         <item itemvalue="JUnit.PolygonTest.testGetNormal" />
         <item itemvalue="JUnit.PlaneTest.testPlaneConstructor" />
-        <item itemvalue="JUnit.PlaneTest.testGetNormal" />
       </list>
     </recent_temporary>
   </component>
@@ -280,7 +281,31 @@
       <option name="project" value="LOCAL‎" />
       <updated>1714511054303</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL‎-00013" summary="commit">
+      <option name="closed" value="true" />
+      <created>1714511320410</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL‎-00013" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1714511320410</updated>
+    </task>
+    <task id="LOCAL‎-00014" summary="done implantation of findIntersections in the Plane">
+      <option name="closed" value="true" />
+      <created>1715017746729</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL‎-00014" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1715017746729</updated>
+    </task>
+    <task id="LOCAL‎-00015" summary="implemtned findIntersections in PLane">
+      <option name="closed" value="true" />
+      <created>1715017868076</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL‎-00015" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1715017868076</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,6 +331,9 @@
     <MESSAGE value="add test of FindIntersections in Sphere" />
     <MESSAGE value="add Documents of FindIntersections in Sphere" />
     <MESSAGE value="add test of findIntersections in Triangle" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test of findIntersections in Triangle" />
+    <MESSAGE value="commit" />
+    <MESSAGE value="done implantation of findIntersections in the Plane" />
+    <MESSAGE value="implemtned findIntersections in PLane" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemtned findIntersections in PLane" />
   </component>
 </project>
