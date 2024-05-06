@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="add test of findIntersections in Triangle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +30,12 @@
     &quot;assignee&quot;: &quot;ShneorM&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ShneorM/ISE5784_5654_9369.git&quot;,
-    &quot;accountId&quot;: &quot;8ce4f129-03ec-4ecc-9dc8-9aae1c22b1be&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ShneorM/ISE5784_5654_9369.git",
+    "accountId": "9d3c3c91-b2e4-4e51-baf5-ee3e0b88675a"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -58,6 +59,7 @@
     "JUnit.PolygonTest.testGetNormal.executor": "Run",
     "JUnit.SphereTest.executor": "Run",
     "JUnit.SphereTest.testGetNormal.executor": "Run",
+    "JUnit.TriangleTest.executor": "Run",
     "JUnit.TriangleTest.testConstructor.executor": "Run",
     "JUnit.TubeTest.testGetNormal.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -84,7 +86,7 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TriangleTest.testConstructor">
+  <component name="RunManager">
     <configuration name="PlaneTest.testGetNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
