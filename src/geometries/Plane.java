@@ -4,10 +4,15 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
+import java.awt.geom.Arc2D;
+import java.util.LinkedList;
 import java.util.List;
+
+import static primitives.Util.isZero;
 
 /**
  * Represents a plane in three-dimensional space.
+ *
  * @author Shneor and Emanuel
  */
 public class Plane implements Geometry {
@@ -18,7 +23,7 @@ public class Plane implements Geometry {
     /**
      * Constructs a plane passing through a point with a given normal vector.
      *
-     * @param q The point on the plane.
+     * @param q      The point on the plane.
      * @param normal The normal vector to the plane. If the length of the normal vector is not 1, it will be normalized.
      */
     public Plane(Point q, Vector normal) {
@@ -36,7 +41,7 @@ public class Plane implements Geometry {
      * @param p3 The third point on the plane.
      * @throws IllegalArgumentException If all three points are collinear, meaning they lie on the same line.
      */
-    public Plane(Point p1, Point p2, Point p3) throws IllegalArgumentException{
+    public Plane(Point p1, Point p2, Point p3) throws IllegalArgumentException {
         q = p1;
         try {
             Vector v1 = p1.subtract(p3);
@@ -55,6 +60,7 @@ public class Plane implements Geometry {
 
     /**
      * get the normal of the plane
+     *
      * @return the normal
      */
     public Vector getNormal() {
@@ -63,6 +69,17 @@ public class Plane implements Geometry {
 
     @Override
     public List<Point> findIntersections(Ray ray) {
-        return null;
+        //Check if the Q-P0 is the ZERO Vector
+        if (q.equals(ray.getHead()))
+            return List.of();
+        //Check if the ray is parallel to the plane
+        if (isZero(normal.dotProduct(ray.getDirection())))
+            return List.of();
+        //Calculate the Scalar t that will give us the point of Intersection with the plane
+        double t = normal.dotProduct(q.subtract(ray.getHead())) / normal.dotProduct(ray.getDirection());
+        if (t <= 0 || isZero(t))
+            return List.of();
+
+        return List.of(ray.getPoint(t));
     }
 }
