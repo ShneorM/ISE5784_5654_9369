@@ -4,10 +4,7 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
-import java.awt.geom.Arc2D;
-import java.util.LinkedList;
 import java.util.List;
-
 import static primitives.Util.isZero;
 
 /**
