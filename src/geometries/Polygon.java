@@ -1,5 +1,6 @@
 package geometries;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static primitives.Util.isZero;
@@ -15,7 +16,7 @@ import primitives.Vector;
  * @author Dan
  */
 //public class Polygon extends Geometry
-//this is what was written but geometry is an interface so we changed it
+//this is what was written but geometry is an interface, so we changed it
 public class Polygon implements Geometry {
     /**
      * List of polygon's vertices
@@ -97,6 +98,39 @@ public class Polygon implements Geometry {
 
     @Override
     public List<Point> findIntersections(Ray ray) {
-        return null;
+        var list=plane.findIntersections(ray);
+        if(list.isEmpty())
+            return list;
+        List<Vector> vs=new ArrayList<>(size);
+        for (Point vertex : vertices) {
+            vs.add(vertex.subtract(ray.getHead()));
+        }
+        List<Double> ts = new ArrayList<>(size);
+
+        List<Vector> ns=new ArrayList<>(size);
+        for(int i=0;i<size;++i){
+            ns.add(vs.get(i).crossProduct(vs.get((i+1)%size)));
+        }
+
+
+        for(Vector n :ns){
+            ts.add(n.dotProduct(ray.getDirection()));
+        }
+
+        int flag;
+        if(isZero(ts.getFirst()))
+            return List.of();
+        else if (ts.getFirst()>0)
+            flag=1;
+        else
+            flag=-1;
+        for(Double t :ts){
+            if(isZero(t))
+                return List.of();
+            if((t>0 && flag==-1)||(t<0 && flag==1))
+                return List.of();
+        }
+
+        return list;
     }
 }

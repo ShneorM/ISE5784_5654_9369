@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="add test of findIntersections in Triangle">
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="add implementation of findIntersections in Triangle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/geometries/PlaneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/PlaneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/geometries/PolygonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/PolygonTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +34,12 @@
     &quot;assignee&quot;: &quot;ShneorM&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ShneorM/ISE5784_5654_9369.git",
-    "accountId": "9d3c3c91-b2e4-4e51-baf5-ee3e0b88675a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ShneorM/ISE5784_5654_9369.git&quot;,
+    &quot;accountId&quot;: &quot;9d3c3c91-b2e4-4e51-baf5-ee3e0b88675a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -55,6 +59,7 @@
     "JUnit.PlaneTest.executor": "Run",
     "JUnit.PlaneTest.testGetNormal.executor": "Run",
     "JUnit.PlaneTest.testPlaneConstructor.executor": "Run",
+    "JUnit.PolygonTest.executor": "Run",
     "JUnit.PolygonTest.testConstructor.executor": "Run",
     "JUnit.PolygonTest.testGetNormal.executor": "Run",
     "JUnit.SphereTest.executor": "Run",
@@ -71,7 +76,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369",
+    "last_opened_file_path": "D:/imanuel/machon lev/projects/year 2 semester 2 introduction to software engineering/stages/Stage0",
     "onboarding.tips.debug.path": "C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
@@ -169,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlaneTest.testGetNormal" />
         <item itemvalue="JUnit.TriangleTest.testConstructor" />
         <item itemvalue="JUnit.PolygonTest.testConstructor" />
         <item itemvalue="JUnit.PolygonTest.testGetNormal" />
         <item itemvalue="JUnit.PlaneTest.testPlaneConstructor" />
-        <item itemvalue="JUnit.PlaneTest.testGetNormal" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +287,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1714511054303</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add implementation of findIntersections in Triangle">
+      <option name="closed" value="true" />
+      <created>1715020102485</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715020102485</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,6 +321,7 @@
     <MESSAGE value="add test of FindIntersections in Sphere" />
     <MESSAGE value="add Documents of FindIntersections in Sphere" />
     <MESSAGE value="add test of findIntersections in Triangle" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test of findIntersections in Triangle" />
+    <MESSAGE value="add implementation of findIntersections in Triangle" />
+    <option name="LAST_COMMIT_MESSAGE" value="add implementation of findIntersections in Triangle" />
   </component>
 </project>
