@@ -21,7 +21,7 @@ public class Polygon implements Geometry {
     /**
      * List of polygon's vertices
      */
-        protected final List<Point> vertices;
+    protected final List<Point> vertices;
     /**
      * Associated plane in which the polygon lays
      */
@@ -98,39 +98,47 @@ public class Polygon implements Geometry {
 
     @Override
     public List<Point> findIntersections(Ray ray) {
-        var list=plane.findIntersections(ray);
-        if(list.isEmpty())
+        // Finds intersections between the ray and the plane containing this polygon.
+        var list = plane.findIntersections(ray);
+        if (list.isEmpty())
             return list;
-        List<Vector> vs=new ArrayList<>(size);
+        // Calculates the vectors from the ray's head to each vertex of the polygon.
+        List<Vector> vs = new ArrayList<>(size);
         for (Point vertex : vertices) {
             vs.add(vertex.subtract(ray.getHead()));
         }
+        // Initializes a list to store the calculated 't' values for each edge.
         List<Double> ts = new ArrayList<>(size);
 
-        List<Vector> ns=new ArrayList<>(size);
-        for(int i=0;i<size;++i){
-            ns.add(vs.get(i).crossProduct(vs.get((i+1)%size)));
+        // Calculates the cross products of consecutive edges to get the normal vectors of each polygon edge.
+        List<Vector> ns = new ArrayList<>(size);
+        for (int i = 0; i < size; ++i) {
+            ns.add(vs.get(i).crossProduct(vs.get((i + 1) % size)));
         }
 
-
-        for(Vector n :ns){
+        // Calculates the 't' values by taking the dot product of each normal vector and the ray direction.
+        for (Vector n : ns) {
             ts.add(n.dotProduct(ray.getDirection()));
         }
 
+        // Determines the direction of the first 't' value and assigns a flag accordingly.
         int flag;
-        if(isZero(ts.getFirst()))
+        if (isZero(ts.getFirst()))
             return List.of();
-        else if (ts.getFirst()>0)
-            flag=1;
+        else if (ts.getFirst() > 0)
+            flag = 1;
         else
-            flag=-1;
-        for(Double t :ts){
-            if(isZero(t))
+            flag = -1;
+
+        // Checks if there are any invalid 't' values that violate the direction determined by the first 't' value.
+        for (Double t : ts) {
+            if (isZero(t))
                 return List.of();
-            if((t>0 && flag==-1)||(t<0 && flag==1))
+            if ((t > 0 && flag == -1) || (t < 0 && flag == 1))
                 return List.of();
         }
 
+        // Returns the list of intersection points.
         return list;
     }
 }
