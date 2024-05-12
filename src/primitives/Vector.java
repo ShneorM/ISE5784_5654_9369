@@ -105,16 +105,8 @@ public class Vector extends Point {
      * @return the normalized vector v/|v|
      */
     public Vector normalize() {
-        //the try needed since the constructor might throw.
-        // but it is also needed that every path will return,
-        // so we will return this in the catch even though it will never actually happen
 
-        try {
-            //this will never actually throw;
-            return new Vector(this.xyz.reduce(this.length()));
-        } catch (IllegalArgumentException ex) {
-            //this is needed just for compilation
-            return this;
-        }
+        return new Vector(this.xyz.reduce(this.length()));
+
     }
 }
