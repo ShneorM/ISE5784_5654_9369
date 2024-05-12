@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit test for geometries.Triangle class
+ *
  * @author Emanuel and Shneor
  */
 class TriangleTest {
@@ -21,10 +22,10 @@ class TriangleTest {
     @Test
     void testGetNormal() {
         // ============ Equivalence Partitions Tests ==============
-        Triangle tr = new Triangle( new Point(1, 0, 0), new Point(1, 2, 0), new Point(0, 1, 0));
+        Triangle tr = new Triangle(new Point(1, 0, 0), new Point(1, 2, 0), new Point(0, 1, 0));
 
         //TC01: Testing the getNormal in Triangle
-        assertEquals(new Vector(0, 0, -1),tr.getNormal(new Point(1, 1.5, 0)), "ERROR: getNormal in Triangle doesn't work properly");
+        assertEquals(new Vector(0, 0, -1), tr.getNormal(new Point(1, 1.5, 0)), "ERROR: getNormal in Triangle doesn't work properly");
     }
 
     /**
@@ -39,7 +40,7 @@ class TriangleTest {
         // =============== Boundary Values Tests ==================
 
         //TC02: testing the ctor of Triangle in the case that points are collinear
-        assertThrows(IllegalArgumentException.class, () -> new Triangle( new Point(1, 0, 0), new Point(1, 2, 0), new Point(1, 3, 0)),
+        assertThrows(IllegalArgumentException.class, () -> new Triangle(new Point(1, 0, 0), new Point(1, 2, 0), new Point(1, 3, 0)),
                 "ERROR: the Ctor With points that points are collinear");
     }
 
@@ -48,20 +49,20 @@ class TriangleTest {
      */
     @Test
     void testFindIntersections() {
-        Triangle t1 = new Triangle(new Point(-10,0,0),new Point(10,0,0), new Point(0,0,10));
+        Triangle t1 = new Triangle(new Point(-10, 0, 0), new Point(10, 0, 0), new Point(0, 0, 10));
 
         // ============ Equivalence Partitions Tests ==============
         // TC01: Test for ray-triangle intersection when the ray passes through the triangle.
         assertEquals(
-                List.of(new Point(0,0,5)),
-                t1.findIntersections(new Ray(new Point(0,-1,5), new Vector(0,1,0))),
+                List.of(new Point(0, 0, 5)),
+                t1.findIntersections(new Ray(new Point(0, -1, 5), new Vector(0, 1, 0))),
                 "ERROR: Expected intersection point when the ray passes through the triangle (TC01)"
         );
 
         // TC02: Test for ray-triangle intersection when the ray passes beside one of the edges of the triangle.
         assertEquals(
                 List.of(),
-                t1.findIntersections(new Ray(new Point(-5,-1,7), new Vector(0,1,0))),
+                t1.findIntersections(new Ray(new Point(-5, -1, 7), new Vector(0, 1, 0))),
                 "ERROR: No intersection expected when the ray passes beside one of the edges of the triangle (TC02)"
         );
 
