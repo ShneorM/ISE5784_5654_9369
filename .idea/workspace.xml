@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="added tests and implementation for polygon.findIntersections&#10;(might be too few tests, will be solved in the next commit)" />
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="documentation for polygon.findIntersections(Ray)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/geometries/PolygonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/PolygonTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +63,7 @@
     "JUnit.SphereTest.testGetNormal.executor": "Run",
     "JUnit.TriangleTest.executor": "Run",
     "JUnit.TriangleTest.testConstructor.executor": "Run",
+    "JUnit.TriangleTest.testFindIntersections.executor": "Run",
     "JUnit.TubeTest.testGetNormal.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -84,7 +89,7 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TriangleTest.testFindIntersections">
     <configuration name="PlaneTest.testGetNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
@@ -96,22 +101,6 @@
       <option name="PACKAGE_NAME" value="geometries" />
       <option name="MAIN_CLASS_NAME" value="geometries.PlaneTest" />
       <option name="METHOD_NAME" value="testGetNormal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaneTest.testPlaneConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="geometries.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="geometries" />
-      <option name="MAIN_CLASS_NAME" value="geometries.PlaneTest" />
-      <option name="METHOD_NAME" value="testPlaneConstructor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,13 +154,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TriangleTest.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="geometries.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="geometries" />
+      <option name="MAIN_CLASS_NAME" value="geometries.TriangleTest" />
+      <option name="METHOD_NAME" value="testFindIntersections" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TriangleTest.testFindIntersections" />
         <item itemvalue="JUnit.PlaneTest.testGetNormal" />
         <item itemvalue="JUnit.TriangleTest.testConstructor" />
         <item itemvalue="JUnit.PolygonTest.testConstructor" />
         <item itemvalue="JUnit.PolygonTest.testGetNormal" />
-        <item itemvalue="JUnit.PlaneTest.testPlaneConstructor" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715349186399</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="documentation for polygon.findIntersections(Ray)">
+      <option name="closed" value="true" />
+      <created>1715352748091</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1715352748091</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,6 +337,7 @@
     <MESSAGE value="add test of findIntersections in Triangle" />
     <MESSAGE value="add implementation of findIntersections in Triangle" />
     <MESSAGE value="added tests and implementation for polygon.findIntersections&#10;(might be too few tests, will be solved in the next commit)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tests and implementation for polygon.findIntersections&#10;(might be too few tests, will be solved in the next commit)" />
+    <MESSAGE value="documentation for polygon.findIntersections(Ray)" />
+    <option name="LAST_COMMIT_MESSAGE" value="documentation for polygon.findIntersections(Ray)" />
   </component>
 </project>

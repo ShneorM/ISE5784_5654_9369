@@ -3,7 +3,6 @@ package geometries;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
-
 import java.util.List;
 
 import static primitives.Util.isZero;
@@ -26,6 +25,7 @@ public class Triangle extends Polygon {
         super(p1, p2, p3);
     }
 
+    @Override
     public List<Point> findIntersections(Ray ray) {
         // Find intersections of the ray with the plane.
         var listPoint = plane.findIntersections(ray);
@@ -60,4 +60,5 @@ public class Triangle extends Polygon {
         else
             return List.of();
     }
+
 }
