@@ -50,7 +50,7 @@ class PlaneTest {
 
         //TC01: Testing the plane that was made by three point
         try {
-            Plane p123 = new Plane(new Point(0, 0, 1), new Point(1, 0, 0), new Point(0, 0, 2));
+            new Plane(new Point(0, 0, 1), new Point(1, 0, 0), new Point(0, 0, 2));
         } catch (IllegalArgumentException ex) {
             fail("the Ctor plane with 3 points doesn't work (TC01)");
         }

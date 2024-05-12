@@ -14,7 +14,7 @@ public class Vector extends Point {
      * @param xyz the triad from which the vector will be constructed
      * @throws IllegalArgumentException if we try to construct the zero vector
      */
-    Vector(Double3 xyz) throws IllegalArgumentException {
+    public Vector(Double3 xyz) throws IllegalArgumentException {
         super(xyz);
         if (xyz.equals(Double3.ZERO))
             throw new IllegalArgumentException("can't create the zero vector");
