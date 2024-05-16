@@ -7,6 +7,7 @@ import primitives.Vector;
 import java.time.LocalDate;
 import java.util.MissingResourceException;
 
+import static primitives.Util.alignZero;
 import static primitives.Util.isZero;
 
 /**
@@ -73,10 +74,15 @@ public class Camera implements Cloneable {
     }
 
     /**
+     * another ctor without permission!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     */
+
+
+    /**
      * @return
      */
     static public Builder getBuilder() {
-        return null;
+        return new Builder();
     }
 
     /**
@@ -87,7 +93,31 @@ public class Camera implements Cloneable {
      * @return
      */
     public Ray constructRay(int nX, int nY, int j, int i) {
-        return null;
+        //Image center
+        Point pointCenter = location.add(vTo.scale(distance));
+
+        //Calculate the size of each pixel
+        double Rx = width/nX;
+        double Ry = height/nY;
+
+        //Calculation of displacement according to i j
+        double Xj = (j - (double)(nX - 1)/2)*Rx;
+        double Yi = -(i - (double)(nY - 1)/2)*Ry;
+
+        //Calculating the pixels function according to i j and gives a point
+        Point Pij = pointCenter;
+        if (alignZero(Xj) != 0){
+            Pij = Pij.add(vRight.scale(Xj));
+        }
+        if (alignZero(Yi) != 0){
+            Pij = Pij.add(vUp.scale(Yi));
+        }
+
+        //Calculation of the vector from the point to the screen according to i j
+        Vector viewIJ =  Pij.subtract(location);
+
+        //Returns the ray from the point by i j
+        return new Ray(location,viewIJ);
     }
 
     /**
@@ -168,7 +198,7 @@ public class Camera implements Cloneable {
             if (camera.distance < 0)
                 throw new IllegalArgumentException("The " + d + " value is invalid");
 
-            return (Camera)camera.clone();
+            return (Camera) camera.clone();
 
         }
     }
