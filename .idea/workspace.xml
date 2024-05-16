@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="added override">
-      <change afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="started working on camera in renderer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715533270654</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="started working on camera in renderer">
+      <option name="closed" value="true" />
+      <created>1715541753834</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1715541753834</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -353,6 +359,7 @@
     <MESSAGE value="added tests and implementation for polygon.findIntersections&#10;(might be too few tests, will be solved in the next commit)" />
     <MESSAGE value="documentation for polygon.findIntersections(Ray)" />
     <MESSAGE value="added override" />
-    <option name="LAST_COMMIT_MESSAGE" value="added override" />
+    <MESSAGE value="started working on camera in renderer" />
+    <option name="LAST_COMMIT_MESSAGE" value="started working on camera in renderer" />
   </component>
 </project>
