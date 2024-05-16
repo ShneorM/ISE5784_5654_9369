@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="started working on camera in renderer">
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="implemtned findIntersections in PLane">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,18 +15,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
-      </GitPushTagMode>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -38,7 +32,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ShneorM/ISE5784_5654_9369.git&quot;,
-    &quot;accountId&quot;: &quot;9d3c3c91-b2e4-4e51-baf5-ee3e0b88675a&quot;
+    &quot;accountId&quot;: &quot;8ce4f129-03ec-4ecc-9dc8-9aae1c22b1be&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -58,16 +52,14 @@
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.CylinderTest.testGetNormal.executor": "Run",
     "JUnit.PlaneTest.executor": "Run",
+    "JUnit.PlaneTest.testFindIntersections.executor": "Run",
     "JUnit.PlaneTest.testGetNormal.executor": "Run",
     "JUnit.PlaneTest.testPlaneConstructor.executor": "Run",
-    "JUnit.PolygonTest.executor": "Run",
     "JUnit.PolygonTest.testConstructor.executor": "Run",
     "JUnit.PolygonTest.testGetNormal.executor": "Run",
     "JUnit.SphereTest.executor": "Run",
     "JUnit.SphereTest.testGetNormal.executor": "Run",
-    "JUnit.TriangleTest.executor": "Run",
     "JUnit.TriangleTest.testConstructor.executor": "Run",
-    "JUnit.TriangleTest.testFindIntersections.executor": "Run",
     "JUnit.TubeTest.testGetNormal.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -78,7 +70,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/imanuel/machon lev/projects/year 2 semester 2 introduction to software engineering/stages/Stage0",
+    "last_opened_file_path": "C:/Users/shneor/Desktop/Stage0",
     "onboarding.tips.debug.path": "C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
@@ -93,8 +85,8 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TriangleTest.testFindIntersections">
-    <configuration name="PlaneTest.testGetNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlaneTest.testFindIntersections">
+    <configuration name="PlaneTest.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
@@ -104,7 +96,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="geometries" />
       <option name="MAIN_CLASS_NAME" value="geometries.PlaneTest" />
-      <option name="METHOD_NAME" value="testGetNormal" />
+      <option name="METHOD_NAME" value="testFindIntersections" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlaneTest.testPlaneConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="geometries.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="geometries" />
+      <option name="MAIN_CLASS_NAME" value="geometries.PlaneTest" />
+      <option name="METHOD_NAME" value="testPlaneConstructor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,29 +166,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TriangleTest.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="geometries.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="geometries" />
-      <option name="MAIN_CLASS_NAME" value="geometries.TriangleTest" />
-      <option name="METHOD_NAME" value="testFindIntersections" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TriangleTest.testFindIntersections" />
-        <item itemvalue="JUnit.PlaneTest.testGetNormal" />
+        <item itemvalue="JUnit.PlaneTest.testFindIntersections" />
         <item itemvalue="JUnit.TriangleTest.testConstructor" />
         <item itemvalue="JUnit.PolygonTest.testConstructor" />
         <item itemvalue="JUnit.PolygonTest.testGetNormal" />
+        <item itemvalue="JUnit.PlaneTest.testPlaneConstructor" />
       </list>
     </recent_temporary>
   </component>
@@ -289,47 +281,31 @@
       <option name="project" value="LOCAL‎" />
       <updated>1714511054303</updated>
     </task>
-    <task id="LOCAL-00013" summary="add implementation of findIntersections in Triangle">
+    <task id="LOCAL‎-00013" summary="commit">
       <option name="closed" value="true" />
-      <created>1715020102485</created>
+      <created>1714511320410</created>
       <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1715020102485</updated>
+      <option name="presentableId" value="LOCAL‎-00013" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1714511320410</updated>
     </task>
-    <task id="LOCAL-00014" summary="added tests and implementation for polygon.findIntersections&#10;(might be too few tests, will be solved in the next commit)">
+    <task id="LOCAL‎-00014" summary="done implantation of findIntersections in the Plane">
       <option name="closed" value="true" />
-      <created>1715349186399</created>
+      <created>1715017746729</created>
       <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1715349186399</updated>
+      <option name="presentableId" value="LOCAL‎-00014" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1715017746729</updated>
     </task>
-    <task id="LOCAL-00015" summary="documentation for polygon.findIntersections(Ray)">
+    <task id="LOCAL‎-00015" summary="implemtned findIntersections in PLane">
       <option name="closed" value="true" />
-      <created>1715352748091</created>
+      <created>1715017868076</created>
       <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1715352748091</updated>
+      <option name="presentableId" value="LOCAL‎-00015" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1715017868076</updated>
     </task>
-    <task id="LOCAL-00016" summary="added override">
-      <option name="closed" value="true" />
-      <created>1715533270654</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1715533270654</updated>
-    </task>
-    <task id="LOCAL-00017" summary="started working on camera in renderer">
-      <option name="closed" value="true" />
-      <created>1715541753834</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1715541753834</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -355,11 +331,9 @@
     <MESSAGE value="add test of FindIntersections in Sphere" />
     <MESSAGE value="add Documents of FindIntersections in Sphere" />
     <MESSAGE value="add test of findIntersections in Triangle" />
-    <MESSAGE value="add implementation of findIntersections in Triangle" />
-    <MESSAGE value="added tests and implementation for polygon.findIntersections&#10;(might be too few tests, will be solved in the next commit)" />
-    <MESSAGE value="documentation for polygon.findIntersections(Ray)" />
-    <MESSAGE value="added override" />
-    <MESSAGE value="started working on camera in renderer" />
-    <option name="LAST_COMMIT_MESSAGE" value="started working on camera in renderer" />
+    <MESSAGE value="commit" />
+    <MESSAGE value="done implantation of findIntersections in the Plane" />
+    <MESSAGE value="implemtned findIntersections in PLane" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemtned findIntersections in PLane" />
   </component>
 </project>
