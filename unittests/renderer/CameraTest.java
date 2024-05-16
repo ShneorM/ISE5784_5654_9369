@@ -6,17 +6,20 @@ import org.junit.jupiter.api.Test;
 
 import primitives.*;
 import renderer.*;
-import scene.Scene;
+//import scene.Scene;
 
 /**
  * Testing Camera Class
+ *
  * @author Dan
  */
 class CameraTest {
-    /** Camera builder for the tests */
+    /**
+     * Camera builder for the tests
+     */
     private final Camera.Builder cameraBuilder = Camera.getBuilder()
-            .setRayTracer(new SimpleRayTracer(new Scene("Test")))
-            .setImageWriter(new ImageWriter("Test", 1, 1))
+//            .setRayTracer(new SimpleRayTracer(new Scene("Test")))
+//            .setImageWriter(new ImageWriter("Test", 1, 1))
             .setLocation(Point.ZERO)
             .setDirection(new Vector(0, 0, -1), new Vector(0, -1, 0))
             .setVpDistance(10);
@@ -27,13 +30,13 @@ class CameraTest {
      */
     @Test
     void testConstructRay() throws CloneNotSupportedException {
-        final String badRay  = "Bad ray";
+        final String badRay = "Bad ray";
 
         // ============ Equivalence Partitions Tests ==============
         // EP01: 4X4 Inside (1,1)
         Camera camera1 = cameraBuilder.setVpSize(8, 8).build();
         assertEquals(new Ray(Point.ZERO, new Vector(1, -1, -10)),
-                camera1.constructRay(4, 4, 1, 1), badRay);
+                        camera1.constructRay(4, 4, 1, 1), badRay);
 
         // =============== Boundary Values Tests ==================
         // BV01: 4X4 Corner (0,0)

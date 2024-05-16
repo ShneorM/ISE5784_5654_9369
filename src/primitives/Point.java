@@ -92,6 +92,4 @@ public class Point {
                 (xyz.d2 - point.xyz.d2) * (xyz.d2 - point.xyz.d2) +
                 (xyz.d3 - point.xyz.d3) * (xyz.d3 - point.xyz.d3);
     }
-
-
 }
