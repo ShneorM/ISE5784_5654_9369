@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="implemtned findIntersections in PLane">
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="just to pull">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/CameraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/CameraTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +31,12 @@
     &quot;assignee&quot;: &quot;ShneorM&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ShneorM/ISE5784_5654_9369.git&quot;,
-    &quot;accountId&quot;: &quot;8ce4f129-03ec-4ecc-9dc8-9aae1c22b1be&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ShneorM/ISE5784_5654_9369.git",
+    "accountId": "9d3c3c91-b2e4-4e51-baf5-ee3e0b88675a"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -50,6 +52,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.CameraTest.testConstructRay.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CylinderTest.testGetNormal.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PlaneTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PlaneTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
@@ -85,7 +88,23 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlaneTest.testFindIntersections">
+  <component name="RunManager" selected="JUnit.CameraTest.testConstructRay">
+    <configuration name="CameraTest.testConstructRay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.CameraTest" />
+      <option name="METHOD_NAME" value="testConstructRay" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlaneTest.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
@@ -97,22 +116,6 @@
       <option name="PACKAGE_NAME" value="geometries" />
       <option name="MAIN_CLASS_NAME" value="geometries.PlaneTest" />
       <option name="METHOD_NAME" value="testFindIntersections" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaneTest.testPlaneConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="geometries.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="geometries" />
-      <option name="MAIN_CLASS_NAME" value="geometries.PlaneTest" />
-      <option name="METHOD_NAME" value="testPlaneConstructor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CameraTest.testConstructRay" />
         <item itemvalue="JUnit.PlaneTest.testFindIntersections" />
         <item itemvalue="JUnit.TriangleTest.testConstructor" />
         <item itemvalue="JUnit.PolygonTest.testConstructor" />
         <item itemvalue="JUnit.PolygonTest.testGetNormal" />
-        <item itemvalue="JUnit.PlaneTest.testPlaneConstructor" />
       </list>
     </recent_temporary>
   </component>
@@ -305,7 +308,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1715017868076</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="just to pull">
+      <option name="closed" value="true" />
+      <created>1715860829891</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1715860829891</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -334,6 +345,7 @@
     <MESSAGE value="commit" />
     <MESSAGE value="done implantation of findIntersections in the Plane" />
     <MESSAGE value="implemtned findIntersections in PLane" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemtned findIntersections in PLane" />
+    <MESSAGE value="just to pull" />
+    <option name="LAST_COMMIT_MESSAGE" value="just to pull" />
   </component>
 </project>
