@@ -14,13 +14,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Testing RayIntegration Class
  *
- * @author Dan
+ * @author Dan, Emanuel and Shneor
  */
 class RayIntegrationTest {
     private static final int NX = 3;
     private static final int NY = 3;
 
     /**
+     *
      * @param camera
      * @param geometry
      * @return
@@ -40,6 +41,7 @@ class RayIntegrationTest {
         // Return the total number of intersection points found.
         return intersects.size();
     }
+
 
 
     @Test

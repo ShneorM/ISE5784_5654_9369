@@ -54,6 +54,43 @@ class VectorTest {
 
     }
 
+
+    /**
+     * Test method for
+     * {@link primitives.Vector#subtract(Point)}.
+     */
+    @Test
+    void testSubtract() {
+
+        //TC01 tests the method subtract for (5,2,3)-(1,2,3)=(4,0,0)
+
+        final Vector v523 = new Vector(5, 2, 3);
+        final Vector v123 = new Vector (1,2,3);
+        assertEquals(new Vector(4, 0, 0), v523.subtract(v123),"ERROR: subtract method doesn't work properly");
+
+        // =============== Boundary Values Tests ==================
+
+        //TC02 tests the method subtract, for (p1-p1)=0 that should throw an exception of vector 0
+
+        assertThrows(IllegalArgumentException.class,()->v523.subtract(v523),"ERROR: subtraction of two similar points doesn't throw or throws the wrong exception");
+    }
+
+    /**
+     * Test method for Vector Ctor with x,y,z
+     * {@link primitives.Vector#Vector
+     */
+    @Test
+    void testVector() {
+        // =============== Boundary Values Tests ==================
+        //TC01 test the Zero Vector in constructor with 3 quarantine
+        assertThrows(IllegalArgumentException.class, () -> new Vector(0, 0, 0), "ERROR: The Ctor function cant agree to the zero vector");
+
+        //TC01 test the Zero Vector in constructor with 3Double object
+        assertThrows(IllegalArgumentException.class, ()->new Vector(new Double3(0,0,0)), "ERROR: The Ctor function cant agree to the zero vector");
+    }
+
+
+
     /**
      * Test method for
      * {@link primitives.Vector#length()}.
