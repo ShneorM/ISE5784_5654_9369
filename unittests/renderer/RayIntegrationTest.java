@@ -14,16 +14,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Testing RayIntegration Class
  *
- * @author Dan, Emanuel and Shneor
+ * @author Emanuel and Shneor
  */
 class RayIntegrationTest {
     private static final int NX = 3;
     private static final int NY = 3;
 
     /**
-     * @param camera
-     * @param geometry
-     * @return
+     Returns the number of intersection points between rays cast from a camera and a geometry object.
+     @param camera the Camera object used to cast the rays
+     @param geometry the Geometry object to intersect with the rays
+     @return the number of intersection points found
      */
     int rays(Camera camera, Geometry geometry) {
         List<Point> intersects = new LinkedList<Point>();// Initialize an empty list to store intersection points.
