@@ -62,8 +62,9 @@ class VectorTest {
     @Test
     void testSubtract() {
 
-        //TC01 tests the method subtract for (5,2,3)-(1,2,3)=(4,0,0)
+        // ============ Equivalence Partitions Tests ==============
 
+        //TC01 tests the method subtract for (5,2,3)-(1,2,3)=(4,0,0)
         final Vector v523 = new Vector(5, 2, 3);
         final Vector v123 = new Vector (1,2,3);
         assertEquals(new Vector(4, 0, 0), v523.subtract(v123),"ERROR: subtract method doesn't work properly");
@@ -71,7 +72,6 @@ class VectorTest {
         // =============== Boundary Values Tests ==================
 
         //TC02 tests the method subtract, for (p1-p1)=0 that should throw an exception of vector 0
-
         assertThrows(IllegalArgumentException.class,()->v523.subtract(v523),"ERROR: subtraction of two similar points doesn't throw or throws the wrong exception");
     }
 
@@ -81,12 +81,21 @@ class VectorTest {
      */
     @Test
     void testVector() {
-        // =============== Boundary Values Tests ==================
-        //TC01 test the Zero Vector in constructor with 3 quarantine
-        assertThrows(IllegalArgumentException.class, () -> new Vector(0, 0, 0), "ERROR: The Ctor function cant agree to the zero vector");
+        // ============ Equivalence Partitions Tests ==============
 
-        //TC01 test the Zero Vector in constructor with 3Double object
-        assertThrows(IllegalArgumentException.class, ()->new Vector(new Double3(0,0,0)), "ERROR: The Ctor function cant agree to the zero vector");
+        //TC01 Testing the creation of a vector by 3 coordinates
+        assertDoesNotThrow(()->new Vector(0,2,3),"ERROR: An exception was thrown on creating a vector (TC 01)");
+
+        //TC02 Testing vector generation by Double3
+        assertDoesNotThrow(()->new Vector(new Double3(3,-4,0)), "ERROR: An exception was thrown on creating a vector (TC 02)");
+
+        // =============== Boundary Values Tests ==================
+
+        //TC03 test the Zero Vector in constructor with 3 quarantine
+        assertThrows(IllegalArgumentException.class, () -> new Vector(0, 0, 0), "ERROR: The Ctor function cant agree to the zero vector (TC 03)");
+
+        //TC04 test the Zero Vector in constructor with 3Double object
+        assertThrows(IllegalArgumentException.class, ()->new Vector(new Double3(0,0,0)), "ERROR: The Ctor function cant agree to the zero vector (TC 04)");
     }
 
 
