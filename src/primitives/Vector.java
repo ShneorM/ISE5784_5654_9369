@@ -1,5 +1,7 @@
 package primitives;
 
+import static primitives.Util.isZero;
+
 /**
  * Class Vector is the basic class representing a three-dimensional vector of Euclidean geometry in Cartesian
  * 3-Dimensional coordinate system.
@@ -30,7 +32,7 @@ public class Vector extends Point {
      */
     public Vector(double x, double y, double z) throws IllegalArgumentException {
         super(x, y, z);
-        if (x == 0 && y == 0 && z == 0)
+        if (isZero(x) && isZero(y) && isZero(z))
             throw new IllegalArgumentException("can't create the zero vector");
     }
 
@@ -81,6 +83,7 @@ public class Vector extends Point {
      * @throws IllegalArgumentException if the scalar is zero
      */
     public Vector scale(double mult) throws IllegalArgumentException {
+        if(isZero(mult)) throw new IllegalArgumentException("can't scale by zero");
         return new Vector(this.xyz.scale(mult));
     }
 
