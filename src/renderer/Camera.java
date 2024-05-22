@@ -11,7 +11,7 @@ import static primitives.Util.alignZero;
 import static primitives.Util.isZero;
 
 /**
- *
+ * This class represents a Camera in a 3D space.
  */
 public class Camera implements Cloneable {
     private Point location;
@@ -19,117 +19,113 @@ public class Camera implements Cloneable {
     private double height = 0.0, width = 0.0, distance = 0.0;
 
     /**
-     * @return
+     * @return the location of the camera.
      */
     public Point getLocation() {
         return location;
     }
 
     /**
-     * @return
+     * @return the "up" vector of the camera.
      */
     public Vector getVUp() {
         return vUp;
     }
 
     /**
-     * @return
+     * @return the "right" vector of the camera.
      */
     public Vector getVRight() {
         return vRight;
     }
 
     /**
-     * @return
+     * @return the "to" vector of the camera.
      */
     public Vector getVTo() {
         return vTo;
     }
 
     /**
-     * @return
+     * @return the height of the view plane.
      */
     public double getHeight() {
         return height;
     }
 
     /**
-     * @return
+     * @return the width of the view plane.
      */
     public double getWidth() {
         return width;
     }
 
     /**
-     * @return
+     * @return the distance from the camera to the view plane.
      */
     public double getDistance() {
         return distance;
     }
 
     /**
-     *
+     * Private constructor to prevent direct instantiation.
      */
     private Camera() {
     }
 
     /**
-     * another ctor without permission!!!!!!!!!!!!!!!!!!!!!!!!!!!
-     */
-
-
-    /**
-     * @return
+     * @return a new Builder instance to build a Camera.
      */
     static public Builder getBuilder() {
         return new Builder();
     }
 
     /**
-     * @param nX
-     * @param nY
-     * @param j
-     * @param i
-     * @return
+     * Constructs a ray through a given pixel.
+     * @param nX the number of horizontal pixels.
+     * @param nY the number of vertical pixels.
+     * @param j the pixel column.
+     * @param i the pixel row.
+     * @return the constructed ray.
      */
     public Ray constructRay(int nX, int nY, int j, int i) {
-        //Image center
+        // Image center
         Point pointCenter = location.add(vTo.scale(distance));
 
-        //Calculate the size of each pixel
-        double Rx = width/nX;
-        double Ry = height/nY;
+        // Calculate the size of each pixel
+        double Rx = width / nX;
+        double Ry = height / nY;
 
-        //Calculation of displacement according to i j
-        double Xj = (j - (double)(nX - 1)/2)*Rx;
-        double Yi = -(i - (double)(nY - 1)/2)*Ry;
+        // Calculation of displacement according to i j
+        double Xj = (j - (double)(nX - 1) / 2) * Rx;
+        double Yi = -(i - (double)(nY - 1) / 2) * Ry;
 
-        //Calculating the pixels function according to i j and gives a point
+        // Calculating the pixel's position according to i j and gives a point
         Point Pij = pointCenter;
-        if (alignZero(Xj) != 0){
+        if (!isZero(Xj)){
             Pij = Pij.add(vRight.scale(Xj));
         }
-        if (alignZero(Yi) != 0){
+        if (!isZero(Yi)){
             Pij = Pij.add(vUp.scale(Yi));
         }
 
-        //Calculation of the vector from the point to the screen according to i j
+        // Calculation of the vector from the point to the screen according to i j
         Vector viewIJ =  Pij.subtract(location);
 
-        //Returns the ray from the point by i j
-        return new Ray(location,viewIJ);
+        // Returns the ray from the point by i j
+        return new Ray(location, viewIJ);
     }
 
     /**
-     *
+     * Builder class to build a Camera instance.
      */
     public static class Builder {
 
         final private Camera camera = new Camera();
 
         /**
-         * @param location
-         * @return
+         * @param location the location to set for the camera.
+         * @return the Builder instance.
          */
         public Builder setLocation(Point location) {
             camera.location = location;
@@ -137,10 +133,10 @@ public class Camera implements Cloneable {
         }
 
         /**
-         * @param vUp
-         * @param vTo
-         * @return
-         * @throws IllegalArgumentException
+         * @param vUp the "up" vector to set for the camera.
+         * @param vTo the "to" vector to set for the camera.
+         * @return the Builder instance.
+         * @throws IllegalArgumentException if the vectors are not perpendicular.
          */
         public Builder setDirection(Vector vUp, Vector vTo) throws IllegalArgumentException {
             if (!isZero(vUp.dotProduct(vTo)))
@@ -151,9 +147,9 @@ public class Camera implements Cloneable {
         }
 
         /**
-         * @param width
-         * @param height
-         * @return
+         * @param width the width to set for the view plane.
+         * @param height the height to set for the view plane.
+         * @return the Builder instance.
          */
         public Builder setVpSize(double width, double height) {
             camera.width = width;
@@ -162,8 +158,8 @@ public class Camera implements Cloneable {
         }
 
         /**
-         * @param distance
-         * @return
+         * @param distance the distance to set from the camera to the view plane.
+         * @return the Builder instance.
          */
         public Builder setVpDistance(double distance) {
             camera.distance = distance;
@@ -171,7 +167,8 @@ public class Camera implements Cloneable {
         }
 
         /**
-         * @return
+         * @return the built Camera instance.
+         * @throws CloneNotSupportedException if cloning is not supported.
          */
         public Camera build() throws CloneNotSupportedException {
             camera.vRight = camera.vTo.crossProduct(camera.vUp).normalize();
