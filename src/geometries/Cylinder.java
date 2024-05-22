@@ -37,7 +37,7 @@ public class Cylinder extends Tube {
         Point headPlusHDirection;
 
         // Compute the headPlusHDirection based on the height of the axis
-        if (height != 0)
+        if (!isZero(height))
             headPlusHDirection = axis.getHead().add(axis.getDirection().scale(height));
         else
             headPlusHDirection = axis.getHead();

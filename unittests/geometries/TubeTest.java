@@ -32,5 +32,10 @@ class TubeTest {
         // =============== Boundary Values Tests ==================
         //TC02: Testing the getNormal with a point that is the closest to the head of the ray
         assertEquals(normalP2,t1.getNormal(p2),"ERROR: getNormal of tube doesn't work properly (TC02)");
+
+        assertThrows(IllegalArgumentException.class,()->t1.getNormal(new Point(9 + 1/Math.sqrt(2), 9 + 1/Math.sqrt(2), 0)),
+                "ERROR: the getNormal of the cylinder when the point is on the second base");
+
     }
+
 }
