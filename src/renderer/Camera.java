@@ -7,7 +7,6 @@ import primitives.Vector;
 import java.time.LocalDate;
 import java.util.MissingResourceException;
 
-import static primitives.Util.alignZero;
 import static primitives.Util.isZero;
 
 /**

@@ -5,6 +5,7 @@ import primitives.Ray;
 import primitives.Vector;
 
 import java.util.List;
+
 import static primitives.Util.isZero;
 
 /**
@@ -41,11 +42,9 @@ public class Plane implements Geometry {
     public Plane(Point p1, Point p2, Point p3) throws IllegalArgumentException {
         q = p1;
         try {
-            Vector v1 = p1.subtract(p3);
-            Vector v2 = p1.subtract(p2);
-            normal = v1.crossProduct(v2).normalize();
+            normal = p1.subtract(p3).crossProduct(p1.subtract(p2)).normalize();
         } catch (IllegalArgumentException ex) {
-            throw new IllegalArgumentException("all point must not be in the same line");
+            throw new IllegalArgumentException("all point must not be on the same line");
         }
     }
 

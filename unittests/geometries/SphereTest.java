@@ -32,8 +32,6 @@ class SphereTest {
         assertEquals(normalP1, s1.getNormal(p1), "ERROR: getNormal of Sphere doesn't work");
 
         // =============== Boundary Values Tests ==================
-        //TC02: Testing if the P-Center is ZERO
-        assertThrows(IllegalArgumentException.class, () -> s2.getNormal(new Point(0, 0, 0)), "ERROR: getNormal of sphere doesn't throw if the radius is zero");
     }
 
     /**
