@@ -21,10 +21,11 @@ class RayIntegrationTest {
     private static final int NY = 3;
 
     /**
-     Returns the number of intersection points between rays cast from a camera and a geometry object.
-     @param camera the Camera object used to cast the rays
-     @param geometry the Geometry object to intersect with the rays
-     @return the number of intersection points found
+     * Returns the number of intersection points between rays cast from a camera and a geometry object.
+     *
+     * @param camera   the Camera object used to cast the rays
+     * @param geometry the Geometry object to intersect with the rays
+     * @return the number of intersection points found
      */
     int rays(Camera camera, Geometry geometry) {
         List<Point> intersects = new LinkedList<Point>();// Initialize an empty list to store intersection points.
@@ -50,7 +51,7 @@ class RayIntegrationTest {
         Sphere sphere = new Sphere(1, new Point(0, 0, -3));
         Camera camera = Camera.getBuilder()
                 .setLocation(new Point(0, 0, 0))
-                .setDirection(new Vector(0, -1, 0), new Vector(0, 0, -1))
+                .setDirection(new Vector(0, 0, -1), new Vector(0, -1, 0))
                 .setVpSize(NX, NY)
                 .setVpDistance(1)
                 .build();
@@ -61,7 +62,7 @@ class RayIntegrationTest {
         sphere = new Sphere(2.5, new Point(0, 0, -2.5));
         camera = Camera.getBuilder()
                 .setLocation(new Point(0, 0, 0.5))
-                .setDirection(new Vector(0, -1, 0), new Vector(0, 0, -1))
+                .setDirection(new Vector(0, 0, -1), new Vector(0, -1, 0))
                 .setVpSize(NX, NY)
                 .setVpDistance(1)
                 .build();
@@ -72,7 +73,7 @@ class RayIntegrationTest {
         sphere = new Sphere(2, new Point(0, 0, -2));
         camera = Camera.getBuilder()
                 .setLocation(new Point(0, 0, 0.5))
-                .setDirection(new Vector(0, -1, 0), new Vector(0, 0, -1))
+                .setDirection(new Vector(0, 0, -1), new Vector(0, -1, 0))
                 .setVpSize(NX, NY)
                 .setVpDistance(1)
                 .build();
@@ -83,7 +84,7 @@ class RayIntegrationTest {
         sphere = new Sphere(4, new Point(0, 0, -2));
         camera = Camera.getBuilder()
                 .setLocation(new Point(0, 0, 0.5))
-                .setDirection(new Vector(0, -1, 0), new Vector(0, 0, -1))
+                .setDirection(new Vector(0, 0, -1), new Vector(0, -1, 0))
                 .setVpSize(NX, NY)
                 .setVpDistance(1)
                 .build();
@@ -94,7 +95,7 @@ class RayIntegrationTest {
         sphere = new Sphere(0.5, new Point(0, 0, 1));
         camera = Camera.getBuilder()
                 .setLocation(new Point(0, 0, 0.5))
-                .setDirection(new Vector(0, -1, 0), new Vector(0, 0, -1))
+                .setDirection(new Vector(0, 0, -1), new Vector(0, -1, 0))
                 .setVpSize(NX, NY)
                 .setVpDistance(1)
                 .build();
@@ -110,7 +111,7 @@ class RayIntegrationTest {
         Triangle triangle = new Triangle(new Point(0, -1, -2), new Point(1, -1, -3), new Point(-1, -1, -2));
         Camera camera = Camera.getBuilder()
                 .setLocation(new Point(0, 0, 0))
-                .setDirection(new Vector(0, -1, 0), new Vector(0, 0, -1))
+                .setDirection(new Vector(0, 0, -1), new Vector(0, -1, 0))
                 .setVpSize(NX, NY)
                 .setVpDistance(1)
                 .build();
@@ -130,7 +131,7 @@ class RayIntegrationTest {
         Plane plane = new Plane(new Point(0, 0, -1), new Vector(0, 0, 2));
         Camera camera = Camera.getBuilder()
                 .setLocation(new Point(0, 0, 0))
-                .setDirection(new Vector(0, -1, 0), new Vector(0, 0, -1))
+                .setDirection(new Vector(0, 0, -1), new Vector(0, -1, 0))
                 .setVpSize(NX, NY)
                 .setVpDistance(1)
                 .build();
@@ -146,7 +147,6 @@ class RayIntegrationTest {
         plane = new Plane(new Point(0, 0, -1), new Vector(0, 2, 2));
         assertEquals(6, rays(camera, plane), "Failed to find all intersection point with the plane (plane test 03)");
     }
-
 
 
 }

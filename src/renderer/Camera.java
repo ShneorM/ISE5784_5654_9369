@@ -137,7 +137,7 @@ public class Camera implements Cloneable {
          * @return the Builder instance.
          * @throws IllegalArgumentException if the vectors are not perpendicular.
          */
-        public Builder setDirection(Vector vUp, Vector vTo) throws IllegalArgumentException {
+        public Builder setDirection(Vector vTo, Vector vUp) throws IllegalArgumentException {
             if (!isZero(vUp.dotProduct(vTo)))
                 throw new IllegalArgumentException("the vectors vTo and vUp are not perpendicular");
             camera.vUp = vUp.normalize();
@@ -170,7 +170,7 @@ public class Camera implements Cloneable {
          * @throws CloneNotSupportedException if cloning is not supported.
          */
         public Camera build() throws CloneNotSupportedException {
-            camera.vRight = camera.vTo.crossProduct(camera.vUp).normalize();
+            camera.vRight = camera.vTo.crossProduct(camera.vUp);    //since the to and up vectors are normalized, we don't need to normalize the right vector
             String h = "height", w = "width", d = "distance";
 
             if (isZero(camera.height))
