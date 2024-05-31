@@ -71,20 +71,16 @@ public List<Point> findIntersections(Ray ray) {
     // Step 2: Check if the intersection point is inside the triangle using barycentric coordinates
     Point P = planeIntersections.getFirst();
 
-    // Get the triangle vertices
-    Point v0 = vertices.get(0);
-    Point v1 = vertices.get(1);
-    Point v2 = vertices.get(2);
 
     // Handle case where P coincides with one of the vertices
-    if (P.equals(v0) || P.equals(v1) || P.equals(v2)) {
+    if (P.equals(vertices.get(0)) || P.equals(vertices.get(1)) || P.equals(vertices.get(2))) {
         return List.of();
     }
 
     // Vectors from triangle vertices to the point
-    Vector v0v1 = v1.subtract(v0);
-    Vector v0v2 = v2.subtract(v0);
-    Vector v0P = P.subtract(v0);
+    Vector v0v1 = vertices.get(1).subtract(vertices.get(0));
+    Vector v0v2 = vertices.get(2).subtract(vertices.get(0));
+    Vector v0P = P.subtract(vertices.get(0));
 
     // Dot products
     double dot00 = v0v2.dotProduct(v0v2);
