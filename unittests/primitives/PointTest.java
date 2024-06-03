@@ -39,7 +39,7 @@ class PointTest {
 
         // =============== Boundary Values Tests ==================
 
-        //TC02 tests the method add for point p1=(5,2,3) and vector (-5,-2,-3) so the result should be (0,0,0)
+        //TC02: tests the method add for point p1=(5,2,3) and vector (-5,-2,-3) so the result should be (0,0,0)
         assertEquals(Point.ZERO, p523.add(new Vector(-5, -2, -3)), "ERROR: the add method doesn't work correctly in the boundary case");
     }
 

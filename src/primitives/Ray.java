@@ -1,5 +1,7 @@
 package primitives;
 
+import java.util.List;
+
 /**
  * Class Ray is the basic class representing a Ray (an infinite line that starts from one place and goes on)
  * of Euclidean geometry in Cartesian
@@ -30,8 +32,8 @@ public class Ray {
      * @param t The parameter determining the position of the point along the ray.
      * @return The point on the ray corresponding to the given parameter.
      */
-    public Point getPoint(double t){
-        if(Util.isZero(t))
+    public Point getPoint(double t) {
+        if (Util.isZero(t))
             return getHead();
         return getHead().add(getDirection().scale(t));
     }
@@ -62,6 +64,7 @@ public class Ray {
 
     /**
      * get the head of the tube
+     *
      * @return the head
      */
     public Point getHead() {
@@ -70,9 +73,33 @@ public class Ray {
 
     /**
      * get the direction of the tube
+     *
      * @return the direction
      */
     public Vector getDirection() {
         return direction;
     }
+
+    /**
+     * Finds the closest point to the head from a list of points.
+     * The distance is calculated using the squared distance to avoid unnecessary square root computations.
+     *
+     * @param points a list of Point objects from which the closest point to the head will be determined.
+     * @return the Point object from the list that is closest to the head.
+     */
+    Point findClosestPoint(List<Point> points){
+        if (points.isEmpty()) {
+            return null;
+        }
+        Point closest = points.getFirst();
+        double minDistanceSquared = closest.distanceSquared(getHead());
+        for (var point : points) {
+            if (point.distanceSquared(getHead()) < minDistanceSquared) {
+                closest = point;
+                minDistanceSquared=point.distanceSquared(getHead());
+            }
+        }
+        return closest;
+    }
 }
+

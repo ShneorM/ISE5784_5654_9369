@@ -67,14 +67,14 @@ public class Plane implements Geometry {
     public List<Point> findIntersections(Ray ray) {
         //Check if the Q-P0 is the ZERO Vector
         if (q.equals(ray.getHead()))
-            return List.of();
+            return null;
         //Check if the ray is parallel to the plane
         if (isZero(normal.dotProduct(ray.getDirection())))
-            return List.of();
+            return null;
         //Calculate the Scalar t that will give us the point of Intersection with the plane
         double t = normal.dotProduct(q.subtract(ray.getHead())) / normal.dotProduct(ray.getDirection());
         if (t <= 0 || isZero(t))
-            return List.of();
+            return null;
 
         return List.of(ray.getPoint(t));
     }

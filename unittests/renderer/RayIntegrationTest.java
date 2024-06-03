@@ -36,7 +36,8 @@ class RayIntegrationTest {
                 Ray ray = camera.constructRay(NX, NY, i, j);
                 // Find all intersection points between the ray and the geometry.
                 List<Point> points = geometry.findIntersections(ray);
-                intersects.addAll(points);//if is empty this will not add anything
+                if(points!= null)
+                    intersects.addAll(points);
             }
         }
         // Return the total number of intersection points found.

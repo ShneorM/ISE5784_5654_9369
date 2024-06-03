@@ -100,8 +100,8 @@ public class Polygon implements Geometry {
     public List<Point> findIntersections(Ray ray) {
         // Finds intersections between the ray and the plane containing this polygon.
         var list = plane.findIntersections(ray);
-        if (list.isEmpty())
-            return list;
+        if (list==null)
+            return null;
         // Calculates the vectors from the ray's head to each vertex of the polygon.
         List<Vector> vs = new ArrayList<>(size);
         for (Point vertex : vertices) {
@@ -124,7 +124,7 @@ public class Polygon implements Geometry {
         // Determines the direction of the first 't' value and assigns a flag accordingly.
         int flag;
         if (isZero(ts.getFirst()))
-            return List.of();
+            return null;
         else if (ts.getFirst() > 0)
             flag = 1;
         else
@@ -133,9 +133,9 @@ public class Polygon implements Geometry {
         // Checks if there are any invalid 't' values that violate the direction determined by the first 't' value.
         for (Double t : ts) {
             if (isZero(t))
-                return List.of();
+                return null;
             if ((t > 0 && flag == -1) || (t < 0 && flag == 1))
-                return List.of();
+                return null;
         }
 
         // Returns the list of intersection points.

@@ -45,55 +45,36 @@ class PolygonTest {
         assertThrows(IllegalArgumentException.class, () -> new Polygon(new Point(0, 0, 0), new Point(1, 0, 0), new Point(1, 2, 0), new Point(1, 3, 0)),
                 "ERROR: the Ctor With points that some points are collinear");
     }
+
     /**
      * Test method for {@link geometries.Polygon#findIntersections(Ray)}.
      */
     @Test
     void testFindIntersections() {
-        Polygon pol = new Polygon(new Point(-10,0,0),new Point(10,0,0), new Point(0,0,10));
+        Polygon pol = new Polygon(new Point(-10,0,0), new Point(10,0,0), new Point(0,0,10));
 
         // ============ Equivalence Partitions Tests ==============
-        // TC01: Test for ray-triangle intersection when the ray passes through the triangle.
+        // TC01: Test for ray-polygon intersection when the ray passes through the polygon.
         assertEquals(
                 List.of(new Point(0,0,5)),
                 pol.findIntersections(new Ray(new Point(0,-1,5), new Vector(0,1,0))),
-                "ERROR: Expected intersection point when the ray passes through the triangle (TC01)"
+                "ERROR: Expected intersection point when the ray passes through the polygon (TC01)"
         );
 
-        // TC02: Test for ray-triangle intersection when the ray passes beside one of the edges of the triangle.
-        assertEquals(
-                List.of(),
-                pol.findIntersections(new Ray(new Point(-5,-1,7), new Vector(0,1,0))),
-                "ERROR: No intersection expected when the ray passes beside one of the edges of the triangle (TC02)"
-        );
+        // TC02: Test for ray-polygon intersection when the ray passes beside one of the edges of the polygon.
+        assertNull(pol.findIntersections(new Ray(new Point(-5, -1, 7), new Vector(0, 1, 0))), "ERROR: No intersection expected when the ray passes beside one of the edges of the polygon (TC02)");
 
-        // TC03: Test for ray-triangle intersection when the ray passes beside one of the vertices of the triangle.
-        assertEquals(
-                List.of(),
-                pol.findIntersections(new Ray(new Point(-13, -1, -1), new Vector(0, 1, 0))),
-                "ERROR: No intersection expected when the ray passes beside one of the vertices of the triangle (TC03)"
-        );
+        // TC03: Test for ray-polygon intersection when the ray passes beside one of the vertices of the polygon.
+        assertNull(pol.findIntersections(new Ray(new Point(-13, -1, -1), new Vector(0, 1, 0))), "ERROR: No intersection expected when the ray passes beside one of the vertices of the polygon (TC03)");
 
         // =============== Boundary Values Tests ==================
-        // TC04: Test for ray-triangle intersection when the ray passes along one of the edges of the triangle.
-        assertEquals(
-                List.of(),
-                pol.findIntersections(new Ray(new Point(-5, -1, 5), new Vector(0, 1, 0))),
-                "ERROR: No intersection expected when the ray passes through one of the edges of the triangle (TC04)"
-        );
+        // TC04: Test for ray-polygon intersection when the ray passes along one of the edges of the polygon.
+        assertNull(pol.findIntersections(new Ray(new Point(-5, -1, 5), new Vector(0, 1, 0))), "ERROR: No intersection expected when the ray passes through one of the edges of the polygon (TC04)");
 
-        // TC05: Test for ray-triangle intersection when the ray passes through one of the vertices of the triangle.
-        assertEquals(
-                List.of(),
-                pol.findIntersections(new Ray(new Point(-10, -1, 0), new Vector(0, 1, 0))),
-                "ERROR: No intersection expected when the ray passes through one of the vertices of the triangle (TC05)"
-        );
+        // TC05: Test for ray-polygon intersection when the ray passes through one of the vertices of the polygon.
+        assertNull(pol.findIntersections(new Ray(new Point(-10, -1, 0), new Vector(0, 1, 0))), "ERROR: No intersection expected when the ray passes through one of the vertices of the polygon (TC05)");
 
-        // TC06: Test for ray-triangle intersection when the ray passes along the extension of one of the edges of the triangle.
-        assertEquals(
-                List.of(),
-                pol.findIntersections(new Ray(new Point(-5, -1, 15), new Vector(0, 1, 0))),
-                "ERROR: No intersection expected when the ray passes along the extension of one of the edges of the triangle (TC06)"
-        );
+        // TC06: Test for ray-polygon intersection when the ray passes along the extension of one of the edges of the polygon.
+        assertNull(pol.findIntersections(new Ray(new Point(-5, -1, 15), new Vector(0, 1, 0))), "ERROR: No intersection expected when the ray passes along the extension of one of the edges of the polygon (TC06)");
     }
 }

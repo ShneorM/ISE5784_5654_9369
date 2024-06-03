@@ -4,6 +4,7 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static primitives.Util.isZero;
@@ -52,20 +53,21 @@ public class Sphere extends RadialGeometry {
         // If the distance between the center and the ray is greater than or equal to the radius,
         // there are no intersections.
         if (d >= radius || isZero(d - radius))
-            return List.of();
+            return null;
 
         // Calculate the distance along the ray to the intersection points.
         double th = Math.sqrt(radius * radius - d * d);
-        List<Point> res = new java.util.LinkedList<Point>(List.of());
-        double t1 = tm - th, t2 = tm + th;
+        List<Point> res = null;
 
-        // Add intersection points to the result list if they are valid.
-        if (!(t1 <= 0 || isZero(t1)))
-            res.add(ray.getPoint(t1));
-        if (!(t2 <= 0 || isZero(t2)))
-            res.add(ray.getPoint(t2));
+        //tm - th == t1, tm + th == t2;
+        if (tm + th < 0 || isZero(tm + th)) {
+            return null;
+        }
+        if (tm - th < 0 || isZero(tm - th)) {
+            return List.of(ray.getPoint(tm + th));
+        }
+        return List.of(ray.getPoint(tm - th), ray.getPoint(tm + th));
 
-        return res;
     }
 
 }
