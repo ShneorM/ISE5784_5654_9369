@@ -10,7 +10,7 @@ public class Scene {
 
     public Color background = Color.BLACK;
 
-    AmbientLight ambientLight = AmbientLight.NONE;
+    public AmbientLight ambientLight = AmbientLight.NONE;
 
     public Geometries geometries = new Geometries();
 

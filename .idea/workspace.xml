@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="file">
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="before fixing from tag 3">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/CameraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/CameraTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/RayIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/RayIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/RenderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/RenderTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,12 +21,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -32,7 +44,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ShneorM/ISE5784_5654_9369.git&quot;,
-    &quot;accountId&quot;: &quot;8ce4f129-03ec-4ecc-9dc8-9aae1c22b1be&quot;
+    &quot;accountId&quot;: &quot;9d3c3c91-b2e4-4e51-baf5-ee3e0b88675a&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -46,114 +58,100 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Geometries.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.All in ISE5784_5654_9369.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CameraTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CameraTest.testConstructRay.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CylinderTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GeometriesTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ImageWriterTest.writeToImage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.testPlaneConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PolygonTest.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PolygonTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayIntegrationTest.testPlane.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayIntegrationTest.testSphere.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayIntegrationTest.testTriangle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayTest.testFindClosestPoint.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayTest.testGetPoint.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SphereTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SphereTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TriangleTest.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TriangleTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TubeTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testSubtract.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testVector.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in ISE5784_5654_9369.executor": "Run",
+    "JUnit.CameraTest.executor": "Run",
+    "JUnit.CameraTest.testConstructRay.executor": "Run",
+    "JUnit.CylinderTest.testGetNormal.executor": "Run",
+    "JUnit.ImageWriterTest.executor": "Run",
+    "JUnit.PlaneTest.executor": "Run",
+    "JUnit.PlaneTest.testFindIntersections.executor": "Run",
+    "JUnit.PlaneTest.testGetNormal.executor": "Run",
+    "JUnit.PlaneTest.testPlaneConstructor.executor": "Run",
+    "JUnit.PolygonTest.testConstructor.executor": "Run",
+    "JUnit.PolygonTest.testGetNormal.executor": "Run",
+    "JUnit.RayIntegrationTest.executor": "Run",
+    "JUnit.RayIntegrationTest.testPlane.executor": "Run",
+    "JUnit.RayIntegrationTest.testSphere.executor": "Run",
+    "JUnit.RayIntegrationTest.testTriangle.executor": "Debug",
+    "JUnit.SphereTest.executor": "Run",
+    "JUnit.SphereTest.testGetNormal.executor": "Run",
+    "JUnit.TriangleTest.testConstructor.executor": "Run",
+    "JUnit.TriangleTest.testFindIntersections.executor": "Run",
+    "JUnit.TubeTest.testGetNormal.executor": "Run",
+    "JUnit.VectorTest.testSubtract.executor": "Run",
+    "JUnit.VectorTest.testVector.executor": "Run",
+    "JUnit.test in ISE5784_5654_9369.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369",
+    "onboarding.tips.debug.path": "C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="primitives" />
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TriangleTest.testConstructor">
-    <configuration name="All in ISE5784_5654_9369" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RayIntegrationTest">
+    <configuration name="CameraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.CameraTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeometriesTest.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ImageWriterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="geometries.*" />
+          <option name="PATTERN" value="renderer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="geometries" />
-      <option name="MAIN_CLASS_NAME" value="geometries.GeometriesTest" />
-      <option name="METHOD_NAME" value="testFindIntersections" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.ImageWriterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RayTest.testGetPoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RayIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="primitives.*" />
+          <option name="PATTERN" value="renderer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="primitives" />
-      <option name="MAIN_CLASS_NAME" value="primitives.RayTest" />
-      <option name="METHOD_NAME" value="testGetPoint" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TriangleTest.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="geometries.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="geometries" />
-      <option name="MAIN_CLASS_NAME" value="geometries.TriangleTest" />
-      <option name="METHOD_NAME" value="testConstructor" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.RayIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,13 +172,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test in ISE5784_5654_9369" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TriangleTest.testConstructor" />
+        <item itemvalue="JUnit.RayIntegrationTest" />
+        <item itemvalue="JUnit.CameraTest" />
+        <item itemvalue="JUnit.ImageWriterTest" />
+        <item itemvalue="JUnit.test in ISE5784_5654_9369" />
         <item itemvalue="JUnit.TriangleTest.testFindIntersections" />
-        <item itemvalue="JUnit.RayTest.testGetPoint" />
-        <item itemvalue="JUnit.All in ISE5784_5654_9369" />
-        <item itemvalue="JUnit.GeometriesTest.testFindIntersections" />
       </list>
     </recent_temporary>
   </component>
@@ -361,23 +373,55 @@
       <option name="project" value="LOCAL‎" />
       <updated>1716406776944</updated>
     </task>
-    <task id="LOCAL‎-00022" summary="ray integration">
+    <task id="LOCAL-00022" summary="fix problems of tag 2:">
       <option name="closed" value="true" />
-      <created>1716409121266</created>
+      <created>1717098224305</created>
       <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL‎-00022" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1716409121266</updated>
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1717098224305</updated>
     </task>
-    <task id="LOCAL‎-00023" summary="ray integration">
+    <task id="LOCAL-00023" summary="tag 4">
       <option name="closed" value="true" />
-      <created>1716409717701</created>
+      <created>1717100528149</created>
       <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL‎-00023" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1716409717701</updated>
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1717100528149</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="tag 4">
+      <option name="closed" value="true" />
+      <created>1717168798699</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1717168798699</updated>
+    </task>
+    <task id="LOCAL-00025" summary="tag 4">
+      <option name="closed" value="true" />
+      <created>1717169031861</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1717169031861</updated>
+    </task>
+    <task id="LOCAL-00026" summary="special way to findIntersections in triangle">
+      <option name="closed" value="true" />
+      <created>1717170890150</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1717170890150</updated>
+    </task>
+    <task id="LOCAL-00027" summary="before fixing from tag 3">
+      <option name="closed" value="true" />
+      <created>1718052618411</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1718052618411</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -410,9 +454,26 @@
     <MESSAGE value="started with RayIntegrationTest" />
     <MESSAGE value="done the RayIntegrationTest" />
     <MESSAGE value="done vector test" />
-    <MESSAGE value="ray integration" />
-    <MESSAGE value="triangle stuff" />
-    <MESSAGE value="file" />
-    <option name="LAST_COMMIT_MESSAGE" value="file" />
+    <MESSAGE value="fix problems of tag 2:" />
+    <MESSAGE value="tag 4" />
+    <MESSAGE value="special way to findIntersections in triangle" />
+    <MESSAGE value="before fixing from tag 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="before fixing from tag 3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/unittests/renderer/RayIntegrationTest.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/renderer/Camera.java</url>
+          <line>226</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
