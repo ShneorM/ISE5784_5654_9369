@@ -49,9 +49,17 @@ public class Triangle extends Polygon {
         Vector v0v2 = vertices.get(2).subtract(vertices.get(0)); //AC
         Vector v0P = P.subtract(vertices.get(0)); //AP
 
+        // Dot products
+        double dot00 = v0v2.dotProduct(v0v2);
+        double dot01 = v0v2.dotProduct(v0v1);
+        double dot02 = v0v2.dotProduct(v0P);
+        double dot11 = v0v1.dotProduct(v0v1);
+        double dot12 = v0v1.dotProduct(v0P);
+
         // Barycentric coordinates
-        double u = v0v2.dotProduct(v0P)/v0v2.lengthSquared();
-        double v = v0v1.dotProduct(v0P)/v0v1.lengthSquared();
+        double invDenom = 1 / (dot00 * dot11 - dot01 * dot01);
+        double u = (dot11 * dot02 - dot01 * dot12) * invDenom;
+        double v = (dot00 * dot12 - dot01 * dot02) * invDenom;
 
         // Check if point is in triangle (excluding the boundaries)
         if (!isZero(u) && u > 0 && !isZero(v) && v > 0 && !isZero(u + v - 1) && u + v < 1) {
