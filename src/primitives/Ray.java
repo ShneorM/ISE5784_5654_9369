@@ -87,7 +87,7 @@ public class Ray {
      * @param points a list of Point objects from which the closest point to the head will be determined.
      * @return the Point object from the list that is closest to the head.
      */
-    Point findClosestPoint(List<Point> points){
+    public Point findClosestPoint(List<Point> points){
         if (points.isEmpty()) {
             return null;
         }

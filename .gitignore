@@ -1,7 +1,7 @@
 ### IntelliJ IDEA ###
 out/
 images/
-.idea/
+/workspace.xml
 !**/src/main/**/out/
 !**/src/test/**/out/
 
