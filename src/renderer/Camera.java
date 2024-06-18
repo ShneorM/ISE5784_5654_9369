@@ -241,7 +241,6 @@ public class Camera implements Cloneable {
          * @throws CloneNotSupportedException if cloning is not supported.
          */
         public Camera build() throws CloneNotSupportedException {
-            camera.vRight = camera.vTo.crossProduct(camera.vUp);    //since the to and up vectors are normalized, we don't need to normalize the right vector
             String h = "height", w = "width", d = "distance";
 
             if (isZero(camera.height))
@@ -269,6 +268,7 @@ public class Camera implements Cloneable {
             if (camera.imageWriter == null)
                 throw new MissingResourceException("Missing data to render", "Camera", "imageWriter");
 
+            camera.vRight = camera.vTo.crossProduct(camera.vUp);    //since the to and up vectors are normalized, we don't need to normalize the right vector
             return (Camera) camera.clone();
         }
     }

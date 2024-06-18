@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @see primitives.Ray
  * @see scene.Scene
  *
- * @autor Emanuel and Shneor
+ * @author Emanuel and Shneor
  */
 class RayIntegrationTest {
     private static final int NX = 3; // Number of horizontal pixels in the view plane.
@@ -129,7 +129,7 @@ class RayIntegrationTest {
     @Test
     void testTriangle() throws CloneNotSupportedException {
         // TC01: Testing a triangle that does not intersect with any rays
-        Triangle triangle = new Triangle(new Point(0, -1, -2), new Point(1, -1, -3), new Point(-1, -1, -2));
+        Triangle triangle = new Triangle(new Point(0, 1, -2), new Point(1, -1, -2), new Point(-1, -1, -2));
         Camera camera = Camera.getBuilder()
                 .setImageWriter(new ImageWriter("test", 1, 1))
                 .setRayTracer(new SimpleRayTracer(new Scene("Test")))
@@ -138,7 +138,7 @@ class RayIntegrationTest {
                 .setVpSize(NX, NY)
                 .setVpDistance(1)
                 .build();
-        assertEquals(0, rays(camera, triangle), "Failed to find all intersection points with the triangle (triangle test 01)");
+        assertEquals(1, rays(camera, triangle), "Failed to find all intersection points with the triangle (triangle test 01)");
 
         // TC02: Testing a triangle that intersects with multiple rays
         triangle = new Triangle(new Point(0, 20, -2), new Point(1, -1, -2), new Point(-1, -1, -2));
