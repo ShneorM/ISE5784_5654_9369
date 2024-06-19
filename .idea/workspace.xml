@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="tag 5 without the bonus">
-      <change afterPath="$PROJECT_DIR$/src/parsers/XmlParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unittests/renderer/XMLSceneParser.java" afterDir="false" />
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="fix tag 3 and 4 start fixing tag 5">
+      <change afterPath="$PROJECT_DIR$/XMLFiles/renderTestTwoColors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scene/SceneBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/renderer/RayIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/RayIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/RenderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/RenderTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,8 @@
     "JUnit.RayIntegrationTest.executor": "Run",
     "JUnit.RayIntegrationTest.testPlane.executor": "Run",
     "JUnit.RayIntegrationTest.testSphere.executor": "Run",
-    "JUnit.RayIntegrationTest.testTriangle.executor": "Run",
+    "JUnit.RayIntegrationTest.testTriangle.executor": "Debug",
+    "JUnit.RenderTests.executor": "Run",
     "JUnit.RenderTests.renderTwoColorTest.executor": "Run",
     "JUnit.SphereTest.executor": "Run",
     "JUnit.SphereTest.testGetNormal.executor": "Run",
@@ -112,7 +114,7 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RayIntegrationTest.testTriangle">
+  <component name="RunManager" selected="JUnit.RenderTests">
     <configuration name="All in ISE5784_5654_9369" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <option name="PACKAGE_NAME" value="" />
@@ -151,7 +153,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RayIntegrationTest.testTriangle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RenderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
@@ -160,9 +162,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="renderer" />
-      <option name="MAIN_CLASS_NAME" value="renderer.RayIntegrationTest" />
-      <option name="METHOD_NAME" value="testTriangle" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="renderer.RenderTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -185,10 +186,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RayIntegrationTest.testTriangle" />
+        <item itemvalue="JUnit.RenderTests" />
+        <item itemvalue="JUnit.RayIntegrationTest" />
         <item itemvalue="JUnit.All in ISE5784_5654_9369" />
         <item itemvalue="JUnit.RenderTests.renderTwoColorTest" />
-        <item itemvalue="JUnit.RayIntegrationTest" />
         <item itemvalue="JUnit.CameraTest" />
       </list>
     </recent_temporary>
@@ -426,15 +427,7 @@
       <option name="project" value="LOCAL" />
       <updated>1718056408056</updated>
     </task>
-    <task id="LOCAL-00029" summary="tag 5 without the bonus">
-      <option name="closed" value="true" />
-      <created>1718316195993</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1718316195993</updated>
-    </task>
-    <option name="localTasksCounter" value="30" />
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -472,8 +465,7 @@
     <MESSAGE value="special way to findIntersections in triangle" />
     <MESSAGE value="before fixing from tag 3" />
     <MESSAGE value="fix tag 3 and 4 start fixing tag 5" />
-    <MESSAGE value="tag 5 without the bonus" />
-    <option name="LAST_COMMIT_MESSAGE" value="tag 5 without the bonus" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix tag 3 and 4 start fixing tag 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -485,17 +477,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/renderer/Camera.java</url>
-          <line>266</line>
+          <line>267</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/unittests/renderer/RayIntegrationTest.java</url>
-          <line>129</line>
-          <properties class="renderer.RayIntegrationTest" method="testTriangle">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

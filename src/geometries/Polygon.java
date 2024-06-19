@@ -90,7 +90,16 @@ public class Polygon implements Geometry {
                 throw new IllegalArgumentException("All vertices must be ordered and the polygon must be convex");
         }
     }
-
+    /**
+     * Polygon constructor based on a list of vertices. The list must be ordered by edge
+     * path. The polygon must be convex.
+     *
+     * @param vertices list of vertices according to their order by edge path
+     * @throws IllegalArgumentException in any case of illegal combination of vertices
+     */
+    public Polygon(List<Point> vertices) {
+        this(vertices.toArray(new Point[0]));
+    }
     @Override
     public Vector getNormal(Point point) {
         return plane.getNormal();
