@@ -13,7 +13,7 @@ import static primitives.Util.isZero;
  *
  * @author Shneor and Emanuel
  */
-public class Plane implements Geometry {
+public class Plane extends Geometry {
 
     private final Point q;
     private final Vector normal;
@@ -64,7 +64,7 @@ public class Plane implements Geometry {
     }
 
     @Override
-    public List<Point> findIntersections(Ray ray) {
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
         //Check if the Q-P0 is the ZERO Vector
         if (q.equals(ray.getHead()))
             return null;
@@ -76,6 +76,11 @@ public class Plane implements Geometry {
         if (t <= 0 || isZero(t))
             return null;
 
-        return List.of(ray.getPoint(t));
+        return List.of(new GeoPoint(this,ray.getPoint(t)));
+    }
+
+    @Override
+    public List<GeoPoint> findGeoIntersections(Ray ray) {
+        return findGeoIntersectionsHelper(ray);
     }
 }

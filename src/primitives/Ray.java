@@ -1,5 +1,7 @@
 package primitives;
 
+import geometries.Intersectable.GeoPoint;
+
 import java.util.List;
 
 /**
@@ -81,25 +83,33 @@ public class Ray {
     }
 
     /**
-     * Finds the closest point to the head from a list of points.
-     * The distance is calculated using the squared distance to avoid unnecessary square root computations.
      *
-     * @param points a list of Point objects from which the closest point to the head will be determined.
-     * @return the Point object from the list that is closest to the head.
+     * @param geoPoints
+     * @return
      */
-    public Point findClosestPoint(List<Point> points){
-        if (points.isEmpty()) {
+    public GeoPoint findClosestGeoPoint(List<GeoPoint> geoPoints){
+        if (geoPoints.isEmpty()) {
             return null;
         }
-        Point closest = points.getFirst();
-        double minDistanceSquared = closest.distanceSquared(getHead());
-        for (var point : points) {
-            if (point.distanceSquared(getHead()) < minDistanceSquared) {
-                closest = point;
-                minDistanceSquared=point.distanceSquared(getHead());
+        GeoPoint closest = geoPoints.getFirst();
+        double minDistanceSquared = closest.point.distanceSquared(getHead());
+        for (var geoPoint : geoPoints) {
+            if (geoPoint.point.distanceSquared(getHead()) < minDistanceSquared) {
+                closest = geoPoint;
+                minDistanceSquared=geoPoint.point.distanceSquared(getHead());
             }
         }
         return closest;
+    }
+
+    /**
+     *
+     * @param points
+     * @return
+     */
+    public Point findClosestPoint(List<Point> points) {
+        return points == null || points.isEmpty() ? null
+                : findClosestGeoPoint(points.stream().map(p -> new GeoPoint(null, p)).toList()).point;
     }
 }
 

@@ -28,7 +28,7 @@ public class Triangle extends Polygon {
 
 
     @Override
-    public List<Point> findIntersections(Ray ray) {
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
         // Step 1: Find intersection with the plane
         List<Point> planeIntersections = plane.findIntersections(ray);
         if (planeIntersections == null) {
@@ -63,8 +63,14 @@ public class Triangle extends Polygon {
 
         // Check if point is in triangle (excluding the boundaries)
         if (!isZero(u) && u > 0 && !isZero(v) && v > 0 && !isZero(u + v - 1) && u + v < 1) {
-            return List.of(P);
+            return List.of(new GeoPoint(this,P));
         }
         return null;
+    }
+
+
+    @Override
+    public List<GeoPoint> findGeoIntersections(Ray ray) {
+        return findGeoIntersectionsHelper(ray);
     }
 }

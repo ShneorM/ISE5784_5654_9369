@@ -17,7 +17,7 @@ import primitives.Vector;
  */
 //public class Polygon extends Geometry
 //this is what was written but geometry is an interface, so we changed it
-public class Polygon implements Geometry {
+public class Polygon extends Geometry {
     /**
      * List of polygon's vertices
      */
@@ -106,7 +106,12 @@ public class Polygon implements Geometry {
     }
 
     @Override
-    public List<Point> findIntersections(Ray ray) {
+    public List<GeoPoint> findGeoIntersections(Ray ray) {
+        return findGeoIntersectionsHelper(ray);
+    }
+
+    @Override
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
         // Finds intersections between the ray and the plane containing this polygon.
         var list = plane.findIntersections(ray);
         if (list==null)
@@ -148,6 +153,6 @@ public class Polygon implements Geometry {
         }
 
         // Returns the list of intersection points.
-        return list;
+        return List.of(new GeoPoint(this, list.getFirst()));
     }
 }

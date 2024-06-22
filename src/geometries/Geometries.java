@@ -14,7 +14,7 @@ import java.util.List;
  * <p>
  * Author: Shneor and Emanuel
  */
-public class Geometries implements Intersectable {
+public class Geometries extends Intersectable {
 
     /**
      * A list to hold all the geometric shapes that can be intersected.
@@ -52,10 +52,10 @@ public class Geometries implements Intersectable {
      * @return a list of intersection points, or null if no intersections are found.
      */
     @Override
-    public List<Point> findIntersections(Ray ray) {
-        List<Point> res = null, shapePoints;
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+        List<GeoPoint> res = null, shapePoints;
         for (var shape : intersectableList) {
-            shapePoints = shape.findIntersections(ray);
+            shapePoints = shape.findGeoIntersectionsHelper(ray);
             if (shapePoints != null) {
                 if (res == null)
                     res = new LinkedList<>();
@@ -64,4 +64,11 @@ public class Geometries implements Intersectable {
         }
         return res;
     }
+
+    @Override
+    public List<GeoPoint> findGeoIntersections(Ray ray) {
+        return findGeoIntersectionsHelper(ray);
+    }
+
+
 }
