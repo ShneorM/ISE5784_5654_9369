@@ -48,9 +48,16 @@ public class SimpleRayTracer extends RayTracerBase {
     }
 
 
+
     /**
+     /**
+     * Calculates the color at the given GeoPoint.
+     * The color is determined based on the ambient light and the emission of the geometry.
      *
+     *
+     * @param geoPoint the point of intersection with the geometry
      * @param geoPoint
+     * @return the color at the given GeoPoint
      * @return
      */
     private Color calcColor(GeoPoint geoPoint) {

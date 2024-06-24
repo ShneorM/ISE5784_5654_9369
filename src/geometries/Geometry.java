@@ -5,8 +5,8 @@ import primitives.Point;
 import primitives.Vector;
 
 /**
- * interface Geometry is the basic interface representing any kind of geometry like sphere, plane etc. of Euclidean geometry in Cartesian
- * 3-Dimensional coordinate system.
+ * The Geometry class is the basic abstract class representing any kind of geometry,
+ * in Euclidean geometry within a 3-Dimensional Cartesian coordinate system.
  *
  * @author Shneor and Emanuel
  */
@@ -14,8 +14,10 @@ public abstract class Geometry extends Intersectable {
     protected Color emission = Color.BLACK;
 
     /**
+     * Sets the emission color of the geometry.
      *
-     * @param emission
+     * @param emission the emission color to set
+     * @return the geometry itself for chaining
      */
     public Geometry setEmission(Color emission) {
         this.emission = emission;
@@ -23,8 +25,9 @@ public abstract class Geometry extends Intersectable {
     }
 
     /**
+     * Gets the emission color of the geometry.
      *
-     * @return
+     * @return the emission color
      */
     public Color getEmission() {
         return emission;
