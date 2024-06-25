@@ -68,11 +68,12 @@ public class SimpleRayTracer extends RayTracerBase {
         Material mat = gp.geometry.getMaterial();
         Color color = gp.geometry.getEmission();
         if (nv == 0) return color;
+        Color iL;
         for (LightSource lightSource : scene.lights) {
             Vector l = lightSource.getL(gp.point);
             double nl = alignZero(n.dotProduct(l));
-            if (nl * nv > 0) { // sign(nl) == sing(nv)
-                Color iL = lightSource.getIntensity(gp.point);
+            if (alignZero(nl * nv) >= 0) { // sign(nl) == sign(nv)
+                iL = lightSource.getIntensity(gp.point);
                 color = color.add(
                         iL.scale(calcDiffusive(mat, nl)
                                 .add(calcSpecular(mat, n, l, nl, v))));
