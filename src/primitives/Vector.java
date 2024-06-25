@@ -37,6 +37,14 @@ public class Vector extends Point {
     }
 
     /**
+     *
+     */
+    public static Vector Y=new Vector(0,1,0);
+    /**
+     *
+     */
+    public static Vector Z = new Vector(0,0,1);
+    /**
      * @param obj the object we are comparing to the calling object
      * @return whether the calling vector is equal to obj
      */

@@ -60,7 +60,7 @@ public class XmlParser {
             Element ambientLightElement = (Element) doc.getElementsByTagName("ambient-light").item(0);
             String ambientLight = ambientLightElement.getAttribute("color");
 
-            if (ambientLight != null) {
+            if (ambientLight != null && !ambientLight.isEmpty()) {
                 Point pAmbientLight =  parsePointFromElement(ambientLight);
 
                 try {
@@ -127,7 +127,7 @@ public class XmlParser {
 
             return scene;
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
         return null;
     }

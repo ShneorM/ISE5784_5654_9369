@@ -53,13 +53,13 @@ public class Geometries extends Intersectable {
      */
     @Override
     public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
-        List<GeoPoint> res = null, shapePoints;
+        List<GeoPoint> res = null, shapeGeoPoints;
         for (var shape : intersectableList) {
-            shapePoints = shape.findGeoIntersectionsHelper(ray);
-            if (shapePoints != null) {
+            shapeGeoPoints = shape.findGeoIntersectionsHelper(ray);
+            if (shapeGeoPoints != null) {
                 if (res == null)
                     res = new LinkedList<>();
-                res.addAll(shapePoints);
+                res.addAll(shapeGeoPoints);
             }
         }
         return res;

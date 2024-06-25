@@ -13,18 +13,13 @@ import primitives.Double3;
  *
  * @author Emanuel and Shneor
  */
-public class AmbientLight {
+public class AmbientLight extends Light {
     /**
      * A constant representing no ambient light.
      * This can be used to indicate that no ambient light is present in the scene.
      */
     public static final AmbientLight NONE = new AmbientLight(Color.BLACK, 0);
 
-    /**
-     * The intensity of the ambient light.
-     * This is a final field, meaning it is immutable once set by the constructor.
-     */
-    final private Color intensity;
 
     /**
      * Constructs an AmbientLight object with the specified intensity and attenuation factor.
@@ -33,7 +28,7 @@ public class AmbientLight {
      * @param Ka The attenuation factor represented as a Double3 object. This scales the intensity.
      */
     public AmbientLight(Color Ia, Double3 Ka) {
-        intensity = Ia.scale(Ka);
+        super(Ia.scale(Ka));
     }
 
     /**
@@ -43,7 +38,7 @@ public class AmbientLight {
      * @param Ka The attenuation factor represented as a double. This scales the intensity.
      */
     public AmbientLight(Color Ia, double Ka) {
-        intensity = Ia.scale(Ka);
+        super(Ia.scale(Ka));
     }
 
     /**
