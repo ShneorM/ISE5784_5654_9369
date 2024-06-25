@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="fix tag 3 and 4 start fixing tag 5">
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="finish tag 6 with bugs without test of multipul light source">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/Light.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/LightSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/PointLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/SpotLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/SpotLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/Scene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/lighting/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/lighting/LightsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,9 +72,11 @@
     "JUnit.CameraTest.testConstructRay.executor": "Run",
     "JUnit.CylinderTest.testGetNormal.executor": "Run",
     "JUnit.ImageWriterTest.executor": "Run",
+    "JUnit.LightsTests.sphereMultiLight.executor": "Run",
     "JUnit.LightsTests.spherePoint.executor": "Debug",
     "JUnit.LightsTests.sphereSpot.executor": "Debug",
     "JUnit.LightsTests.sphereSpotSharp.executor": "Run",
+    "JUnit.LightsTests.trianglesMultiColor.executor": "Run",
     "JUnit.LightsTests.trianglesPoint.executor": "Debug",
     "JUnit.PlaneTest.executor": "Run",
     "JUnit.PlaneTest.testFindIntersections.executor": "Run",
@@ -85,6 +97,7 @@
     "JUnit.TubeTest.testGetNormal.executor": "Run",
     "JUnit.VectorTest.testSubtract.executor": "Run",
     "JUnit.VectorTest.testVector.executor": "Run",
+    "JUnit.lighting in ISE5784_5654_9369.executor": "Run",
     "JUnit.test in ISE5784_5654_9369.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -114,7 +127,7 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LightsTests.trianglesPoint">
+  <component name="RunManager" selected="JUnit.All in ISE5784_5654_9369">
     <configuration name="All in ISE5784_5654_9369" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <option name="PACKAGE_NAME" value="" />
@@ -123,7 +136,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LightsTests.spherePoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LightsTests.sphereMultiLight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
@@ -133,13 +146,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="lighting" />
       <option name="MAIN_CLASS_NAME" value="lighting.LightsTests" />
-      <option name="METHOD_NAME" value="spherePoint" />
+      <option name="METHOD_NAME" value="sphereMultiLight" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LightsTests.sphereSpot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LightsTests.trianglesMultiColor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
@@ -149,23 +162,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="lighting" />
       <option name="MAIN_CLASS_NAME" value="lighting.LightsTests" />
-      <option name="METHOD_NAME" value="sphereSpot" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LightsTests.sphereSpotSharp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lighting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lighting" />
-      <option name="MAIN_CLASS_NAME" value="lighting.LightsTests" />
-      <option name="METHOD_NAME" value="sphereSpotSharp" />
+      <option name="METHOD_NAME" value="trianglesMultiColor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -187,13 +184,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="lighting in ISE5784_5654_9369" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lighting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lighting" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LightsTests.trianglesPoint" />
         <item itemvalue="JUnit.All in ISE5784_5654_9369" />
-        <item itemvalue="JUnit.LightsTests.spherePoint" />
-        <item itemvalue="JUnit.LightsTests.sphereSpot" />
-        <item itemvalue="JUnit.LightsTests.sphereSpotSharp" />
+        <item itemvalue="JUnit.LightsTests.trianglesMultiColor" />
+        <item itemvalue="JUnit.LightsTests.sphereMultiLight" />
+        <item itemvalue="JUnit.lighting in ISE5784_5654_9369" />
+        <item itemvalue="JUnit.LightsTests.trianglesPoint" />
       </list>
     </recent_temporary>
   </component>
@@ -438,7 +449,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719288612945</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="finish tag 6 with bugs without test of multipul light source">
+      <option name="closed" value="true" />
+      <created>1719306860917</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1719306860917</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -476,7 +495,8 @@
     <MESSAGE value="special way to findIntersections in triangle" />
     <MESSAGE value="before fixing from tag 3" />
     <MESSAGE value="fix tag 3 and 4 start fixing tag 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix tag 3 and 4 start fixing tag 5" />
+    <MESSAGE value="finish tag 6 with bugs without test of multipul light source" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish tag 6 with bugs without test of multipul light source" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

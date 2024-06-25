@@ -87,9 +87,11 @@ public class Scene {
     }
 
     /**
+     * Sets the list of light sources in the scene.
+     * This allows the addition or modification of the light sources used for rendering the scene.
      *
-     * @param lights
-     * @return
+     * @param lights the list of light sources to set
+     * @return the Scene object itself for method chaining
      */
     public Scene setLights(List<LightSource> lights) {
         this.lights = lights;

@@ -13,11 +13,12 @@ import static primitives.Util.alignZero;
  * If no intersections are found, it returns the background color of the scene.
  * If intersections are found, it calculates the color based on ambient light.
  *
- * @author Shneor and Emanuel
  * @see renderer.RayTracerBase
  * @see primitives.Ray
  * @see primitives.Color
  * @see scene.Scene
+ *
+ * @author Shneor and Emanuel
  */
 public class SimpleRayTracer extends RayTracerBase {
 
@@ -45,11 +46,13 @@ public class SimpleRayTracer extends RayTracerBase {
                 : calcColor(ray.findClosestGeoPoint(intersections), ray);
     }
 
-
     /**
-     * @param intersection
-     * @param ray
-     * @return
+     * Calculates the color at a specific intersection point.
+     * This includes ambient light and local effects like diffuse and specular reflections.
+     *
+     * @param intersection the intersection point.
+     * @param ray the ray that caused the intersection.
+     * @return the color at the intersection point.
      */
     private Color calcColor(GeoPoint intersection, Ray ray) {
         return scene.ambientLight.getIntensity()
@@ -57,9 +60,11 @@ public class SimpleRayTracer extends RayTracerBase {
     }
 
     /**
-     * @param gp
-     * @param ray
-     * @return
+     * Calculates the local effects (diffuse and specular reflections) at a given point.
+     *
+     * @param gp the geometric point at which the effects are calculated.
+     * @param ray the ray that caused the intersection.
+     * @return the color including local effects.
      */
     private Color calcLocalEffects(GeoPoint gp, Ray ray) {
         Vector n = gp.geometry.getNormal(gp.point);
@@ -69,8 +74,9 @@ public class SimpleRayTracer extends RayTracerBase {
         Color color = gp.geometry.getEmission();
         if (nv == 0) return color;
         Color iL;
+        Vector l;
         for (LightSource lightSource : scene.lights) {
-            Vector l = lightSource.getL(gp.point);
+            l = lightSource.getL(gp.point);
             double nl = alignZero(n.dotProduct(l));
             if (alignZero(nl * nv) >= 0) { // sign(nl) == sign(nv)
                 iL = lightSource.getIntensity(gp.point);
@@ -83,33 +89,30 @@ public class SimpleRayTracer extends RayTracerBase {
     }
 
     /**
+     * Calculates the diffuse reflection component of the material.
      *
-     * @param mat
-     * @param nl
-     * @return
+     * @param mat the material of the geometry.
+     * @param nl the dot product of the normal and light direction vectors.
+     * @return the diffuse reflection component.
      */
     private Double3 calcDiffusive(Material mat, double nl) {
         return mat.kD.scale(Math.abs(nl));
     }
 
     /**
+     * Calculates the specular reflection component of the material.
      *
-     * @param material
-     * @param n
-     * @param l
-     * @param nl
-     * @param v
-     * @return
+     * @param material the material of the geometry.
+     * @param n the normal vector at the point of intersection.
+     * @param l the direction vector from the light source to the intersection point.
+     * @param nl the dot product of the normal and light direction vectors.
+     * @param v the direction vector of the ray.
+     * @return the specular reflection component.
      */
     private Double3 calcSpecular(Material material, Vector n, Vector l, double nl, Vector v) {
         Double3 ks = material.kS;
-
-
-        //Vector r = l.subtract(n.scale(2 * nl)).normalize();
         double vr = alignZero(v.scale(-1).dotProduct(l.subtract(n.scale(2 * nl)).normalize()));
         vr = (vr > 0) ? vr : 0; // Ensure vr is non-negative
-
-
         if (vr <= 0) return Double3.ZERO; // No specular reflection in this case
 
         double result = 1.0;
@@ -119,5 +122,4 @@ public class SimpleRayTracer extends RayTracerBase {
 
         return ks.scale(result);
     }
-
 }

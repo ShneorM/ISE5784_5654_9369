@@ -9,7 +9,7 @@ import java.util.List;
  * Intersectable is the basic abstract class representing any kind of intersectable object like sphere, plane, etc.,
  * in Euclidean geometry within a 3-Dimensional Cartesian coordinate system.
  *
- * @authour Shneor and Emanuel
+ * @author Shneor and Emanuel
  */
 public abstract class Intersectable {
 
