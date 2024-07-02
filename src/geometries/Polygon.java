@@ -105,15 +105,11 @@ public class Polygon extends Geometry {
         return plane.getNormal();
     }
 
-    @Override
-    public List<GeoPoint> findGeoIntersections(Ray ray) {
-        return findGeoIntersectionsHelper(ray);
-    }
 
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray,double maxDistance) {
         // Finds intersections between the ray and the plane containing this polygon.
-        var list = plane.findIntersections(ray);
+        var list = plane.findIntersections(ray,maxDistance);
         if (list==null)
             return null;
         // Calculates the vectors from the ray's head to each vertex of the polygon.

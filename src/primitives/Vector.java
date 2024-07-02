@@ -91,7 +91,7 @@ public class Vector extends Point {
      * @throws IllegalArgumentException if the scalar is zero
      */
     public Vector scale(double mult) throws IllegalArgumentException {
-        if(isZero(mult)) throw new IllegalArgumentException("can't scale by zero");
+        if(isZero(mult)||xyz.scale(mult).equals(Double3.ZERO)) throw new IllegalArgumentException("can't scale by zero");
         return new Vector(this.xyz.scale(mult));
     }
 

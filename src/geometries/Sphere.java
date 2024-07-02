@@ -4,9 +4,9 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import static primitives.Util.alignZero;
 import static primitives.Util.isZero;
 
 /**
@@ -39,11 +39,11 @@ public class Sphere extends RadialGeometry {
 
 
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
         // If the ray's head coincides with the center of the sphere,
         // then the intersection point is at a distance of the radius.
         if (center.equals(ray.getHead())) {
-            return List.of(new GeoPoint(this,ray.getPoint(radius)));
+            return List.of(new GeoPoint(this, ray.getPoint(radius)));
         }
 
         Vector u = center.subtract(ray.getHead());
@@ -57,23 +57,29 @@ public class Sphere extends RadialGeometry {
 
         // Calculate the distance along the ray to the intersection points.
         double th = Math.sqrt(radius * radius - d * d);
-        List<Point> res = null;
+
 
         //tm - th == t1, tm + th == t2;
-        if (tm + th < 0 || isZero(tm + th)) {
+        if (tm + th < 0 || isZero(ray, tm + th)) {
             return null;
         }
-        if (tm - th < 0 || isZero(tm - th)) {
-            return List.of(new GeoPoint(this,ray.getPoint(tm + th)));
+        if ((tm - th < 0 || isZero(ray, tm - th)) && alignZero(tm + th - maxDistance) < 0) {
+            return List.of(new GeoPoint(this, ray.getPoint(tm + th)));
         }
-        return List.of(new GeoPoint(this,ray.getPoint(tm - th)),new GeoPoint(this, ray.getPoint(tm + th)));
-
+        if ((tm - th < 0 || isZero(ray, tm - th))) {//tm+th-maxDistance>=0
+            return null;
+        }
+        //from here tm-th>0
+        if (alignZero(tm + th - maxDistance) < 0) {
+            return List.of(new GeoPoint(this, ray.getPoint(tm - th)), new GeoPoint(this, ray.getPoint(tm + th)));
+        }
+        if (alignZero(tm - th - maxDistance) < 0) {//tm+th>=maxDistance
+            return List.of(new GeoPoint(this, ray.getPoint(tm - th)));
+        }
+        //tm+th>=maxDistance,tm-th>=maxDistance
+        return null;
     }
-
-    @Override
-    public List<GeoPoint> findGeoIntersections(Ray ray) {
-        return findGeoIntersectionsHelper(ray);
-    }
-
 }
+
+
 

@@ -13,14 +13,17 @@ import static primitives.Util.alignZero;
  * If no intersections are found, it returns the background color of the scene.
  * If intersections are found, it calculates the color based on ambient light.
  *
+ * @author Shneor and Emanuel
  * @see renderer.RayTracerBase
  * @see primitives.Ray
  * @see primitives.Color
  * @see scene.Scene
- *
- * @author Shneor and Emanuel
  */
 public class SimpleRayTracer extends RayTracerBase {
+    /**
+     *
+     */
+    private static final double DELTA = 0.1;
 
     /**
      * Constructs a SimpleRayTracer with the specified scene.
@@ -51,7 +54,7 @@ public class SimpleRayTracer extends RayTracerBase {
      * This includes ambient light and local effects like diffuse and specular reflections.
      *
      * @param intersection the intersection point.
-     * @param ray the ray that caused the intersection.
+     * @param ray          the ray that caused the intersection.
      * @return the color at the intersection point.
      */
     private Color calcColor(GeoPoint intersection, Ray ray) {
@@ -62,7 +65,7 @@ public class SimpleRayTracer extends RayTracerBase {
     /**
      * Calculates the local effects (diffuse and specular reflections) at a given point.
      *
-     * @param gp the geometric point at which the effects are calculated.
+     * @param gp  the geometric point at which the effects are calculated.
      * @param ray the ray that caused the intersection.
      * @return the color including local effects.
      */
@@ -78,7 +81,7 @@ public class SimpleRayTracer extends RayTracerBase {
         for (LightSource lightSource : scene.lights) {
             l = lightSource.getL(gp.point);
             double nl = alignZero(n.dotProduct(l));
-            if (alignZero(nl * nv) >= 0) { // sign(nl) == sign(nv)
+            if (alignZero(nl * nv) >= 0 && unshaded(gp, lightSource, l, l.scale(-1))) { // sign(nl) == sign(nv)
                 iL = lightSource.getIntensity(gp.point);
                 color = color.add(
                         iL.scale(calcDiffusive(mat, nl)
@@ -89,10 +92,35 @@ public class SimpleRayTracer extends RayTracerBase {
     }
 
     /**
+     *
+     */
+    private static final double EPS = 0.1;
+
+    /**
+     * @param gp
+     * @param light
+     * @param l
+     * @param n
+     * @return
+     */
+    private boolean unshaded(GeoPoint gp, LightSource light, Vector l, Vector n) {
+        //Vector lightDirection = l.scale(-1); // from point to light source
+        //Ray ray = new Ray(gp.point, lightDirection);
+//        Vector epsVector = n.scale(EPS);
+//        Point point = gp.point.add(n.scale(EPS));
+
+        var intersections = scene.geometries.findIntersections(
+                new Ray(gp.point.add(n.scale(EPS)), l.scale(-1)),
+                light.getDistance(gp.point)
+        );
+        return intersections == null;
+    }
+
+    /**
      * Calculates the diffuse reflection component of the material.
      *
      * @param mat the material of the geometry.
-     * @param nl the dot product of the normal and light direction vectors.
+     * @param nl  the dot product of the normal and light direction vectors.
      * @return the diffuse reflection component.
      */
     private Double3 calcDiffusive(Material mat, double nl) {
@@ -103,10 +131,10 @@ public class SimpleRayTracer extends RayTracerBase {
      * Calculates the specular reflection component of the material.
      *
      * @param material the material of the geometry.
-     * @param n the normal vector at the point of intersection.
-     * @param l the direction vector from the light source to the intersection point.
-     * @param nl the dot product of the normal and light direction vectors.
-     * @param v the direction vector of the ray.
+     * @param n        the normal vector at the point of intersection.
+     * @param l        the direction vector from the light source to the intersection point.
+     * @param nl       the dot product of the normal and light direction vectors.
+     * @param v        the direction vector of the ray.
      * @return the specular reflection component.
      */
     private Double3 calcSpecular(Material material, Vector n, Vector l, double nl, Vector v) {

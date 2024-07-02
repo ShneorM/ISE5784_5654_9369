@@ -1,4 +1,5 @@
 package primitives;
+import primitives.Double3;
 
 /** Util class is used for some internal utilities, e.g. controlling accuracy
  * @author Dan */
@@ -31,6 +32,25 @@ public final class Util {
       return getExp(number) < ACCURACY;
    }
 
+   /**
+    *
+    * @param v
+    * @param mult
+    * @return
+    */
+   public static boolean isZero(Vector v,double mult){
+      return v.xyz.scale(mult).equals(Double3.ZERO);
+   }
+
+   /**
+    *
+    * @param ray
+    * @param mult
+    * @return
+    */
+   public static boolean isZero(Ray ray,double mult){
+      return isZero(ray.getDirection(),mult);
+   }
    /** Aligns the number to zero if it is almost zero
     * @param  number the number to align
     * @return        0.0 if the number is very close to zero, the number itself

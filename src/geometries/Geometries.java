@@ -52,10 +52,10 @@ public class Geometries extends Intersectable {
      * @return a list of intersection points, or null if no intersections are found.
      */
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray,double maxDistance) {
         List<GeoPoint> res = null, shapeGeoPoints;
         for (var shape : intersectableList) {
-            shapeGeoPoints = shape.findGeoIntersectionsHelper(ray);
+            shapeGeoPoints = shape.findGeoIntersectionsHelper(ray,maxDistance);
             if (shapeGeoPoints != null) {
                 if (res == null)
                     res = new LinkedList<>();
@@ -65,10 +65,7 @@ public class Geometries extends Intersectable {
         return res;
     }
 
-    @Override
-    public List<GeoPoint> findGeoIntersections(Ray ray) {
-        return findGeoIntersectionsHelper(ray);
-    }
+
 
 
 }

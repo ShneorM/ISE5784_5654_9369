@@ -35,7 +35,7 @@ public class Ray {
      * @return The point on the ray corresponding to the given parameter.
      */
     public Point getPoint(double t) {
-        if (Util.isZero(t))
+        if (Util.isZero(this,t))
             return getHead();
         return getHead().add(getDirection().scale(t));
     }

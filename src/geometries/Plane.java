@@ -6,6 +6,7 @@ import primitives.Vector;
 
 import java.util.List;
 
+import static primitives.Util.alignZero;
 import static primitives.Util.isZero;
 
 /**
@@ -64,7 +65,7 @@ public class Plane extends Geometry {
     }
 
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray,double maxDistance) {
         //Check if the Q-P0 is the ZERO Vector
         if (q.equals(ray.getHead()))
             return null;
@@ -73,14 +74,11 @@ public class Plane extends Geometry {
             return null;
         //Calculate the Scalar t that will give us the point of Intersection with the plane
         double t = normal.dotProduct(q.subtract(ray.getHead())) / normal.dotProduct(ray.getDirection());
-        if (t <= 0 || isZero(t))
+        if (t <= 0 || isZero(ray,t)||alignZero(t-maxDistance)>=0)
             return null;
 
         return List.of(new GeoPoint(this,ray.getPoint(t)));
     }
 
-    @Override
-    public List<GeoPoint> findGeoIntersections(Ray ray) {
-        return findGeoIntersectionsHelper(ray);
-    }
+
 }

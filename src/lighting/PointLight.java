@@ -74,7 +74,7 @@ public class PointLight extends Light implements LightSource {
      */
     @Override
     public Color getIntensity(Point p) {
-        double d = position.distance(p);
+        double d = getDistance(p);
         return intensity.scale(1 / (kC + kL * d + kQ * d * d));
     }
 
@@ -91,5 +91,13 @@ public class PointLight extends Light implements LightSource {
             throw new IllegalArgumentException("The point cannot be equal to the position of the point light.");
         }
         return p.subtract(position).normalize();
+    }
+
+    @Override
+    public double getDistance(Point point) {
+        if (point.equals(position)) {
+            throw new IllegalArgumentException("The point cannot be equal to the position of the point light.");
+        }
+        return point.distance(position);
     }
 }

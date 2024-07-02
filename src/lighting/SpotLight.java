@@ -60,6 +60,6 @@ public class SpotLight extends PointLight {
         for (int i = 0; i < beamWidth; ++i) {
             nlOr0 *= dirL;
         }
-        return super.getIntensity(p).scale(nlOr0);
+        return super.getIntensity(p).scale(nlOr0).scale(1+(double)(beamWidth-1)/10);
     }
 }
