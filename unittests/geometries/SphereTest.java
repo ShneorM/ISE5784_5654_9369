@@ -113,4 +113,19 @@ class SphereTest {
 
     }
 
+    @Test
+    void testFindIntersectionsWithDistance() {
+        Sphere sphere = new Sphere(1, new Point(0, 0, 0));
+
+        // Test case 01: Ray intersects the sphere at two points within a large distance
+        List<Point> result = sphere.findIntersections(new Ray(new Point(3, 0, 0), new Vector(-1, 0, 0)), 1000);
+        // TC01: Expected result size is 2
+        assertEquals(2, result.size(), "ERROR: Ray should intersect the sphere at two points within the distance (TC01)");
+
+        // Test case 02: Ray does not intersect the sphere within a very small distance
+        result = sphere.findIntersections(new Ray(new Point(25, 0, 0), new Vector(-3, 0, 0)), 10);
+        // TC02: Expected result is null (no intersection within the distance)
+        assertNull(result, "ERROR: Ray should not intersect the sphere within the distance (TC02)");
+    }
+
 }

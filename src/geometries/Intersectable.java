@@ -40,7 +40,9 @@ public abstract class Intersectable {
         }
 
         /**
-         * @return
+         * Retrieves the normal vector at the current point on the geometry.
+         *
+         * @return the normal vector at the current point.
          */
         public Vector getNormal() {
             return geometry.getNormal(point);
@@ -72,9 +74,11 @@ public abstract class Intersectable {
     }
 
     /**
-     * @param ray
-     * @param maxDistance
-     * @return
+     * Finds intersections of the ray with geometries up to a specified maximum distance.
+     *
+     * @param ray         the ray to find intersections with.
+     * @param maxDistance the maximum distance to consider for intersections.
+     * @return a list of intersection points, or {@code null} if no intersections are found.
      */
     public List<Point> findIntersections(Ray ray, double maxDistance) {
         var geoList = findGeoIntersections(ray, maxDistance);
@@ -82,26 +86,32 @@ public abstract class Intersectable {
     }
 
     /**
-     * @param ray
-     * @return
+     * Finds intersections of the ray with geometries within an infinite distance.
+     *
+     * @param ray the ray to find intersections with.
+     * @return a list of geometric points representing intersections, or an empty list if no intersections are found.
      */
     public final List<GeoPoint> findGeoIntersections(Ray ray) {
         return findGeoIntersections(ray, Double.POSITIVE_INFINITY);
     }
 
     /**
-     * @param ray
-     * @param maxDistance
-     * @return
+     * Finds intersections of the ray with geometries up to a specified maximum distance.
+     *
+     * @param ray         the ray to find intersections with.
+     * @param maxDistance the maximum distance to consider for intersections.
+     * @return a list of geometric points representing intersections, or an empty list if no intersections are found.
      */
     public final List<GeoPoint> findGeoIntersections(Ray ray, double maxDistance) {
         return findGeoIntersectionsHelper(ray, maxDistance);
     }
 
     /**
-     * @param ray
-     * @param maxDistance
-     * @return
+     * Helper method to be implemented by subclasses to find intersections of the ray with geometries.
+     *
+     * @param ray         the ray to find intersections with.
+     * @param maxDistance the maximum distance to consider for intersections.
+     * @return a list of geometric points representing intersections, or an empty list if no intersections are found.
      */
     protected abstract List<GeoPoint>
     findGeoIntersectionsHelper(Ray ray, double maxDistance);

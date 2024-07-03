@@ -21,7 +21,7 @@ import static primitives.Util.alignZero;
  */
 public class SimpleRayTracer extends RayTracerBase {
     /**
-     *
+     * Constant value for epsilon to prevent self-intersections.
      */
     private static final double DELTA = 0.1;
 
@@ -92,25 +92,18 @@ public class SimpleRayTracer extends RayTracerBase {
     }
 
     /**
+     * Checks if the given point is unshaded by the light source.
+     * Calculates shadows using an epsilon offset to prevent self-intersections.
      *
-     */
-    private static final double EPS = 0.1;
-
-    /**
-     * @param gp
-     * @param light
-     * @param l
-     * @param n
-     * @return
+     * @param gp    the geometric point being shaded.
+     * @param light the light source casting shadows.
+     * @param l     the direction vector from the light source to the point.
+     * @param n     the normal vector at the shaded point.
+     * @return true if the point is unshaded, false otherwise.
      */
     private boolean unshaded(GeoPoint gp, LightSource light, Vector l, Vector n) {
-        //Vector lightDirection = l.scale(-1); // from point to light source
-        //Ray ray = new Ray(gp.point, lightDirection);
-//        Vector epsVector = n.scale(EPS);
-//        Point point = gp.point.add(n.scale(EPS));
-
         var intersections = scene.geometries.findIntersections(
-                new Ray(gp.point.add(n.scale(EPS)), l.scale(-1)),
+                new Ray(gp.point.add(n.scale(DELTA)), l.scale(-1)),
                 light.getDistance(gp.point)
         );
         return intersections == null;

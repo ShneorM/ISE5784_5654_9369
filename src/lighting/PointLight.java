@@ -78,13 +78,7 @@ public class PointLight extends Light implements LightSource {
         return intensity.scale(1 / (kC + kL * d + kQ * d * d));
     }
 
-    /**
-     * Gets the direction vector of the light from the light source to a given point.
-     *
-     * @param p the point at which the direction is being calculated
-     * @return the direction vector of the light at the specified point
-     * @throws IllegalArgumentException if the point is equal to the position of the light source
-     */
+
     @Override
     public Vector getL(Point p) {
         if (p.equals(position)) {

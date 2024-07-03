@@ -77,4 +77,27 @@ class PolygonTest {
         // TC06: Test for ray-polygon intersection when the ray passes along the extension of one of the edges of the polygon.
         assertNull(pol.findIntersections(new Ray(new Point(-5, -1, 15), new Vector(0, 1, 0))), "ERROR: No intersection expected when the ray passes along the extension of one of the edges of the polygon (TC06)");
     }
-}
+
+
+    /**
+     * Test method for {@link geometries.Polygon#findIntersections(Ray, double)}.
+     */
+    @Test
+    void testFindIntersectionsWithDistance() {
+        Polygon polygon = new Polygon(
+                new Point(0, 1, 0),
+                new Point(1, 1, 0),
+                new Point(1, 0, 0),
+                new Point(-1, -1, 0)
+        );
+        // Test case 01: Ray does not intersect the polygon within a very large distance
+        List<Point> result = polygon.findIntersections(new Ray(new Point(1, 1, 1), new Vector(-0.5, -0.5, -2)), 500);
+        assertEquals(1,result.size(),"ERROR: Ray should intersect the polygon within the distance (TC01)");
+
+        // Test case 02: Ray does not intersect the polygon within a very small distance
+        result = polygon.findIntersections(new Ray(new Point(1, 1, 1), new Vector(-0.5, -0.5, -2)), 1);
+        // TC02: Expected result is null (no intersection within the distance)
+        assertNull(result, "ERROR: Ray should not intersect the polygon within the distance (TC02)");
+    }
+
+    }

@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit test for geometries.Sphere class
+ *
  * @author Shneor and Emanuel
  */
 class PlaneTest {
@@ -64,22 +65,23 @@ class PlaneTest {
                 () -> new Plane(new Point(0, 0, 0), new Point(0, 0, 0), new Point(0, 0, 2)),
                 "the ctor with two similar points doesn't throw");
     }
+
     /**
      * Test method for {@link geometries.Plane#findIntersections(Ray)};
      */
     @Test
     void testFindIntersections() {
-        Plane pl1=new Plane(new Point(0,2,3),new Vector(1,0,0));
-        Vector vRegular=new Vector(1,0,1);
-        Vector vParallel=new Vector(0,0,1);
-        Vector vPerpendicular=new Vector(1,0,0);
+        Plane pl1 = new Plane(new Point(0, 2, 3), new Vector(1, 0, 0));
+        Vector vRegular = new Vector(1, 0, 1);
+        Vector vParallel = new Vector(0, 0, 1);
+        Vector vPerpendicular = new Vector(1, 0, 0);
 
 
         // ============ Equivalence Partitions Tests ==============
         //TC01: testing findIntersections when a regular vector (not parallel not perpendicular) is intersecting the plane
         assertEquals(
-                List.of(new Point(0,0,1)),
-                pl1.findIntersections(new Ray(new Point(-1,0,0),vRegular)),
+                List.of(new Point(0, 0, 1)),
+                pl1.findIntersections(new Ray(new Point(-1, 0, 0), vRegular)),
                 "ERROR:findIntersections when a regular vector (not parallel not perpendicular) is intersecting the plane"
         );
         //TC02: testing findIntersections when a regular vector (not parallel not perpendicular) isn't intersecting the plane
@@ -96,8 +98,8 @@ class PlaneTest {
 
         // TC05: Test for ray-plane intersection when the ray is perpendicular to the plane and starts before the plane.
         assertEquals(
-                List.of(new Point(0,0,0)),
-                pl1.findIntersections(new Ray(new Point(-1,0,0), vPerpendicular)),
+                List.of(new Point(0, 0, 0)),
+                pl1.findIntersections(new Ray(new Point(-1, 0, 0), vPerpendicular)),
                 "ERROR: Expected intersection point when the ray is perpendicular to the plane and starts before it (TC05)"
         );
 
@@ -106,7 +108,7 @@ class PlaneTest {
 
         // TC07: Test for ray-plane intersection when the ray is perpendicular to the plane and starts after the plane.
         assertNull(
-                pl1.findIntersections(new Ray(new Point(1,0,0), vPerpendicular)),
+                pl1.findIntersections(new Ray(new Point(1, 0, 0), vPerpendicular)),
                 "ERROR: No intersection expected when the ray is perpendicular to the plane and starts after it (TC07)"
         );
 
@@ -114,5 +116,25 @@ class PlaneTest {
         assertNull(pl1.findIntersections(new Ray(new Point(0, 3, 5), vRegular)), "ERROR: findIntersections when a regular vector (not parallel not perpendicular) starts on the plane");
         //TC09: testing findIntersections when a regular vector (not parallel not perpendicular) starts on the plane on the point that stored in the plane
         assertNull(pl1.findIntersections(new Ray(new Point(0, 2, 3), vRegular)), "ERROR: findIntersections when a regular vector (not parallel not perpendicular) starts on the plane on the point that stored in the plane");
+    }
+
+
+    /**
+     * Test method for {@link geometries.Plane#findIntersections(Ray, double)};
+     */
+    @Test
+    void testFindIntersectionsWithDistance() {
+        Ray ray = new Ray(new Point(1, 1, 5), new Vector(-1, 1, -3));
+        Plane plane = new Plane(new Point(1, 1, 1), new Point(1, 0, 0), new Point(0, 1, 0));
+
+        // Test case 01: Ray intersects the plane within the given distance
+        List<Point> result = plane.findIntersections(ray, 500);
+        // TC01: Expected result size is 1
+        assertEquals(1, result.size(), "ERROR: Ray should intersect the plane within the distance (TC01)");
+
+        // Test case 02: Ray does not intersect the plane within the given distance
+        result = plane.findIntersections(ray, 1);
+        // TC02: Expected result is null (no intersection within the distance)
+        assertNull(result, "ERROR: Ray should not intersect the plane within the distance (TC02)");
     }
 }

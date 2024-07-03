@@ -75,4 +75,21 @@ class TriangleTest {
         // TC06: Test for ray-triangle intersection when the ray passes along the extension of one of the edges of the triangle.
         assertNull(t1.findIntersections(new Ray(new Point(-5, -1, 15), new Vector(0, 1, 0))), "ERROR: No intersection expected when the ray passes along the extension of one of the edges of the triangle (TC06)");
     }
+
+    /**
+     * Test method for {@link geometries.Triangle#findIntersections(Ray, double)} (Ray)}.
+     */
+    @Test
+    void testFindIntersectionsWithDistance() {
+        Triangle triangle = new Triangle(new Point(-10,0,0), new Point(10,0,0), new Point(0,0,10));
+        // Test case 01: Ray intersects the polygon within a large distance
+        List<Point> result = triangle.findIntersections(new Ray(new Point(0, -2, 2), new Vector(0, 1, 1)), 500);
+        // TC01: Expected result size is 1
+        assertEquals(1, result.size(), "ERROR: Ray should intersect the polygon within the distance (TC01)");
+
+        // Test case 02: Ray does not intersect the polygon within a very small distance
+        result = triangle.findIntersections(new Ray(new Point(0, -2, 2), new Vector(0, 1, 1)), 1);
+        // TC02: Expected result is null (no intersection within the distance)
+        assertNull(result, "ERROR: Ray should not intersect the polygon within the distance (TC01)");
+    }
 }
