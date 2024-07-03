@@ -33,20 +33,22 @@ public final class Util {
    }
 
    /**
+    * Checks if the scaled vector is effectively zero.
     *
-    * @param v
-    * @param mult
-    * @return
+    * @param v    the vector to check.
+    * @param mult the scaling factor.
+    * @return true if the scaled vector is effectively zero, false otherwise.
     */
    public static boolean isZero(Vector v,double mult){
       return v.xyz.scale(mult).equals(Double3.ZERO);
    }
 
    /**
+    * Checks if the scaled direction vector of the ray is effectively zero.
     *
-    * @param ray
-    * @param mult
-    * @return
+    * @param ray  the ray to check.
+    * @param mult the scaling factor.
+    * @return true if the scaled direction vector of the ray is effectively zero, false otherwise.
     */
    public static boolean isZero(Ray ray,double mult){
       return isZero(ray.getDirection(),mult);
