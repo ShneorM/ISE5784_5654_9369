@@ -70,7 +70,7 @@ public class SimpleRayTracer extends RayTracerBase {
      * @return the color including local effects.
      */
     private Color calcLocalEffects(GeoPoint gp, Ray ray) {
-        Vector n = gp.geometry.getNormal(gp.point);
+        Vector n = gp.getNormal();
         Vector v = ray.getDirection();
         double nv = alignZero(n.dotProduct(v));
         Material mat = gp.geometry.getMaterial();
@@ -81,7 +81,7 @@ public class SimpleRayTracer extends RayTracerBase {
         for (LightSource lightSource : scene.lights) {
             l = lightSource.getL(gp.point);
             double nl = alignZero(n.dotProduct(l));
-            if (alignZero(nl * nv) >= 0 && unshaded(gp, lightSource, l, l.scale(-1))) { // sign(nl) == sign(nv)
+            if (alignZero(nl * nv) >= 0 && unshaded(gp, lightSource, l, n,nl)) { // sign(nl) == sign(nv)
                 iL = lightSource.getIntensity(gp.point);
                 color = color.add(
                         iL.scale(calcDiffusive(mat, nl)
@@ -101,9 +101,9 @@ public class SimpleRayTracer extends RayTracerBase {
      * @param n     the normal vector at the shaded point.
      * @return true if the point is unshaded, false otherwise.
      */
-    private boolean unshaded(GeoPoint gp, LightSource light, Vector l, Vector n) {
+    private boolean unshaded(GeoPoint gp, LightSource light, Vector l, Vector n, double nl) {
         var intersections = scene.geometries.findIntersections(
-                new Ray(gp.point.add(n.scale(DELTA)), l.scale(-1)),
+                new Ray(gp.point.add(n.scale((nl < 0) ? DELTA : -DELTA)), l.scale(-1)),
                 light.getDistance(gp.point)
         );
         return intersections == null;
