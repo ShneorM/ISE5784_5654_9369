@@ -4,6 +4,9 @@ import geometries.Intersectable.GeoPoint;
 
 import java.util.List;
 
+import static primitives.Util.alignZero;
+import static primitives.Util.isZero;
+
 /**
  * Class Ray is the basic class representing a Ray (an infinite line that starts from one place and goes on)
  * of Euclidean geometry in Cartesian
@@ -14,6 +17,11 @@ import java.util.List;
 public class Ray {
     private final Point head;
     private final Vector direction;
+
+    /**
+     * Constant value for epsilon to prevent self-intersections.
+     */
+    private static final double DELTA = 0.1;
 
     /**
      * construct a ray from the head and the normalized direction
@@ -82,6 +90,12 @@ public class Ray {
         return direction;
     }
 
+    public Ray(Point original, Vector direction, Vector n){
+         head= original.add(n.scale((alignZero(n.dotProduct(direction))>0) ?DELTA:-DELTA));
+         this.direction=direction.normalize();
+    }
+
+
     /**
      * Finds the closest GeoPoint to the head of the ray from a list of GeoPoints.
      *
@@ -89,7 +103,7 @@ public class Ray {
      * @return the closest GeoPoint to the head of the ray, or null if the list is empty
      */
     public GeoPoint findClosestGeoPoint(List<GeoPoint> geoPoints){
-        if (geoPoints.isEmpty()) {
+        if ( geoPoints==null || geoPoints.isEmpty()) {
             return null;
         }
         GeoPoint closest = geoPoints.getFirst();

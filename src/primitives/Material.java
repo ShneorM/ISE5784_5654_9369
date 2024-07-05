@@ -5,8 +5,8 @@ package primitives;
  * It includes properties for diffuse and specular reflection coefficients, as well as shininess.
  * These properties are used in lighting calculations to determine how the material interacts with light.
  *
+ * @author Emanuel and Shneor
  * @see Double3
- * @author Shneor and Emanuel
  */
 public class Material {
     /**
@@ -20,6 +20,55 @@ public class Material {
      * Represents the proportion of the light that is specularly reflected from the surface.
      */
     public Double3 kS = Double3.ZERO;
+
+    /**
+     *
+     */
+    public Double3 kT = Double3.ZERO;
+
+    /**
+     *
+     */
+    public Double3 kR = Double3.ZERO;
+
+    /**
+     *
+     * @param kR
+     * @return
+     */
+    public Material setKR(Double3 kR) {
+        this.kR = kR;
+        return this;
+    }
+
+    /**
+     *
+     * @param kR
+     * @return
+     */
+    public Material setKR(double kR) {
+        this.kR = new Double3(kR);
+        return this;
+    }
+    /**
+     *
+     * @param kT
+     * @return
+     */
+    public Material setKT(Double3 kT) {
+        this.kT = kT;
+        return this;
+    }
+
+    /**
+     *
+     * @param kT
+     * @return
+     */
+    public Material setKT(double kT) {
+        this.kT = new Double3(kT);
+        return this;
+    }
 
     /**
      * The shininess factor.
@@ -81,4 +130,6 @@ public class Material {
         this.kD = new Double3(kD);
         return this;
     }
+
+
 }
