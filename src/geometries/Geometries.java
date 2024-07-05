@@ -45,12 +45,7 @@ public class Geometries extends Intersectable {
         intersectableList.addAll(List.of(geometries));
     }
 
-    /**
-     * Finds all the intersection points between the given ray and the geometric shapes in the collection.
-     *
-     * @param ray the ray to intersect with the geometric shapes.
-     * @return a list of intersection points, or null if no intersections are found.
-     */
+
     @Override
     public List<GeoPoint> findGeoIntersectionsHelper(Ray ray,double maxDistance) {
         List<GeoPoint> res = null, shapeGeoPoints;

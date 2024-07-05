@@ -46,13 +46,7 @@ public class SpotLight extends PointLight {
         return this;
     }
 
-    /**
-     * Gets the intensity of the light at a given point.
-     * The intensity is affected by the direction of the spotlight beam and the beam width.
-     *
-     * @param p the point at which the light intensity is being calculated
-     * @return the color intensity of the light at the specified point
-     */
+
     @Override
     public Color getIntensity(Point p) {
         double nlOr0 = 1.0;

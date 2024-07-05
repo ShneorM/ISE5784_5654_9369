@@ -1,16 +1,23 @@
 package geometries;
 
+import lighting.AmbientLight;
+import lighting.SpotLight;
 import org.junit.jupiter.api.Test;
-import primitives.Point;
-import primitives.Ray;
-import primitives.Vector;
+import primitives.*;
+import renderer.Camera;
+import renderer.ImageWriter;
+import renderer.SimpleRayTracer;
+import scene.Scene;
 
 import java.util.List;
 
+import static java.awt.Color.*;
+import static java.awt.Color.WHITE;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit test for geometries.Polygon class
+ *
  * @author Emanuel and Shneor
  */
 class PolygonTest {
@@ -51,13 +58,13 @@ class PolygonTest {
      */
     @Test
     void testFindIntersections() {
-        Polygon pol = new Polygon(new Point(-10,0,0), new Point(10,0,0), new Point(0,0,10));
+        Polygon pol = new Polygon(new Point(-10, 0, 0), new Point(10, 0, 0), new Point(0, 0, 10));
 
         // ============ Equivalence Partitions Tests ==============
         // TC01: Test for ray-polygon intersection when the ray passes through the polygon.
         assertEquals(
-                List.of(new Point(0,0,5)),
-                pol.findIntersections(new Ray(new Point(0,-1,5), new Vector(0,1,0))),
+                List.of(new Point(0, 0, 5)),
+                pol.findIntersections(new Ray(new Point(0, -1, 5), new Vector(0, 1, 0))),
                 "ERROR: Expected intersection point when the ray passes through the polygon (TC01)"
         );
 
@@ -92,12 +99,13 @@ class PolygonTest {
         );
         // Test case 01: Ray does not intersect the polygon within a very large distance
         List<Point> result = polygon.findIntersections(new Ray(new Point(1, 1, 1), new Vector(-0.5, -0.5, -2)), 500);
-        assertEquals(1,result.size(),"ERROR: Ray should intersect the polygon within the distance (TC01)");
+        assertEquals(1, result.size(), "ERROR: Ray should intersect the polygon within the distance (TC01)");
 
         // Test case 02: Ray does not intersect the polygon within a very small distance
         result = polygon.findIntersections(new Ray(new Point(1, 1, 1), new Vector(-0.5, -0.5, -2)), 1);
         // TC02: Expected result is null (no intersection within the distance)
         assertNull(result, "ERROR: Ray should not intersect the polygon within the distance (TC02)");
     }
+}
 
-    }
+

@@ -22,19 +22,22 @@ public class Material {
     public Double3 kS = Double3.ZERO;
 
     /**
-     *
+     * The transparency coefficient.
+     * Represents the proportion of the light that is transmitted through the surface.
      */
     public Double3 kT = Double3.ZERO;
 
     /**
-     *
+     * The reflection coefficient.
+     * Represents the proportion of the light that is reflected from the surface.
      */
     public Double3 kR = Double3.ZERO;
 
     /**
+     * Sets the reflection coefficient using a Double3 value.
      *
-     * @param kR
-     * @return
+     * @param kR the reflection coefficient to set
+     * @return the Material itself for chaining
      */
     public Material setKR(Double3 kR) {
         this.kR = kR;
@@ -42,18 +45,21 @@ public class Material {
     }
 
     /**
+     * Sets the reflection coefficient using a double value.
      *
-     * @param kR
-     * @return
+     * @param kR the reflection coefficient to set
+     * @return the Material itself for chaining
      */
     public Material setKR(double kR) {
         this.kR = new Double3(kR);
         return this;
     }
+
     /**
+     * Sets the transparency coefficient using a Double3 value.
      *
-     * @param kT
-     * @return
+     * @param kT the transparency coefficient to set
+     * @return the Material itself for chaining
      */
     public Material setKT(Double3 kT) {
         this.kT = kT;
@@ -61,9 +67,10 @@ public class Material {
     }
 
     /**
+     * Sets the transparency coefficient using a double value.
      *
-     * @param kT
-     * @return
+     * @param kT the transparency coefficient to set
+     * @return the Material itself for chaining
      */
     public Material setKT(double kT) {
         this.kT = new Double3(kT);
@@ -130,6 +137,4 @@ public class Material {
         this.kD = new Double3(kD);
         return this;
     }
-
-
 }

@@ -90,10 +90,19 @@ public class Ray {
         return direction;
     }
 
+    /**
+     * Constructs a ray that is slightly offset from the original point in the direction of the normal.
+     * This is typically used to avoid self-intersection in ray tracing.
+     *
+     * @param original the original point of the ray
+     * @param direction the direction vector of the ray
+     * @param n the normal vector at the original point, used to determine the offset direction
+     */
     public Ray(Point original, Vector direction, Vector n){
-         head= original.add(n.scale((alignZero(n.dotProduct(direction))>0) ?DELTA:-DELTA));
-         this.direction=direction.normalize();
+        head = original.add(n.scale((alignZero(n.dotProduct(direction)) > 0) ? DELTA : -DELTA));
+        this.direction = direction.normalize();
     }
+
 
 
     /**
