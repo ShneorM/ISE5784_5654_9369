@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="tag 6 is finished with bonus">
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="complete tag 7">
+      <change afterPath="$PROJECT_DIR$/src/renderer/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unittests/lighting/SoftShadowTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/LightSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/PointLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/ImageWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/ImageWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/RayTracerBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/RayTracerBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/lighting/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/lighting/LightsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/lighting/ShadowTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/lighting/ShadowTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,63 +66,77 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.All in ISE5784_5654_9369.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CameraTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CameraTest.testConstructRay.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CylinderTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ImageWriterTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LightsTests.sphereDirectional.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LightsTests.sphereMultiLight.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LightsTests.spherePoint.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.LightsTests.sphereSpot.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.LightsTests.sphereSpotSharp.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LightsTests.trianglesMultiColor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LightsTests.trianglesPoint.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.LightsTests.trianglesSpotSharp.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PlaneTest.testPlaneConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PolygonTest.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PolygonTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayIntegrationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayIntegrationTest.testPlane.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayIntegrationTest.testSphere.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RayIntegrationTest.testTriangle.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.RenderTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RenderTests.renderTwoColorTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ShadowTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SphereTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SphereTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TriangleTest.testConstructor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TriangleTest.testFindIntersections.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TubeTest.testGetNormal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testSubtract.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.VectorTest.testVector.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.lighting in ISE5784_5654_9369.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.test in ISE5784_5654_9369.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/imanuel/machon lev/projects/year 2 semester 2 introduction to software engineering/actual project/unittests/renderer&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in ISE5784_5654_9369.executor": "Run",
+    "JUnit.CameraTest.executor": "Run",
+    "JUnit.CameraTest.testConstructRay.executor": "Run",
+    "JUnit.CylinderTest.testGetNormal.executor": "Run",
+    "JUnit.GeometriesTest.testFindIntersectionsWithDistance.executor": "Run",
+    "JUnit.ImageWriterTest.executor": "Run",
+    "JUnit.LightsTests.trianglesSpotSharp.executor": "Run",
+    "JUnit.PlaneTest.executor": "Run",
+    "JUnit.PlaneTest.testFindIntersections.executor": "Run",
+    "JUnit.PlaneTest.testFindIntersectionsWithDistance.executor": "Run",
+    "JUnit.PlaneTest.testGetNormal.executor": "Run",
+    "JUnit.PlaneTest.testPlaneConstructor.executor": "Run",
+    "JUnit.PolygonTest.createPingPongTable.executor": "Run",
+    "JUnit.PolygonTest.createPingPongTableScene.executor": "Run",
+    "JUnit.PolygonTest.createSimpleScene.executor": "Run",
+    "JUnit.PolygonTest.testConstructor.executor": "Run",
+    "JUnit.PolygonTest.testFindIntersectionsWithDistance.executor": "Run",
+    "JUnit.PolygonTest.testGetNormal.executor": "Run",
+    "JUnit.RayIntegrationTest.executor": "Run",
+    "JUnit.RayIntegrationTest.testPlane.executor": "Run",
+    "JUnit.RayIntegrationTest.testSphere.executor": "Run",
+    "JUnit.RayIntegrationTest.testTriangle.executor": "Debug",
+    "JUnit.ReflectionRefractionTests (1).executor": "Run",
+    "JUnit.ReflectionRefractionTests.createPingPongTableSce1ne.executor": "Run",
+    "JUnit.ReflectionRefractionTests.createPingPongTableScene.executor": "Run",
+    "JUnit.ReflectionRefractionTests.executor": "Run",
+    "JUnit.ReflectionRefractionTests.twoSpheresOnMirrors.executor": "Run",
+    "JUnit.RenderTests.executor": "Run",
+    "JUnit.RenderTests.renderTwoColorTest.executor": "Run",
+    "JUnit.ShadowTests.trianglesSphere.executor": "Run",
+    "JUnit.SoftShadowTests.executor": "Run",
+    "JUnit.SoftShadowTests.sphereTriangleInitial.executor": "Run",
+    "JUnit.SoftShadowTests.trianglesSphere.executor": "Run",
+    "JUnit.SoftShadowsTest.testSoftShadows.executor": "Run",
+    "JUnit.SphereTest.executor": "Run",
+    "JUnit.SphereTest.testFindIntersectionsWithDistance.executor": "Run",
+    "JUnit.SphereTest.testGetNormal.executor": "Run",
+    "JUnit.TriangleTest.testConstructor.executor": "Run",
+    "JUnit.TriangleTest.testFindIntersections.executor": "Run",
+    "JUnit.TriangleTest.testFindIntersectionsWithDistance.executor": "Run",
+    "JUnit.TubeTest.testGetNormal.executor": "Run",
+    "JUnit.VectorTest.testSubtract.executor": "Run",
+    "JUnit.VectorTest.testVector.executor": "Run",
+    "JUnit.geometries in ISE5784_5654_9369.executor": "Run",
+    "JUnit.test in ISE5784_5654_9369.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/shneor/Desktop/ISE5784_9458_1468-MP1",
+    "onboarding.tips.debug.path": "C:/Users/shneor/Desktop/miniP/ISE5784_5654_9369/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="renderer" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\imanuel\machon lev\projects\year 2 semester 2 introduction to software engineering\actual project\unittests\renderer" />
     </key>
@@ -129,55 +156,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LightsTests.sphereDirectional" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lighting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lighting" />
-      <option name="MAIN_CLASS_NAME" value="lighting.LightsTests" />
-      <option name="METHOD_NAME" value="sphereDirectional" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LightsTests.trianglesMultiColor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lighting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lighting" />
-      <option name="MAIN_CLASS_NAME" value="lighting.LightsTests" />
-      <option name="METHOD_NAME" value="trianglesMultiColor" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LightsTests.trianglesSpotSharp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lighting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lighting" />
-      <option name="MAIN_CLASS_NAME" value="lighting.LightsTests" />
-      <option name="METHOD_NAME" value="trianglesSpotSharp" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShadowTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShadowTests.trianglesSphere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
@@ -187,7 +166,55 @@
       </extension>
       <option name="PACKAGE_NAME" value="lighting" />
       <option name="MAIN_CLASS_NAME" value="lighting.ShadowTests" />
+      <option name="METHOD_NAME" value="trianglesSphere" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SoftShadowTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lighting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lighting" />
+      <option name="MAIN_CLASS_NAME" value="lighting.SoftShadowTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SoftShadowTests.sphereTriangleInitial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lighting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lighting" />
+      <option name="MAIN_CLASS_NAME" value="lighting.SoftShadowTests" />
+      <option name="METHOD_NAME" value="sphereTriangleInitial" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SoftShadowTests.trianglesSphere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lighting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lighting" />
+      <option name="MAIN_CLASS_NAME" value="lighting.SoftShadowTests" />
+      <option name="METHOD_NAME" value="trianglesSphere" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -195,10 +222,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in ISE5784_5654_9369" />
-        <item itemvalue="JUnit.ShadowTests" />
-        <item itemvalue="JUnit.LightsTests.sphereDirectional" />
-        <item itemvalue="JUnit.LightsTests.trianglesSpotSharp" />
-        <item itemvalue="JUnit.LightsTests.trianglesMultiColor" />
+        <item itemvalue="JUnit.SoftShadowTests.trianglesSphere" />
+        <item itemvalue="JUnit.SoftShadowTests.sphereTriangleInitial" />
+        <item itemvalue="JUnit.SoftShadowTests" />
+        <item itemvalue="JUnit.ShadowTests.trianglesSphere" />
       </list>
     </recent_temporary>
   </component>
@@ -435,31 +462,63 @@
       <option name="project" value="LOCAL" />
       <updated>1718056408056</updated>
     </task>
-    <task id="LOCAL-00029" summary="fix tag 3 and 4 start fixing tag 5">
+    <task id="LOCAL‎-00029" summary="tag 5 bonus with polygon">
       <option name="closed" value="true" />
-      <created>1719288612945</created>
+      <created>1718830875154</created>
       <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1719288612945</updated>
+      <option name="presentableId" value="LOCAL‎-00029" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1718830875154</updated>
     </task>
-    <task id="LOCAL-00030" summary="finish tag 6 with bugs without test of multipul light source">
+    <task id="LOCAL‎-00030" summary="earlier stage 6">
       <option name="closed" value="true" />
-      <created>1719306860917</created>
+      <created>1719096343494</created>
       <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1719306860917</updated>
+      <option name="presentableId" value="LOCAL‎-00030" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1719096343494</updated>
     </task>
-    <task id="LOCAL-00031" summary="tag 6 is finished with bonus">
+    <task id="LOCAL‎-00031" summary="complete documents">
       <option name="closed" value="true" />
-      <created>1719353434932</created>
+      <created>1719213161870</created>
       <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1719353434932</updated>
+      <option name="presentableId" value="LOCAL‎-00031" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1719213161870</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL‎-00032" summary="Tests for 7.1 and + documents">
+      <option name="closed" value="true" />
+      <created>1720042774369</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL‎-00032" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1720042774369</updated>
+    </task>
+    <task id="LOCAL‎-00033" summary="Tests for 7.1 and + documents">
+      <option name="closed" value="true" />
+      <created>1720045428469</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL‎-00033" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1720045428469</updated>
+    </task>
+    <task id="LOCAL‎-00034" summary="earlier in 7.2">
+      <option name="closed" value="true" />
+      <created>1720141325833</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL‎-00034" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1720141325833</updated>
+    </task>
+    <task id="LOCAL‎-00035" summary="complete tag 7">
+      <option name="closed" value="true" />
+      <created>1720184804775</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL‎-00035" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1720184804775</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -474,10 +533,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
-    <MESSAGE value="Done Vector Class in Stage1" />
-    <MESSAGE value="start the Cylinder and Tube Classes" />
-    <MESSAGE value="PR01" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add Test" />
     <MESSAGE value="Stage1" />
     <MESSAGE value="TDD with geometries Shapes" />
@@ -497,9 +553,13 @@
     <MESSAGE value="special way to findIntersections in triangle" />
     <MESSAGE value="before fixing from tag 3" />
     <MESSAGE value="fix tag 3 and 4 start fixing tag 5" />
-    <MESSAGE value="finish tag 6 with bugs without test of multipul light source" />
-    <MESSAGE value="tag 6 is finished with bonus" />
-    <option name="LAST_COMMIT_MESSAGE" value="tag 6 is finished with bonus" />
+    <MESSAGE value="tag 5 bonus with polygon" />
+    <MESSAGE value="earlier stage 6" />
+    <MESSAGE value="complete documents" />
+    <MESSAGE value="Tests for 7.1 and + documents" />
+    <MESSAGE value="earlier in 7.2" />
+    <MESSAGE value="complete tag 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete tag 7" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -509,26 +569,7 @@
           <line>26</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <condition expression="t==0" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/primitives/Ray.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/unittests/renderer/RenderTests.java</url>
-          <line>86</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="this" language="JAVA" />
-        <watch expression="xyz.scale(mult).equals(Double3.ZERO)" language="JAVA" />
-        <watch expression="xyz" language="JAVA" />
-        <watch expression="isZero(mult)" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

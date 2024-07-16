@@ -5,6 +5,8 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.MissingResourceException;
 
 import static primitives.Util.isZero;
@@ -327,6 +329,10 @@ public class Camera implements Cloneable {
      * @param row    the row of the pixel.
      */
     private void castRay(int Nx, int Ny, int column, int row) {
-        imageWriter.writePixel(column, row, rayTracer.traceRay(constructRay(Nx, Ny, column, row)));
+        imageWriter.writePixel(column, row, rayTracer.traceRay(constructRay(Nx, Ny, column, row),imageWriter.getNumberOfSamples()));
     }
+
+
+
+
 }

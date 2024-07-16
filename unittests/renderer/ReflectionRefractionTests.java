@@ -18,19 +18,28 @@ import primitives.*;
 import renderer.*;
 import scene.Scene;
 
-/** Tests for reflection and transparency functionality, test for partial
+/**
+ * Tests for reflection and transparency functionality, test for partial
  * shadows
  * (with transparency)
- * @author dzilb */
+ *
+ * @author dzilb
+ */
 public class ReflectionRefractionTests {
-    /** Scene for the tests */
+    /**
+     * Scene for the tests
+     */
     private final Scene scene = new Scene("Test scene");
-    /** Camera builder for the tests with triangles */
+    /**
+     * Camera builder for the tests with triangles
+     */
     private final Camera.Builder cameraBuilder = Camera.getBuilder()
             .setDirection(new Vector(0, 0, -1), Vector.Y)
             .setRayTracer(new SimpleRayTracer(scene));
 
-    /** Produce a picture of a sphere lighted by a spot light */
+    /**
+     * Produce a picture of a sphere lighted by a spot light
+     */
     @Test
     public void twoSpheres() throws CloneNotSupportedException {
         scene.geometries.add(
@@ -50,14 +59,16 @@ public class ReflectionRefractionTests {
         cam.writeToImage();
     }
 
-    /** Produce a picture of a sphere lighted by a spot light */
+    /**
+     * Produce a picture of a sphere lighted by a spot light
+     */
     @Test
     public void twoSpheresOnMirrors() throws CloneNotSupportedException {
         scene.geometries.add(
-                new Sphere(400d,new Point(-950, -900, -1000)).setEmission(new Color(0, 50, 100))
+                new Sphere(400d, new Point(-950, -900, -1000)).setEmission(new Color(0, 50, 100))
                         .setMaterial(new Material().setKD(0.25).setKS(0.25).setNShininess(20)
                                 .setKT(new Double3(0.5, 0, 0))),
-                new Sphere(200d,new Point(-950, -900, -1000)).setEmission(new Color(100, 50, 20))
+                new Sphere(200d, new Point(-950, -900, -1000)).setEmission(new Color(100, 50, 20))
                         .setMaterial(new Material().setKD(0.25).setKS(0.25).setNShininess(20)),
                 new Triangle(new Point(1500, -1500, -1500), new Point(-1500, 1500, -1500),
                         new Point(670, 670, 3000))
@@ -75,13 +86,15 @@ public class ReflectionRefractionTests {
                 .setVpSize(2500, 2500)
                 .setImageWriter(new ImageWriter("reflectionTwoSpheresMirrored", 500, 500))
                 .build();
-                cam.renderImage();
-                cam.writeToImage();
+        cam.renderImage();
+        cam.writeToImage();
     }
 
-    /** Produce a picture of a two triangles lighted by a spot light with a
+    /**
+     * Produce a picture of a two triangles lighted by a spot light with a
      * partially
-     * transparent Sphere producing partial shadow */
+     * transparent Sphere producing partial shadow
+     */
     @Test
     public void trianglesTransparentSphere() throws CloneNotSupportedException {
         scene.geometries.add(
@@ -90,7 +103,7 @@ public class ReflectionRefractionTests {
                         .setMaterial(new Material().setKD(0.5).setKS(0.5).setNShininess(60)),
                 new Triangle(new Point(-150, -150, -115), new Point(-70, 70, -140), new Point(75, 75, -150))
                         .setMaterial(new Material().setKD(0.5).setKS(0.5).setNShininess(60)),
-                new Sphere(30d,new Point(60, 50, -50)).setEmission(new Color(BLUE))
+                new Sphere(30d, new Point(60, 50, -50)).setEmission(new Color(BLUE))
                         .setMaterial(new Material().setKD(0.2).setKS(0.2).setNShininess(30).setKT(0.6)));
         scene.setAmbientLight(new AmbientLight(new Color(WHITE), 0.15));
         scene.lights.add(
@@ -101,13 +114,14 @@ public class ReflectionRefractionTests {
                 .setVpSize(200, 200)
                 .setImageWriter(new ImageWriter("refractionShadow", 600, 600))
                 .build();
-                cam.renderImage();
-                cam.writeToImage();
+        cam.renderImage();
+        cam.writeToImage();
     }
 
 
     /**
      * Creating a ping pong table with reflections and transparencies
+     *
      * @throws CloneNotSupportedException
      */
     @Test
@@ -304,5 +318,5 @@ public class ReflectionRefractionTests {
 
 
 
-
 }
+

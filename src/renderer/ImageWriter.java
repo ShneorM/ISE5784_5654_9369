@@ -47,6 +47,11 @@ public class ImageWriter {
      */
     private Logger logger = Logger.getLogger("ImageWriter");
 
+    /**
+     * number of rays through each pixel
+     */
+    private int numberOfSamples = 1;
+
     // ***************** Constructors ********************** //
 
     /**
@@ -84,6 +89,14 @@ public class ImageWriter {
         return nX;
     }
 
+    public int getNumberOfSamples() {
+        return numberOfSamples;
+    }
+
+    public ImageWriter setNumberOfSamples(int numberOfSamples) {
+        this.numberOfSamples = numberOfSamples;
+        return this;
+    }
     // ***************** Operations ******************** //
 
     /**

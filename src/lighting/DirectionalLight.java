@@ -34,6 +34,15 @@ public class DirectionalLight extends Light implements LightSource {
         super(intensity);
         this.direction = direction.normalize();
     }
+    @Override
+    public double getRadius() {
+        return 0;
+    }
+
+    @Override
+    public Point getPosition() {
+        return null;
+    }
 
     @Override
     public Color getIntensity(Point p) {

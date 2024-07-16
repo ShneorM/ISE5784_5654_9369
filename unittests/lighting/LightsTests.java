@@ -252,7 +252,7 @@ public class LightsTests {
     public void trianglesSpotSharp() throws CloneNotSupportedException {
         scene2.geometries.add(triangle1, triangle2);
         scene2.lights.add(new SpotLight(trianglesLightColor, trianglesLightPosition, trianglesLightDirection)
-                .setNarrowBeam(10).setKL(0.001).setKQ(0.00004));
+                .setNarrowBeam(20).setKL(0.001).setKQ(0.00004));
 
         Camera cam = camera2.setImageWriter(new ImageWriter("lightTrianglesSpotSharp", 500, 500))
                 .build();

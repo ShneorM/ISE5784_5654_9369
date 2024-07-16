@@ -39,11 +39,12 @@ public class Vector extends Point {
     /**
      *
      */
-    public static Vector Y=new Vector(0,1,0);
+    public static Vector Y = new Vector(0, 1, 0);
     /**
      *
      */
-    public static Vector Z = new Vector(0,0,1);
+    public static Vector Z = new Vector(0, 0, 1);
+
     /**
      * @param obj the object we are comparing to the calling object
      * @return whether the calling vector is equal to obj
@@ -91,7 +92,8 @@ public class Vector extends Point {
      * @throws IllegalArgumentException if the scalar is zero
      */
     public Vector scale(double mult) throws IllegalArgumentException {
-        if(isZero(mult)||xyz.scale(mult).equals(Double3.ZERO)) throw new IllegalArgumentException("can't scale by zero");
+        if (isZero(mult) || xyz.scale(mult).equals(Double3.ZERO))
+            throw new IllegalArgumentException("can't scale by zero");
         return new Vector(this.xyz.scale(mult));
     }
 
@@ -119,5 +121,16 @@ public class Vector extends Point {
 
         return new Vector(this.xyz.reduce(this.length()));
 
+    }
+
+    /**
+     * calculate a vector orthogonal to this vector
+     *
+     * @return a vector orthogonal to this vector
+     */
+    public Vector createOrthogonal() {
+        if (Util.isZero(getY()) && Util.isZero(getZ()))
+            return Vector.Y;
+        return crossProduct(new Vector(1,0,0));
     }
 }

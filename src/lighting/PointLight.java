@@ -22,6 +22,10 @@ public class PointLight extends Light implements LightSource {
     private double kC = 1.0, kL = 0.0, kQ = 0.0;
 
     /**
+     * radius for soft shadows
+     */
+    private double radius = 0.0;
+    /**
      * Constructs a PointLight with the specified intensity and position.
      *
      * @param intensity the color intensity of the light
@@ -65,6 +69,26 @@ public class PointLight extends Light implements LightSource {
         return this;
     }
 
+    /**
+     * Sets the radius of the PointLight and returns the updated PointLight object.
+     *
+     * @param radius the radius to be set for the PointLight
+     * @return the updated PointLight object with the new radius
+     */
+    public PointLight setRadius(double radius){
+        this.radius = radius;
+        return this;
+    }
+
+    @Override
+    public double getRadius() {
+        return radius;
+    }
+
+    @Override
+    public Point getPosition() {
+        return position;
+    }
 
     @Override
     public Color getIntensity(Point p) {
