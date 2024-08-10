@@ -113,6 +113,9 @@ class SphereTest {
 
     }
 
+    /**
+     * Test method for {@link geometries.Sphere#findIntersections(Ray,double)}
+     */
     @Test
     void testFindIntersectionsWithDistance() {
         Sphere sphere = new Sphere(1, new Point(0, 0, 0));
@@ -127,5 +130,29 @@ class SphereTest {
         // TC02: Expected result is null (no intersection within the distance)
         assertNull(result, "ERROR: Ray should not intersect the sphere within the distance (TC02)");
     }
+    /**
+     * Test method for {@link geometries.Sphere#setBoundingBox()}
+     */
+    @Test
+    void testSetBoundingBox() {
 
+        // Arrange: Create a sphere with a known center and radius
+        Point center = new Point(1, 2, 3);
+        double radius = 2.0;
+        Sphere sphere = new Sphere( radius,center);
+
+        // Act: Call the setBoundingBox method
+        sphere.setBoundingBox();
+
+        // Assert: Verify that the bounding box was set correctly
+        BoundingBox boundingBox = sphere.getBoundingBox();
+
+        assertNotNull(boundingBox, "Bounding box should not be null");
+        assertEquals(1 - radius, boundingBox.getMinX(), "Min X value is incorrect");
+        assertEquals(1 + radius, boundingBox.getMaxX(), "Max X value is incorrect");
+        assertEquals(2 - radius, boundingBox.getMinY(), "Min Y value is incorrect");
+        assertEquals(2 + radius, boundingBox.getMaxY(), "Max Y value is incorrect");
+        assertEquals(3 - radius, boundingBox.getMinZ(), "Min Z value is incorrect");
+        assertEquals(3 + radius, boundingBox.getMaxZ(), "Max Z value is incorrect");
+    }
 }

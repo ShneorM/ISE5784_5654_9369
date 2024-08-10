@@ -106,6 +106,36 @@ class PolygonTest {
         // TC02: Expected result is null (no intersection within the distance)
         assertNull(result, "ERROR: Ray should not intersect the polygon within the distance (TC02)");
     }
+
+    /**
+     * Testing the method {@link Polygon#setBoundingBox()}
+     */
+    @Test
+    void testSetBoundingBox() {
+        // Arrange: Create a polygon with known vertices
+        List<Point> vertices = List.of(
+                new Point(0,0,1),
+                new Point(0, 1,1),
+                new Point(0, 1, -3),
+                new Point(0,0,0)
+        );
+
+        Polygon polygon = new Polygon(vertices);
+
+        // Act: Call the setBoundingBox method
+        polygon.setBoundingBox();
+
+        // Assert: Verify that the bounding box was set correctly
+        BoundingBox boundingBox = polygon.getBoundingBox();
+
+        assertNotNull(boundingBox, "Bounding box should not be null");
+        assertEquals(0, boundingBox.getMinX(), "Min X value is incorrect");
+        assertEquals(0, boundingBox.getMaxX(), "Max X value is incorrect");
+        assertEquals(0, boundingBox.getMinY(), "Min Y value is incorrect");
+        assertEquals(1, boundingBox.getMaxY(), "Max Y value is incorrect");
+        assertEquals(-3, boundingBox.getMinZ(), "Min Z value is incorrect");
+        assertEquals(1, boundingBox.getMaxZ(), "Max Z value is incorrect");
+    }
 }
 
 

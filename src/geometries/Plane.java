@@ -65,7 +65,7 @@ public class Plane extends Geometry {
     }
 
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray,double maxDistance) {
+    public List<GeoPoint> findGeoIntersectionsHelperForGeometry(Ray ray,double maxDistance) {
         //Check if the Q-P0 is the ZERO Vector
         if (q.equals(ray.getHead()))
             return null;
@@ -78,6 +78,12 @@ public class Plane extends Geometry {
             return null;
 
         return List.of(new GeoPoint(this,ray.getPoint(t)));
+    }
+
+    @Override
+    public void setBoundingBox() {
+        //there is no box that can contain an infinite plane
+        boundingBox=null;
     }
 
 

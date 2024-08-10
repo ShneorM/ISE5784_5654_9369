@@ -56,8 +56,10 @@ public class Cylinder extends Tube {
         else
             return super.getNormal(point);
     }
+
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray,double maxDistance) {
-        return null;
+    public void setBoundingBox() {
+        // for now puts here null so there won't be problems, later might be implemented
+        boundingBox=null;
     }
 }

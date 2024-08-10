@@ -5,21 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="complete tag 7">
-      <change afterPath="$PROJECT_DIR$/src/renderer/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unittests/lighting/SoftShadowTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/geometries/BoundingBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/geometries/Container.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TeapotTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TestAutomaticBuildingOfHierarchyStage3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TestBoundaryVolumeHierarchyStage2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TestConservativeBoundaryRegionStage1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unittests/geometries/BoundingBoxTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/LightSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/PointLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ISE5784_5654_9369.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ISE5784_5654_9369.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Cylinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parsers/XmlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parsers/XmlParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/ImageWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/ImageWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/RayTracerBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/RayTracerBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/SimpleRayTracer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/lighting/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/lighting/LightsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/geometries/GeometriesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/GeometriesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/geometries/PolygonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/PolygonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/geometries/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/SphereTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/geometries/TriangleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/TriangleTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/lighting/ShadowTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/lighting/ShadowTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/lighting/SoftShadowTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/lighting/SoftShadowTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/renderer/XMLSceneParser.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,10 +89,16 @@
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.All in ISE5784_5654_9369.executor": "Run",
+    "JUnit.BoundingBoxTest.executor": "Run",
+    "JUnit.BoundingBoxTest.testGetBoundingBoxCenter.executor": "Run",
+    "JUnit.BoundingBoxTest.testSetBoundingBox.executor": "Run",
     "JUnit.CameraTest.executor": "Run",
     "JUnit.CameraTest.testConstructRay.executor": "Run",
     "JUnit.CylinderTest.testGetNormal.executor": "Run",
+    "JUnit.GeometriesTest.testBuildBvhTree.executor": "Run",
     "JUnit.GeometriesTest.testFindIntersectionsWithDistance.executor": "Run",
+    "JUnit.GeometriesTest.testFlatten.executor": "Run",
+    "JUnit.GeometriesTest.testTurnOnOffBvh.executor": "Run",
     "JUnit.ImageWriterTest.executor": "Run",
     "JUnit.LightsTests.trianglesSpotSharp.executor": "Run",
     "JUnit.PlaneTest.executor": "Run",
@@ -86,6 +109,7 @@
     "JUnit.PolygonTest.createPingPongTable.executor": "Run",
     "JUnit.PolygonTest.createPingPongTableScene.executor": "Run",
     "JUnit.PolygonTest.createSimpleScene.executor": "Run",
+    "JUnit.PolygonTest.executor": "Run",
     "JUnit.PolygonTest.testConstructor.executor": "Run",
     "JUnit.PolygonTest.testFindIntersectionsWithDistance.executor": "Run",
     "JUnit.PolygonTest.testGetNormal.executor": "Run",
@@ -103,14 +127,22 @@
     "JUnit.ShadowTests.trianglesSphere.executor": "Run",
     "JUnit.SoftShadowTests.executor": "Run",
     "JUnit.SoftShadowTests.sphereTriangleInitial.executor": "Run",
+    "JUnit.SoftShadowTests.sphereTriangleMove2.executor": "Run",
     "JUnit.SoftShadowTests.trianglesSphere.executor": "Run",
     "JUnit.SoftShadowsTest.testSoftShadows.executor": "Run",
     "JUnit.SphereTest.executor": "Run",
     "JUnit.SphereTest.testFindIntersectionsWithDistance.executor": "Run",
     "JUnit.SphereTest.testGetNormal.executor": "Run",
+    "JUnit.TeapotTest.executor": "Run",
+    "JUnit.TeapotTest.teapot.executor": "Run",
+    "JUnit.TestBoundaryVolumeHierarchyStage2.compareNestedGeometryToFlatGeometry.executor": "Run",
+    "JUnit.TestConservativeBoundaryRegionStage1.comparePingPongTableScene.executor": "Run",
+    "JUnit.TestConservativeBoundaryRegionStage1.compareTeaPotScene.executor": "Run",
+    "JUnit.TestConservativeBoundaryRegionStage1.comparingTrianglesToBoxes.executor": "Run",
     "JUnit.TriangleTest.testConstructor.executor": "Run",
     "JUnit.TriangleTest.testFindIntersections.executor": "Run",
     "JUnit.TriangleTest.testFindIntersectionsWithDistance.executor": "Run",
+    "JUnit.TriangleTest.testSetBoundingBox.executor": "Run",
     "JUnit.TubeTest.testGetNormal.executor": "Run",
     "JUnit.VectorTest.testSubtract.executor": "Run",
     "JUnit.VectorTest.testVector.executor": "Run",
@@ -123,6 +155,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/shneor/Desktop/ISE5784_9458_1468-MP1",
@@ -147,73 +180,82 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in ISE5784_5654_9369">
-    <configuration name="All in ISE5784_5654_9369" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShadowTests.trianglesSphere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestConservativeBoundaryRegionStage1.comparePingPongTableScene">
+    <configuration name="TeapotTest.teapot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lighting.*" />
+          <option name="PATTERN" value="BVHAcceleration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="lighting" />
-      <option name="MAIN_CLASS_NAME" value="lighting.ShadowTests" />
-      <option name="METHOD_NAME" value="trianglesSphere" />
+      <option name="PACKAGE_NAME" value="BVHAcceleration" />
+      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TeapotTest" />
+      <option name="METHOD_NAME" value="teapot" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SoftShadowTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestBoundaryVolumeHierarchyStage2.compareNestedGeometryToFlatGeometry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lighting.*" />
+          <option name="PATTERN" value="BVHAcceleration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="lighting" />
-      <option name="MAIN_CLASS_NAME" value="lighting.SoftShadowTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SoftShadowTests.sphereTriangleInitial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lighting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lighting" />
-      <option name="MAIN_CLASS_NAME" value="lighting.SoftShadowTests" />
-      <option name="METHOD_NAME" value="sphereTriangleInitial" />
+      <option name="PACKAGE_NAME" value="BVHAcceleration" />
+      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TestBoundaryVolumeHierarchyStage2" />
+      <option name="METHOD_NAME" value="compareNestedGeometryToFlatGeometry" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SoftShadowTests.trianglesSphere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestConservativeBoundaryRegionStage1.comparePingPongTableScene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lighting.*" />
+          <option name="PATTERN" value="BVHAcceleration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="lighting" />
-      <option name="MAIN_CLASS_NAME" value="lighting.SoftShadowTests" />
-      <option name="METHOD_NAME" value="trianglesSphere" />
+      <option name="PACKAGE_NAME" value="BVHAcceleration" />
+      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TestConservativeBoundaryRegionStage1" />
+      <option name="METHOD_NAME" value="comparePingPongTableScene" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestConservativeBoundaryRegionStage1.compareTeaPotScene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BVHAcceleration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BVHAcceleration" />
+      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TestConservativeBoundaryRegionStage1" />
+      <option name="METHOD_NAME" value="compareTeaPotScene" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestConservativeBoundaryRegionStage1.comparingTrianglesToBoxes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BVHAcceleration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BVHAcceleration" />
+      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TestConservativeBoundaryRegionStage1" />
+      <option name="METHOD_NAME" value="comparingTrianglesToBoxes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -221,11 +263,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in ISE5784_5654_9369" />
-        <item itemvalue="JUnit.SoftShadowTests.trianglesSphere" />
-        <item itemvalue="JUnit.SoftShadowTests.sphereTriangleInitial" />
-        <item itemvalue="JUnit.SoftShadowTests" />
-        <item itemvalue="JUnit.ShadowTests.trianglesSphere" />
+        <item itemvalue="JUnit.TestConservativeBoundaryRegionStage1.comparePingPongTableScene" />
+        <item itemvalue="JUnit.TeapotTest.teapot" />
+        <item itemvalue="JUnit.TestConservativeBoundaryRegionStage1.compareTeaPotScene" />
+        <item itemvalue="JUnit.TestBoundaryVolumeHierarchyStage2.compareNestedGeometryToFlatGeometry" />
+        <item itemvalue="JUnit.TestConservativeBoundaryRegionStage1.comparingTrianglesToBoxes" />
       </list>
     </recent_temporary>
   </component>
@@ -568,6 +610,50 @@
           <url>file://$PROJECT_DIR$/unittests/renderer/RayIntegrationTest.java</url>
           <line>26</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/geometries/Geometries.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/unittests/geometries/GeometriesTest.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/unittests/geometries/GeometriesTest.java</url>
+          <line>167</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/geometries/Geometries.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/geometries/BoundingBox.java</url>
+          <line>308</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/unittests/BVHAcceleration/TestBoundaryVolumeHierarchyStage2.java</url>
+          <line>310</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/unittests/BVHAcceleration/TestConservativeBoundaryRegionStage1.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/geometries/BoundingBox.java</url>
+          <line>62</line>
+          <properties class="geometries.BoundingBox" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

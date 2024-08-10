@@ -8,6 +8,10 @@ import java.util.List;
 
 import static primitives.Util.isZero;
 
+/**
+ * needed to represent a board
+ * @author shneor and emanuel
+ */
 public class Board {
 
     /**

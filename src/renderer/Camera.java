@@ -1,5 +1,6 @@
 package renderer;
 
+import org.jetbrains.annotations.NotNull;
 import primitives.Color;
 import primitives.Point;
 import primitives.Ray;
@@ -106,7 +107,7 @@ public class Camera implements Cloneable {
      * Private constructor to prevent direct instantiation.
      * Use the Builder to create an instance.
      */
-    private Camera() {
+    public Camera() {
     }
 
     /**
@@ -182,7 +183,7 @@ public class Camera implements Cloneable {
          * @return the Builder instance.
          * @throws IllegalArgumentException if the vectors are not perpendicular.
          */
-        public Builder setDirection(Vector vTo, Vector vUp) throws IllegalArgumentException {
+        public Builder setDirection(@NotNull Vector vTo, @NotNull Vector vUp) throws IllegalArgumentException {
             if (!isZero(vUp.dotProduct(vTo)))
                 throw new IllegalArgumentException("the vectors vTo and vUp are not perpendicular");
             camera.vUp = vUp.normalize();
@@ -240,9 +241,8 @@ public class Camera implements Cloneable {
          * Builds and returns the Camera instance.
          *
          * @return the built Camera instance.
-         * @throws CloneNotSupportedException if cloning is not supported.
          */
-        public Camera build() throws CloneNotSupportedException {
+        public Camera build()  {
             String h = "height", w = "width", d = "distance";
 
             if (isZero(camera.height))
@@ -271,7 +271,12 @@ public class Camera implements Cloneable {
                 throw new MissingResourceException("Missing data to render", "Camera", "imageWriter");
 
             camera.vRight = camera.vTo.crossProduct(camera.vUp);    //since the to and up vectors are normalized, we don't need to normalize the right vector
-            return (Camera) camera.clone();
+            try {
+                return (Camera) camera.clone();
+            }
+            catch (CloneNotSupportedException ex){
+                throw new MissingResourceException(ex.getMessage(),"","");
+            }
         }
     }
 
@@ -282,7 +287,7 @@ public class Camera implements Cloneable {
      * @param color    The color of the grid lines.
      * @throws MissingResourceException if the {@code imageWriter} is not initialized.
      */
-    public void printGrid(int interval, Color color) throws MissingResourceException {
+    public Camera printGrid(int interval, Color color) throws MissingResourceException {
         if (imageWriter != null) {
             for (int i = 0; i < imageWriter.getNx(); i++) {
                 for (int j = 0; j < imageWriter.getNy(); j++) {
@@ -294,6 +299,7 @@ public class Camera implements Cloneable {
         } else {
             throw new MissingResourceException("ImageWriter not initialized", "ImageWriter", "Missing");
         }
+        return this;
     }
 
     /**
@@ -301,11 +307,12 @@ public class Camera implements Cloneable {
      *
      * @throws MissingResourceException if the {@code imageWriter} is not initialized.
      */
-    public void writeToImage() {
+    public Camera writeToImage() {
         if (imageWriter == null) {
             throw new MissingResourceException("ImageWriter not initialized.", "Camera", "Missing");
         }
         imageWriter.writeToImage();
+        return this;
     }
 
     /**
@@ -313,11 +320,12 @@ public class Camera implements Cloneable {
      *
      * @throws MissingResourceException if the {@code imageWriter} or {@code rayTracer} is not initialized.
      */
-    public void renderImage() {
+    public Camera renderImage () {
         for (int row = 0; row < imageWriter.getNy(); ++row)
             for (int col = 0; col < imageWriter.getNx(); ++col) {
                 castRay(imageWriter.getNx(), imageWriter.getNy(), col, row);
             }
+        return this;
     }
 
     /**

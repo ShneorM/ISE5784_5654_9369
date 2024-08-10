@@ -92,4 +92,41 @@ class TriangleTest {
         // TC02: Expected result is null (no intersection within the distance)
         assertNull(result, "ERROR: Ray should not intersect the polygon within the distance (TC01)");
     }
+
+    /**
+     * Testing method {@link Geometries#setBoundingBox()}
+     */
+    @Test
+    void testSetBoundingBox() {
+        // Arrange: Create a collection of geometries with known bounding dimensions
+        Triangle triangle = new Triangle(
+                new Point(4, 5, 6),
+                new Point(7, 8, 9),
+                new Point(10, 11, 10)
+        );
+
+        ;
+
+        // Act: Call the setBoundingBox method
+        triangle.setBoundingBox();
+
+        // Assert: Verify that the bounding box was set correctly
+        BoundingBox boundingBox = triangle.getBoundingBox();
+
+        // Calculate expected bounding box dimensions based on the geometries
+        double expectedMinX =(4);
+        double expectedMaxX = 10;
+        double expectedMinY =( 5);
+        double expectedMaxY = ( 11);
+        double expectedMinZ = ( 6);
+        double expectedMaxZ =( 10);
+
+        assertNotNull(boundingBox, "Bounding box should not be null");
+        assertEquals(expectedMinX, boundingBox.getMinX(), "Min X value is incorrect");
+        assertEquals(expectedMaxX, boundingBox.getMaxX(), "Max X value is incorrect");
+        assertEquals(expectedMinY, boundingBox.getMinY(), "Min Y value is incorrect");
+        assertEquals(expectedMaxY, boundingBox.getMaxY(), "Max Y value is incorrect");
+        assertEquals(expectedMinZ, boundingBox.getMinZ(), "Min Z value is incorrect");
+        assertEquals(expectedMaxZ, boundingBox.getMaxZ(), "Max Z value is incorrect");
+    }
 }
