@@ -2,6 +2,7 @@ package BVHAcceleration;
 
 import static java.awt.Color.YELLOW;
 
+import geometries.Geometries;
 import org.junit.jupiter.api.Test;
 
 import geometries.Triangle;
@@ -15,8 +16,6 @@ import renderer.ImageWriter;
 import renderer.SimpleRayTracer;
 import scene.Scene;
 
-import java.util.List;
-
 /**
  * Test rendering an image
  * 
@@ -25,14 +24,11 @@ import java.util.List;
 public class TeapotTest {
 
 
-	static private final Scene scene = new Scene("Test scene");
 
 	private static final Color color = new Color(200, 0, 0);
 	private static final Material mat = new Material().setKD(0.5).setKS(0.5).setNShininess(60);
 
-	static private final ImageWriter imageWriter = new ImageWriter("teapot", 800, 800);
-
-	//region points
+    //region points
 	private static final Point[] points = new Point[] { null,//
 			new Point(40.6266, 28.3457, -1.10804), //
 			new Point(40.0714, 30.4443, -1.10804), //
@@ -567,13 +563,28 @@ public class TeapotTest {
 	};
 //endregion
 
+
 	@Test
 	public void teapot(){teapot(false);}
 	/**
+	 * @param bvh whether should use the bvh acceleration
 	 * Produce a scene with a 3D model and render it into a png image
 	 * @return the time that the rendering took
 	 */
-	static public long teapot(boolean bvh) {
+	static public long teapot(boolean bvh) {return teapot(bvh,0);}
+	/**
+	 * Produce a scene with a 3D model and render it into a png image
+	 * @param bvh whether should use the bvh acceleration
+	 * @param buildTree which tree should build if at all
+	 *                   1 for binary tree with the distance measured from the edges
+	 *                   2 for binary tree with the distance measured from the centers
+	 * @return the time that the rendering took
+	 */
+	static public long teapot(boolean bvh,int buildTree) {
+		final Scene scene = new Scene("Test scene");
+
+        final ImageWriter imageWriter = new ImageWriter("teapot", 800, 800);
+		scene.geometries=new Geometries();
 		//region triangles
 		scene.geometries.add( //
 				new Triangle(points[7], points[6], points[1]).setEmission(color).setMaterial(mat), //
@@ -1573,7 +1584,16 @@ public class TeapotTest {
 		scene.lights.add(new PointLight(new Color(500, 500, 500), new Point(100, 0, -100)).setKQ(0.000001));
 
 		scene.geometries.turnOnOffBvh(bvh);
-
+		switch (buildTree) {
+			case 1:
+				scene.geometries.buildBinaryBvhTree(); // Build BVH tree with default settings
+				break;
+			case 2:
+				scene.geometries.buildBinaryBvhTree(false); // Build BVH tree with a specific option
+				break;
+			default:
+				break;
+		}
 		long start=System.currentTimeMillis();
 
 		final Camera camera = Camera.getBuilder()

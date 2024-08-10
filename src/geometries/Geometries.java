@@ -125,7 +125,7 @@ public class Geometries extends Container {
     private void turnOnOffBvh(Geometries geometries, boolean on) {
         for (Container geometry : geometries.containerList) {
             geometry.setBvh(on);
-            if (on && geometries.getBoundingBox()==null)
+            if (on && geometry.getBoundingBox()==null)
                 geometry.setBoundingBox();
             if (geometry instanceof Geometries subGeometries)
                 turnOnOffBvh(subGeometries, on);
@@ -134,12 +134,25 @@ public class Geometries extends Container {
     //endregion
 
     /**
+     *
+     */
+    public void buildBvhTree(){
+        flatten();
+        boolean perfect=setImperfectBoundingBox();
+        buildBvhTree(getBoundingBox());
+        checkForUnBoundability();
+
+    }
+    public void buildBvhTree(BoundingBox box){
+
+    }
+    /**
      * automated build bounding volume hierarchy tree
-     * with default edges = true
+     * with default edges = false
      * so it will calculate the distance between the edges
      */
-    public void buildBvhTree() {
-        buildBvhTree(true);
+    public void buildBinaryBvhTree() {
+        buildBinaryBvhTree(false);
     }
 
     /**
@@ -147,7 +160,7 @@ public class Geometries extends Container {
      *
      * @param edges whether to calculate between the edges (true) or centers (false)
      */
-    public void buildBvhTree(boolean edges) {
+    public void buildBinaryBvhTree(boolean edges) {
         boolean on = this.isBvh();
         // flatten the list of Geometries
         this.flatten();
@@ -268,11 +281,13 @@ public class Geometries extends Container {
     }
 
 
+
+
     @Override
     public void setBoundingBox() {
-        //to avoid writing the same code twice we will use the function setImperfectBoundingBox
-        // but it will be longer since if we would do it here we could return immediately
-        // when we see that at least one of the geometries is unbound-able
+        //to avoid writing the same code twice we will use the function setImperfectBoundingBox.
+        //but it will be longer since if we would do it here we could return immediately
+        //when we see that at least one of the geometries is unbound-able
         if(!setImperfectBoundingBox())
             boundingBox=null;
         //else the bounding box will already contain the right boundingBox
@@ -280,10 +295,10 @@ public class Geometries extends Container {
 
     /**
      * set an imperfect bounding box that will contain only bound-able elements and will ignore unbound-able ones
-     *
+     *  important: needs to be used carefully , usually with the second function that will put back null if necessary
      * @return whether the box is actually perfect or it should be null
      */
-    public boolean setImperfectBoundingBox() {
+    private boolean setImperfectBoundingBox() {
         boolean isPerfect = true;
         if (containerList.isEmpty()) {
             boundingBox = null;
@@ -320,5 +335,18 @@ public class Geometries extends Container {
         boundingBox = new BoundingBox(xMin, xMax, yMin, yMax, zMin, zMax);
         return isPerfect;
     }
+    private void checkForUnBoundability(){
+        checkForUnBoundability(this);
+    }
+    public void checkForUnBoundability(Geometries geometries){
+        for(Container geometry:geometries.getContainerList()){
+            geometry.setBoundingBox();
+            if(geometry.getBoundingBox()==null) {
+                boundingBox = null;
+                return;
+            }
+        }
+    }
+
 
 }
