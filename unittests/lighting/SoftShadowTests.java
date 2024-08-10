@@ -1,5 +1,6 @@
 package lighting;
 
+import geometries.Container;
 import geometries.Intersectable;
 import geometries.Sphere;
 import geometries.Triangle;
@@ -31,7 +32,7 @@ public class SoftShadowTests {
             .setRayTracer(new SimpleRayTracer(scene));
 
     /** The sphere in the tests */
-    private final Intersectable sphere     = new Sphere( 60d,new Point(0, 0, -200))
+    private final Container sphere     = new Sphere( 60d,new Point(0, 0, -200))
             .setEmission(new Color(BLUE))
             .setMaterial(new Material().setKD(0.5).setKS(0.5).setNShininess(30));
     /** The material of the triangles in the tests */
@@ -46,7 +47,7 @@ public class SoftShadowTests {
         scene.lights.add( //
                 new SpotLight(new Color(400, 240, 0), spotLocation, new Vector(1, 1, -3)) //
                         .setKL(1E-5).setKQ(1.5E-7).setRadius(10));
-        Camera cam =camera.setImageWriter(new ImageWriter(pictName, 400, 400).setNumberOfSamples(9))
+        Camera cam =camera.setImageWriter(new ImageWriter(pictName, 1500, 1500).setNumberOfSamples(9))
                 .build();
         cam.renderImage(); //
         cam.writeToImage();

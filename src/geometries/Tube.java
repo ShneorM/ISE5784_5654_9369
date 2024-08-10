@@ -53,8 +53,13 @@ public class Tube extends RadialGeometry {
 
 
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray,double maxDistance) {
+    public List<GeoPoint> findGeoIntersectionsHelperForGeometry(Ray ray,double maxDistance) {
         return null;
+    }
+    @Override
+    public void setBoundingBox() {
+        //there is no box that can contain an infinite tube
+        boundingBox=null;
     }
 
 }

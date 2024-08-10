@@ -13,6 +13,12 @@ abstract public class RadialGeometry extends Geometry {
     protected final double radius;
 
     /**
+     *
+     * @return the radius
+     */
+    double getRadius(){return radius;}
+
+    /**
      * construct a Radial Geometry with a certain radius
      * @param radius the radius of the body
      * @throws IllegalArgumentException if the radius is negative

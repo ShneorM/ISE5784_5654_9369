@@ -107,7 +107,7 @@ public class Polygon extends Geometry {
 
 
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray,double maxDistance) {
+    public List<GeoPoint> findGeoIntersectionsHelperForGeometry(Ray ray,double maxDistance) {
         // Finds intersections between the ray and the plane containing this polygon.
         var list = plane.findIntersections(ray,maxDistance);
         if (list==null)
@@ -151,4 +151,34 @@ public class Polygon extends Geometry {
         // Returns the list of intersection points.
         return List.of(new GeoPoint(this, list.getFirst()));
     }
+
+    @Override
+    public void setBoundingBox() {
+        double minX = Double.POSITIVE_INFINITY;
+        double minY = Double.POSITIVE_INFINITY;
+        double minZ = Double.POSITIVE_INFINITY;
+
+        double maxX = Double.NEGATIVE_INFINITY;
+        double maxY = Double.NEGATIVE_INFINITY;
+        double maxZ = Double.NEGATIVE_INFINITY;
+
+        for (Point vertex : vertices) {
+            // get minimal & maximal x value for the containing box
+            minX = Math.min(vertex.getX(), minX);
+            maxX = Math.max(vertex.getX(), maxX);
+
+            // get minimal & maximal y value for the containing box
+            minY = Math.min(vertex.getY(), minY);
+            maxY = Math.max(vertex.getY(), maxY);
+
+            // get minimal & maximal z value for the containing box
+            minZ = Math.min(vertex.getZ(), minZ);
+            maxZ = Math.max(vertex.getZ(), maxZ);
+        }
+
+        // set the minimum and maximum values in 3 axes for this bounding region of the component
+        boundingBox=new BoundingBox(minX, maxX, minY, maxY, minZ, maxZ);
+    }
+
+
 }

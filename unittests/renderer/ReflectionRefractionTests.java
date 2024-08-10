@@ -3,20 +3,18 @@
  */
 package renderer;
 
-import static java.awt.Color.*;
-
 import geometries.Plane;
 import geometries.Polygon;
-import lighting.PointLight;
-import org.junit.jupiter.api.Test;
-
 import geometries.Sphere;
 import geometries.Triangle;
 import lighting.AmbientLight;
+import lighting.PointLight;
 import lighting.SpotLight;
+import org.junit.jupiter.api.Test;
 import primitives.*;
-import renderer.*;
 import scene.Scene;
+
+import static java.awt.Color.*;
 
 /**
  * Tests for reflection and transparency functionality, test for partial
@@ -121,11 +119,18 @@ public class ReflectionRefractionTests {
 
     /**
      * Creating a ping pong table with reflections and transparencies
-     *
-     * @throws CloneNotSupportedException
      */
     @Test
-    public void createPingPongTableScene() throws CloneNotSupportedException {
+    public void createPingPongTableScene() {
+        createPingPongTableScene(false);
+    }
+
+    /**
+     * Creating a ping pong table with reflections and transparencies
+     *
+     * @return the time that the rendering took
+     */
+    static public long createPingPongTableScene(boolean bvh) {
         final Scene scene = new Scene("Ping Pong Table Scene");
 
         // Define colors
@@ -135,6 +140,7 @@ public class ReflectionRefractionTests {
         Color orangeColor = new Color(255, 165, 0);
         Color lampColor = new Color(139, 0, 0); // Red color for the lamp
 
+        //region scene
         double tableHeight = 20;
         // Create ping pong table
         Polygon table = (Polygon) new Polygon(
@@ -300,6 +306,10 @@ public class ReflectionRefractionTests {
         scene.lights.add(new SpotLight(new Color(400, 200, 200), new Point(0, roomHeight - 10, 50), new Vector(0, -1, -1))
                 .setKL(1E-4).setKQ(1.5E-7));
 
+        scene.geometries.turnOnOffBvh(bvh);
+
+        //endregion
+        long start = System.currentTimeMillis();
         // Set up the camera
         Camera.Builder cameraBuilder = Camera.getBuilder()
                 .setDirection(new Vector(0, 0, -1), Vector.Y)
@@ -309,13 +319,11 @@ public class ReflectionRefractionTests {
                 .setVpSize(200, 200)
                 .setImageWriter(new ImageWriter("pingPongTable", 600, 600));
 
-        Camera cam = cameraBuilder.build();
+        cameraBuilder.build().renderImage().writeToImage();
+        long finish = System.currentTimeMillis();
+        return finish - start;
 
-        // Render the image
-        cam.renderImage();
-        cam.writeToImage();
     }
-
 
 
 }

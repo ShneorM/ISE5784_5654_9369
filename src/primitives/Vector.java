@@ -37,11 +37,16 @@ public class Vector extends Point {
     }
 
     /**
-     *
+     * vector (1,0,0)
+     */
+    public static Vector X = new Vector(1, 0, 0);
+
+    /**
+     * vector (0,1,0)
      */
     public static Vector Y = new Vector(0, 1, 0);
     /**
-     *
+     * vector (0,0,1)
      */
     public static Vector Z = new Vector(0, 0, 1);
 
@@ -131,6 +136,6 @@ public class Vector extends Point {
     public Vector createOrthogonal() {
         if (Util.isZero(getY()) && Util.isZero(getZ()))
             return Vector.Y;
-        return crossProduct(new Vector(1,0,0));
+        return crossProduct(Vector.X);
     }
 }

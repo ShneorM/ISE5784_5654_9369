@@ -1,9 +1,8 @@
 package geometries;
 
-import primitives.Color;
-import primitives.Material;
-import primitives.Point;
-import primitives.Vector;
+import primitives.*;
+
+import java.util.List;
 
 /**
  * The Geometry class is the basic abstract class representing any kind of geometry,
@@ -21,7 +20,7 @@ import primitives.Vector;
  *
  * @author Shneor and Emanuel
  */
-public abstract class Geometry extends Intersectable {
+public abstract class Geometry extends Container {
     /**
      * The emission color of the geometry.
      */
@@ -79,4 +78,15 @@ public abstract class Geometry extends Intersectable {
      * @return the normal vector to the point on the surface
      */
     public abstract Vector getNormal(Point point);
+
+    @Override
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance){
+        if(isBvh()&& getBoundingBox()!=null&& !getBoundingBox().intersectBV(ray,maxDistance)){
+            return null;
+        }
+        return findGeoIntersectionsHelperForGeometry(ray,maxDistance);
+    }
+
+    abstract protected List<GeoPoint> findGeoIntersectionsHelperForGeometry(Ray ray,double maxDistance);
+
 }

@@ -24,7 +24,7 @@ public class ShadowTests {
       .setRayTracer(new SimpleRayTracer(scene));
 
    /** The sphere in the tests */
-   private final Intersectable  sphere     = new Sphere( 60d,new Point(0, 0, -200))
+   private final Container  sphere     = new Sphere( 60d,new Point(0, 0, -200))
       .setEmission(new Color(BLUE))
       .setMaterial(new Material().setKD(0.5).setKS(0.5).setNShininess(30));
    /** The material of the triangles in the tests */
