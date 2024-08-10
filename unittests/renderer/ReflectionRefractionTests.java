@@ -36,10 +36,10 @@ public class ReflectionRefractionTests {
             .setRayTracer(new SimpleRayTracer(scene));
 
     /**
-     * Produce a picture of a sphere lighted by a spot light
+     * Produce a picture of a sphere lighted by a spotlight
      */
     @Test
-    public void twoSpheres() throws CloneNotSupportedException {
+    public void twoSpheres() {
         scene.geometries.add(
                 new Sphere(50d, new Point(0, 0, -50)).setEmission(new Color(BLUE))
                         .setMaterial(new Material().setKD(0.4).setKS(0.3).setNShininess(100).setKT(0.3)),
@@ -58,10 +58,10 @@ public class ReflectionRefractionTests {
     }
 
     /**
-     * Produce a picture of a sphere lighted by a spot light
+     * Produce a picture of a sphere lighted by a spotlight
      */
     @Test
-    public void twoSpheresOnMirrors() throws CloneNotSupportedException {
+    public void twoSpheresOnMirrors()  {
         scene.geometries.add(
                 new Sphere(400d, new Point(-950, -900, -1000)).setEmission(new Color(0, 50, 100))
                         .setMaterial(new Material().setKD(0.25).setKS(0.25).setNShininess(20)
@@ -94,7 +94,7 @@ public class ReflectionRefractionTests {
      * transparent Sphere producing partial shadow
      */
     @Test
-    public void trianglesTransparentSphere() throws CloneNotSupportedException {
+    public void trianglesTransparentSphere()  {
         scene.geometries.add(
                 new Triangle(new Point(-150, -150, -115), new Point(150, -150, -135),
                         new Point(75, 75, -150))
@@ -130,17 +130,25 @@ public class ReflectionRefractionTests {
      *
      * @return the time that the rendering took
      */
-    static public long createPingPongTableScene(boolean bvh) {
+    static public long createPingPongTableScene(boolean bvh) {return createPingPongTableScene(bvh,0);}
+
+        /**
+         * Creating a ping pong table with reflections and transparencies
+         *
+         * @return the time that the rendering took
+         */
+    static public long createPingPongTableScene(boolean bvh,int buildTree) {
         final Scene scene = new Scene("Ping Pong Table Scene");
 
         // Define colors
         Color greenColor = new Color(0, 100, 0);
         Color grayColor = new Color(105, 105, 105);
-        Color whiteColor = new Color(255, 255, 255);
+       // Color whiteColor = new Color(255, 255, 255);
         Color orangeColor = new Color(255, 165, 0);
         Color lampColor = new Color(139, 0, 0); // Red color for the lamp
 
         //region scene
+        //region geometries
         double tableHeight = 20;
         // Create ping pong table
         Polygon table = (Polygon) new Polygon(
@@ -287,6 +295,7 @@ public class ReflectionRefractionTests {
         Point lampBase2 = new Point(5, roomHeight, -5);
         Point lampBase3 = new Point(5, roomHeight, 5);
         Point lampBase4 = new Point(-5, roomHeight, 5);
+        //endregion
 
         // Create triangles for the lamp
         scene.geometries.add(new Triangle(lampTop, lampBase1, lampBase2).setEmission(lampColor)
@@ -306,10 +315,23 @@ public class ReflectionRefractionTests {
         scene.lights.add(new SpotLight(new Color(400, 200, 200), new Point(0, roomHeight - 10, 50), new Vector(0, -1, -1))
                 .setKL(1E-4).setKQ(1.5E-7));
 
-        scene.geometries.turnOnOffBvh(bvh);
 
+
+        scene.geometries.turnOnOffBvh(bvh);
+        switch (buildTree) {
+            case 1:
+                scene.geometries.buildBinaryBvhTree(); // Build BVH tree with default settings
+                break;
+            case 2:
+                scene.geometries.buildBinaryBvhTree(false); // Build BVH tree with a specific option
+                break;
+            default:
+                break;
+        }
         //endregion
-        long start = System.currentTimeMillis();
+
+
+
         // Set up the camera
         Camera.Builder cameraBuilder = Camera.getBuilder()
                 .setDirection(new Vector(0, 0, -1), Vector.Y)
@@ -319,6 +341,7 @@ public class ReflectionRefractionTests {
                 .setVpSize(200, 200)
                 .setImageWriter(new ImageWriter("pingPongTable", 600, 600));
 
+        long start = System.currentTimeMillis();
         cameraBuilder.build().renderImage().writeToImage();
         long finish = System.currentTimeMillis();
         return finish - start;

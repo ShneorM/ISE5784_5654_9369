@@ -161,10 +161,10 @@ class GeometriesTest {
     }
 
     /**
-     * Testing method {@link Geometries#buildBvhTree()}
+     * Testing method {@link Geometries#buildBinaryBvhTree()}
      */
     @Test
-    void testBuildBvhTree() {
+    void testBuildBinaryBvhTree() {
         // Arrange: Create a set of geometries
         Sphere sphere1 = new Sphere(new Point(1, 2, 3), 1);
         Sphere sphere2 = new Sphere(new Point(5, 5, 5), 1);
@@ -178,7 +178,7 @@ class GeometriesTest {
         Geometries geometries = new Geometries(sphere1, sphere2, sphere3, triangle);
 
         // Act: Build the BVH tree
-        geometries.buildBvhTree();
+        geometries.buildBinaryBvhTree();
 
         // Assert: Verify the BVH tree structure
         List<Container> containerList = geometries.getContainerList();

@@ -130,7 +130,6 @@ public class BoundingBox {
      *
      * @param ray the ray to check for intersection
      * @return boolean result, true if intersects, false otherwise
-     * @author Naor Barkochva
      */
     public boolean intersectBV(Ray ray) {
         return intersectBV(ray, Double.POSITIVE_INFINITY);
@@ -142,7 +141,6 @@ public class BoundingBox {
      * @param ray         the ray to check for intersection
      * @param maxDistance the max distance that the ray allowed to go
      * @return boolean result, true if intersects, false otherwise
-     * @author Naor Barkochva
      */
     public boolean intersectBV(Ray ray, double maxDistance) {
         Point p0 = ray.getHead();
@@ -368,28 +366,45 @@ public class BoundingBox {
         char longest = findLongest();
         double average;
 
-        switch (longest) {
-            case BoundingBox.X:
+        return switch (longest) {
+            case BoundingBox.X -> {
                 average = (getMaxX() + getMinX()) / 2;
-                return List.of(
+                yield List.of(
                         new BoundingBox(getMinX(), average, getMinY(), getMaxY(), getMinZ(), getMaxZ()),
                         new BoundingBox(average, getMaxX(), getMinY(), getMaxY(), getMinZ(), getMaxZ())
                 );
-            case BoundingBox.Y:
+            }
+            case BoundingBox.Y -> {
                 average = (getMaxY() + getMinY()) / 2;
-                return List.of(
+                yield List.of(
                         new BoundingBox(getMinX(), getMaxX(), getMinY(), average, getMinZ(), getMaxZ()),
                         new BoundingBox(getMinX(), getMaxX(), average, getMaxY(), getMinZ(), getMaxZ())
                 );
-            case BoundingBox.Z:
+            }
+            case BoundingBox.Z -> {
                 average = (getMaxZ() + getMinZ()) / 2;
-                return List.of(
+                yield List.of(
                         new BoundingBox(getMinX(), getMaxX(), getMinY(), getMaxY(), getMinZ(), average),
                         new BoundingBox(getMinX(), getMaxX(), getMinY(), getMaxY(), average, getMaxZ())
                 );
-            default:
-                throw new RuntimeException("the function longest returned something that is not BoundingBox.X, Y or Z ");
+            }
+            default ->
+                    throw new RuntimeException("the function longest returned something that is not BoundingBox.X, Y or Z ");
+        };
+    }
 
-        }
+    /**
+     *
+     * @param other possibly smaller bounding box within this one
+     * @return whether other is contained inside this one
+     */
+    public boolean contain(BoundingBox other){
+        return getMinX()<=other.getMinX()&&
+                getMaxX()>= other.getMaxX()&&
+                getMinY()<=other.getMinY()&&
+                getMaxY()>= other.getMaxY()&&
+                getMinZ()<=other.getMinZ()&&
+                getMaxZ()>= other.getMaxZ();
+
     }
 }
