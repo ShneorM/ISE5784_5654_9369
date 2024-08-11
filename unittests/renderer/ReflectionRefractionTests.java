@@ -325,6 +325,8 @@ public class ReflectionRefractionTests {
             case 2:
                 scene.geometries.buildBinaryBvhTree(false); // Build BVH tree with a specific option
                 break;
+            case 3:
+                scene.geometries.buildBvhTree();
             default:
                 break;
         }

@@ -399,7 +399,8 @@ public class BoundingBox {
      * @return whether other is contained inside this one
      */
     public boolean contain(BoundingBox other){
-        return getMinX()<=other.getMinX()&&
+        return other!=null&&
+                getMinX()<=other.getMinX()&&
                 getMaxX()>= other.getMaxX()&&
                 getMinY()<=other.getMinY()&&
                 getMaxY()>= other.getMaxY()&&

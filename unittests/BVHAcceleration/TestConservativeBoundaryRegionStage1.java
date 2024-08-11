@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
+import renderer.ReflectionRefractionTests;
+
+import java.util.function.Function;
 
 import static BVHAcceleration.TeapotTest.teapot;
 import static java.lang.System.currentTimeMillis;
@@ -17,32 +20,32 @@ import static renderer.ReflectionRefractionTests.createPingPongTableScene;
  */
 public class TestConservativeBoundaryRegionStage1 {
     static final String mls=" milliseconds.";
+    /**
+     * Benchmarks a scene rendering function with and without BVH acceleration and prints the results.
+     *
+     * @param sceneName      The name of the scene being benchmarked.
+     * @param renderFunction The function that renders the scene and returns the time taken.
+     */
+    private void benchmarkScene(String sceneName, Function<Boolean, Long> renderFunction) {
+        long noBvh = renderFunction.apply(false); // Render without BVH acceleration
+        long withBvh = renderFunction.apply(true); // Render with BVH acceleration
+
+        System.out.println(sceneName + ":");
+        System.out.println("At this stage, we only use the bounding box for each box with no hierarchy.");
+        System.out.println("The run with no BVH acceleration was " + noBvh + " ms");
+        System.out.println("The run with the BVH was " + withBvh + " ms");
+        System.out.println("The code ran " + (double) noBvh / withBvh + " times faster with the BVH than without.");
+        System.out.println();
+    }
+
     @Test
     public void comparePingPongTableScene() {
-
-        long noBvh = createPingPongTableScene(false);
-        long withBvh = createPingPongTableScene(true);
-
-        System.out.println("at this stage we only use the bounding box for each box with no hierarchy");
-        System.out.println("the run with no bvh acceleration was " + noBvh + mls);
-        System.out.println("the run with the bvh was " + withBvh + mls);
-        System.out.println("the code run " + (double) noBvh / withBvh + " times faster with the bvh than without");
-        System.out.println();
-
+        benchmarkScene("Ping Pong Table Scene", ReflectionRefractionTests::createPingPongTableScene);
     }
 
     @Test
     public void compareTeapotScene() {
-//put false here
-        long noBvh = teapot(false);
-        long withBvh = teapot(true);
-
-        System.out.println("at this stage we only use the bounding box for each box with no hierarchy");
-        System.out.println("the run with no bvh acceleration was " + noBvh + mls);
-        System.out.println("the run with the bvh was " + withBvh + mls);
-        System.out.println("the code run " + (double) noBvh / withBvh + " times faster with the bvh than without");
-
-
+        benchmarkScene("Teapot Scene", TeapotTest::teapot);
     }
 
     @Test
@@ -71,8 +74,9 @@ public class TestConservativeBoundaryRegionStage1 {
         finish=currentTimeMillis();
         long boxesTime = finish - start;
 
-        System.out.println("triangles with no box " + trianglesTime+" milliseconds");
-        System.out.println("triangles with  box " + boxesTime+" milliseconds");
+        System.out.println("triangles with no box " + trianglesTime+mls);
+        System.out.println("triangles with box " + boxesTime+mls);
+        System.out.println();
 
     }
 
