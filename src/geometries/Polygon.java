@@ -107,7 +107,7 @@ public class Polygon extends Geometry {
 
 
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelperForGeometry(Ray ray,double maxDistance) {
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
         // Finds intersections between the ray and the plane containing this polygon.
         var list = plane.findIntersections(ray,maxDistance);
         if (list==null)

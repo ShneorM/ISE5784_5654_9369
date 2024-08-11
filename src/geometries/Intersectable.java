@@ -106,7 +106,7 @@ public abstract class Intersectable {
      * @param maxDistance the maximum distance to consider for intersections
      * @return a list of GeoPoints representing intersections, or null if none are found
      */
-    public final List<GeoPoint> findGeoIntersections(Ray ray, double maxDistance) {
+    public List<GeoPoint> findGeoIntersections(Ray ray, double maxDistance) {
         return findGeoIntersectionsHelper(ray, maxDistance);
     }
 

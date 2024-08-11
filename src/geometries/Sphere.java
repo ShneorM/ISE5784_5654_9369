@@ -54,7 +54,7 @@ public class Sphere extends RadialGeometry {
 
 
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelperForGeometry(Ray ray, double maxDistance) {
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
         // If the ray's head coincides with the center of the sphere,
         // then the intersection point is at a distance of the radius.
         if ( getCenter().equals(ray.getHead())) {

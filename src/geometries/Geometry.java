@@ -80,13 +80,6 @@ public abstract class Geometry extends Container {
     public abstract Vector getNormal(Point point);
 
     @Override
-    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance){
-        if(isBvh()&& getBoundingBox()!=null&& !getBoundingBox().intersectBV(ray,maxDistance)){
-            return null;
-        }
-        return findGeoIntersectionsHelperForGeometry(ray,maxDistance);
-    }
-
-    abstract protected List<GeoPoint> findGeoIntersectionsHelperForGeometry(Ray ray,double maxDistance);
+    abstract protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance);
 
 }

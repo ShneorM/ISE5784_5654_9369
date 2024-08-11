@@ -57,6 +57,15 @@ public class Geometries extends Container {
     }
 
     /**
+     * Add geometries to the list
+     *
+     * @param geometries list of geometries
+     */
+    public void add(List<Container> geometries) {
+        containerList.addAll(geometries);
+    }
+
+    /**
      * remove method allow to remove (even zero) geometries from the composite class
      *
      * @param geometries which we want to add to the composite class
@@ -326,8 +335,7 @@ public void buildBinaryBvhTree(boolean edges) {
 
 @Override
 public List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
-    if (isBvh() && boundingBox != null && !boundingBox.intersectBV(ray))
-        return null;
+
     List<GeoPoint> res = null, shapeGeoPoints;
     for (var shape : containerList) {
         shapeGeoPoints = shape.findGeoIntersectionsHelper(ray, maxDistance);

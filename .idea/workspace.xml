@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="minip2 all finished but working on a potentially better tree building">
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/renderer/PixelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/BoundingBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/BoundingBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ISE5784_5654_9369.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ISE5784_5654_9369.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Container.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/BVHAcceleration/TeapotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TeapotTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/BVHAcceleration/TestAutomaticBuildingOfHierarchyStage3.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TestAutomaticBuildingOfHierarchyStage3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/BVHAcceleration/TestBoundaryVolumeHierarchyStage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TestBoundaryVolumeHierarchyStage2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/BVHAcceleration/TestConservativeBoundaryRegionStage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TestConservativeBoundaryRegionStage1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +72,7 @@
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.All in ISE5784_5654_9369.executor": "Run",
+    "JUnit.BVHAcceleration in ISE5784_5654_9369.executor": "Run",
     "JUnit.BoundingBoxTest.executor": "Run",
     "JUnit.BoundingBoxTest.testGetBoundingBoxCenter.executor": "Run",
     "JUnit.BoundingBoxTest.testSetBoundingBox.executor": "Run",
@@ -111,8 +119,6 @@
     "JUnit.SphereTest.testGetNormal.executor": "Run",
     "JUnit.TeapotTest.executor": "Run",
     "JUnit.TeapotTest.teapot.executor": "Run",
-    "JUnit.TestAutomaticBuildingOfHierarchyStage3.comparePingPongTableScene.executor": "Run",
-    "JUnit.TestAutomaticBuildingOfHierarchyStage3.compareTeapotScene.executor": "Run",
     "JUnit.TestBoundaryVolumeHierarchyStage2.compareNestedGeometryToFlatGeometry.executor": "Run",
     "JUnit.TestConservativeBoundaryRegionStage1.comparePingPongTableScene.executor": "Run",
     "JUnit.TestConservativeBoundaryRegionStage1.compareTeaPotScene.executor": "Run",
@@ -126,6 +132,7 @@
     "JUnit.VectorTest.testSubtract.executor": "Run",
     "JUnit.VectorTest.testVector.executor": "Run",
     "JUnit.geometries in ISE5784_5654_9369.executor": "Run",
+    "JUnit.renderer in ISE5784_5654_9369.executor": "Run",
     "JUnit.test in ISE5784_5654_9369.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -159,8 +166,8 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestBoundaryVolumeHierarchyStage2.compareNestedGeometryToFlatGeometry">
-    <configuration name="TestAutomaticBuildingOfHierarchyStage3.comparePingPongTableScene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ReflectionRefractionTests.createPingPongTableScene">
+    <configuration name="BVHAcceleration in ISE5784_5654_9369" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
@@ -169,14 +176,28 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="BVHAcceleration" />
-      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TestAutomaticBuildingOfHierarchyStage3" />
-      <option name="METHOD_NAME" value="comparePingPongTableScene" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReflectionRefractionTests.createPingPongTableScene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="MAIN_CLASS_NAME" value="renderer.ReflectionRefractionTests" />
+      <option name="METHOD_NAME" value="createPingPongTableScene" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAutomaticBuildingOfHierarchyStage3.compareTeapotScene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TeapotTest.teapot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
@@ -185,40 +206,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="BVHAcceleration" />
-      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TestAutomaticBuildingOfHierarchyStage3" />
-      <option name="METHOD_NAME" value="compareTeapotScene" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestBoundaryVolumeHierarchyStage2.compareNestedGeometryToFlatGeometry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BVHAcceleration.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BVHAcceleration" />
-      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TestBoundaryVolumeHierarchyStage2" />
-      <option name="METHOD_NAME" value="compareNestedGeometryToFlatGeometry" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestConservativeBoundaryRegionStage1.compareTeaPotScene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5784_5654_9369" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BVHAcceleration.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BVHAcceleration" />
-      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TestConservativeBoundaryRegionStage1" />
-      <option name="METHOD_NAME" value="compareTeaPotScene" />
+      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TeapotTest" />
+      <option name="METHOD_NAME" value="teapot" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -240,13 +229,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="renderer in ISE5784_5654_9369" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5784_5654_9369" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="renderer" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestBoundaryVolumeHierarchyStage2.compareNestedGeometryToFlatGeometry" />
-        <item itemvalue="JUnit.TestAutomaticBuildingOfHierarchyStage3.compareTeapotScene" />
+        <item itemvalue="JUnit.ReflectionRefractionTests.createPingPongTableScene" />
+        <item itemvalue="JUnit.renderer in ISE5784_5654_9369" />
+        <item itemvalue="JUnit.BVHAcceleration in ISE5784_5654_9369" />
+        <item itemvalue="JUnit.TeapotTest.teapot" />
         <item itemvalue="JUnit.TestConservativeBoundaryRegionStage1.compareTeapotScene" />
-        <item itemvalue="JUnit.TestConservativeBoundaryRegionStage1.compareTeaPotScene" />
-        <item itemvalue="JUnit.TestAutomaticBuildingOfHierarchyStage3.comparePingPongTableScene" />
       </list>
     </recent_temporary>
   </component>
@@ -539,23 +542,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1720184804775</updated>
     </task>
-    <task id="LOCAL-00036" summary="minip 2 finished until (included) stage 1">
+    <task id="LOCAL‎-00036" summary="complete tag 7">
       <option name="closed" value="true" />
-      <created>1723327936907</created>
+      <created>1723328353109</created>
       <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1723327936907</updated>
+      <option name="presentableId" value="LOCAL‎-00036" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723328353109</updated>
     </task>
-    <task id="LOCAL-00037" summary="minip2 all finished but working on a potentially better tree building">
-      <option name="closed" value="true" />
-      <created>1723333909297</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1723333909297</updated>
-    </task>
-    <option name="localTasksCounter" value="38" />
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,6 +566,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="add Test" />
+    <MESSAGE value="Stage1" />
     <MESSAGE value="TDD with geometries Shapes" />
     <MESSAGE value="JTP" />
     <MESSAGE value="add test of FindIntersections in Sphere" />
@@ -594,9 +591,7 @@
     <MESSAGE value="Tests for 7.1 and + documents" />
     <MESSAGE value="earlier in 7.2" />
     <MESSAGE value="complete tag 7" />
-    <MESSAGE value="minip 2 finished until (included) stage 1" />
-    <MESSAGE value="minip2 all finished but working on a potentially better tree building" />
-    <option name="LAST_COMMIT_MESSAGE" value="minip2 all finished but working on a potentially better tree building" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete tag 7" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -608,7 +603,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/geometries/Geometries.java</url>
-          <line>96</line>
+          <line>105</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -622,11 +617,6 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/geometries/Geometries.java</url>
-          <line>230</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/geometries/BoundingBox.java</url>
           <line>306</line>
           <option name="timeStamp" value="17" />
@@ -636,10 +626,20 @@
           <line>301</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.util.ConcurrentModificationException" package="java.util" />
-          <option name="timeStamp" value="27" />
-        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/unittests/BVHAcceleration/TestConservativeBoundaryRegionStage1.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/geometries/BoundingBox.java</url>
+          <line>62</line>
+          <properties class="geometries.BoundingBox" method="&lt;init&gt;">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

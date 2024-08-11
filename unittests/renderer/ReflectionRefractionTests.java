@@ -341,6 +341,7 @@ public class ReflectionRefractionTests {
                 .setLocation(new Point(0, roomHeight / 2, roomDepth / 2 - 50)) // Adjust camera position
                 .setVpDistance(150)
                 .setVpSize(200, 200)
+                .setMultithreading(5)
                 .setImageWriter(new ImageWriter("pingPongTable", 600, 600));
 
         long start = System.currentTimeMillis();

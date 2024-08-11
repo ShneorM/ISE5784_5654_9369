@@ -7,6 +7,7 @@ import primitives.Ray;
 import primitives.Vector;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.MissingResourceException;
 
@@ -24,13 +25,12 @@ import static primitives.Util.isZero;
  * The Camera also supports printing a grid on the image and writing the rendered image to a file.
  * </p>
  *
+ * @author Shneor and Emanuel
  * @see primitives.Point
  * @see primitives.Vector
  * @see primitives.Ray
  * @see renderer.ImageWriter
  * @see renderer.RayTracerBase
- *
- * @author Shneor and Emanuel
  */
 public class Camera implements Cloneable {
     private Point location;
@@ -39,6 +39,9 @@ public class Camera implements Cloneable {
 
     private ImageWriter imageWriter;
     private RayTracerBase rayTracer;
+
+    private PixelManager pixelManager;
+    private int threadsCount;
 
     /**
      * Gets the location of the camera.
@@ -176,6 +179,19 @@ public class Camera implements Cloneable {
         }
 
         /**
+         * Sets the threadsCount for the camera.
+         *
+         * @param threadsCount the threads count to set for the camera.
+         * @return the Builder instance.
+         */
+        public Builder setMultithreading(int threadsCount) {
+            if (camera.threadsCount < 0)
+                throw new MissingResourceException("threads count can't be smaller than 0", "Camera", "");
+            camera.threadsCount = threadsCount;
+            return this;
+        }
+
+        /**
          * Sets the "up" and "to" vectors for the camera.
          *
          * @param vUp the "up" vector to set for the camera.
@@ -242,7 +258,7 @@ public class Camera implements Cloneable {
          *
          * @return the built Camera instance.
          */
-        public Camera build()  {
+        public Camera build() {
             String h = "height", w = "width", d = "distance";
 
             if (isZero(camera.height))
@@ -273,9 +289,8 @@ public class Camera implements Cloneable {
             camera.vRight = camera.vTo.crossProduct(camera.vUp);    //since the to and up vectors are normalized, we don't need to normalize the right vector
             try {
                 return (Camera) camera.clone();
-            }
-            catch (CloneNotSupportedException ex){
-                throw new MissingResourceException(ex.getMessage(),"","");
+            } catch (CloneNotSupportedException ex) {
+                throw new MissingResourceException(ex.getMessage(), "", "");
             }
         }
     }
@@ -316,15 +331,42 @@ public class Camera implements Cloneable {
     }
 
     /**
-     * Renders the image by casting rays through each pixel and using the ray tracer to determine the color.
+     * Renders the image by casting rays through each pixel of the view plane.
      *
-     * @throws MissingResourceException if the {@code imageWriter} or {@code rayTracer} is not initialized.
+     * The method operates in two modes:
+     * 1. **Without Threads:** If `threadsCount` is 0, the method processes each pixel sequentially in the main thread.
+     * 2. **With Threads:** If `threadsCount` is greater than 0, the method creates and starts a specified number of threads.
+     *    Each thread processes pixels in parallel by fetching the next available pixel from the `PixelManager`.
+     *
+     * The method waits for all threads to complete before returning the `Camera` instance.
+     *
+     * @return the {@link Camera} instance after the image has been rendered.
      */
-    public Camera renderImage () {
-        for (int row = 0; row < imageWriter.getNy(); ++row)
-            for (int col = 0; col < imageWriter.getNx(); ++col) {
-                castRay(imageWriter.getNx(), imageWriter.getNy(), col, row);
+    public Camera renderImage() {
+        final int nx = imageWriter.getNx(), ny = imageWriter.getNy();
+        pixelManager = new PixelManager(ny, nx);
+
+        if (threadsCount == 0) //without threads
+            for (int i = 0; i < ny; i++) {
+                for (int j = 0; j < nx; j++) {
+                    castRay(nx, ny, j, i);
+                }
             }
+        else { //with threads
+            var threads = new LinkedList<Thread>();
+            while (threadsCount-- > 0)
+                threads.add(new Thread(() -> { // add threads
+                    PixelManager.Pixel pixel;
+                    while ((pixel = pixelManager.nextPixel()) != null)
+                        castRay(nx, ny, pixel.col(), pixel.row());
+                }));
+            for (var thread : threads) thread.start();
+            try {
+                for (var thread : threads) thread.join();
+            } catch (InterruptedException ignore) {
+            }
+        }
+
         return this;
     }
 
@@ -337,10 +379,8 @@ public class Camera implements Cloneable {
      * @param row    the row of the pixel.
      */
     private void castRay(int Nx, int Ny, int column, int row) {
-        imageWriter.writePixel(column, row, rayTracer.traceRay(constructRay(Nx, Ny, column, row),imageWriter.getNumberOfSamples()));
+        imageWriter.writePixel(column, row, rayTracer.traceRay(constructRay(Nx, Ny, column, row), imageWriter.getNumberOfSamples()));
     }
-
-
 
 
 }

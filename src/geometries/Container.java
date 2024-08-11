@@ -1,5 +1,10 @@
 package geometries;
 
+import primitives.Point;
+import primitives.Ray;
+
+import java.util.List;
+
 /**
  * class to contain the proper methods for setting a bounding box for both geometry and geometries
  */
@@ -42,5 +47,14 @@ public abstract class Container extends Intersectable {
     public Container setBvh(boolean bvh) {
         this.bvh = bvh;
         return this;
+    }
+
+
+    @Override
+    public List<GeoPoint> findGeoIntersections(Ray ray, double maxDistance) {
+        if(isBvh()&& getBoundingBox()!=null&& !getBoundingBox().intersectBV(ray,maxDistance)){
+            return null;
+        }
+        return super.findGeoIntersections(ray,maxDistance);
     }
 }
