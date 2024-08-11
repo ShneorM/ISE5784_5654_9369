@@ -1586,15 +1586,16 @@ public class TeapotTest {
 		scene.geometries.turnOnOffBvh(bvh);
 		switch (buildTree) {
 			case 1:
-				scene.geometries.buildBinaryBvhTree(); // Build BVH tree with default settings
+				scene.geometries.buildBinaryBvhTree(true); // Build BVH tree with default settings
 				break;
 			case 2:
 				scene.geometries.buildBinaryBvhTree(false); // Build BVH tree with a specific option
 				break;
+			case 3:
+				scene.geometries.buildBvhTree();
 			default:
 				break;
 		}
-		long start=System.currentTimeMillis();
 
 		final Camera camera = Camera.getBuilder()
 				.setLocation(new Point(0, 0, -1000))
@@ -1605,7 +1606,7 @@ public class TeapotTest {
 				.setRayTracer(new SimpleRayTracer(scene))
 				//.setMultithreading(3).setDebugPrint(0.1)
 				.build();
-
+		long start=System.currentTimeMillis();
 		camera
 				.renderImage()
 				.printGrid(50, new Color(YELLOW))

@@ -31,12 +31,10 @@ public class TestBoundaryVolumeHierarchyStage2 {
         System.out.println();
 
 
-        noBvh= createDeeplyNestedGeometryScene(false,false);
         flatBvh = createDeeplyNestedGeometryScene(true,true);
         nestedBvh= createDeeplyNestedGeometryScene(true,false);
 
         System.out.println("for more complicated scene:");
-        System.out.println("with no bvh it took "+ noBvh+mls);
         System.out.println("with flat bvh it took "+ flatBvh+mls);
         System.out.println("with nested bvh it took "+ nestedBvh+mls);
         System.out.println("the nested time was "+(double)flatBvh/nestedBvh+" times faster than the flat-bvh run and "+(double)noBvh/nestedBvh+" times than the no-bvh run");
@@ -274,15 +272,7 @@ public class TestBoundaryVolumeHierarchyStage2 {
     static public long createDeeplyNestedGeometryScene(boolean bvh,boolean flat) {
         final Scene scene = new Scene("Deeply Nested Geometry Scene");
 
-        // Define colors
-        Color blueColor = new Color(0, 0, 255);
-        Color redColor = new Color(255, 0, 0);
         Color greenColor = new Color(0, 255, 0);
-        Color yellowColor = new Color(255, 255, 0);
-        Color whiteColor = new Color(255, 255, 255);
-        Color grayColor = new Color(169, 169, 169);
-        Color purpleColor = new Color(128, 0, 128);
-
 
 
         Geometries topRight=new Geometries();
@@ -291,7 +281,8 @@ public class TestBoundaryVolumeHierarchyStage2 {
         Geometries downRight=new Geometries();
 
         int bigNumber=100 ;
-       double offset=50,smallOffset;
+       double offset=15,smallOffset;
+       //region geometries
         for (int i = 0; i <bigNumber ; i++) {
             topRight.add(new Sphere(
                     new Point(0,offset+(random()-0.5)*10,offset+(random()-0.5)*10),
@@ -346,6 +337,7 @@ public class TestBoundaryVolumeHierarchyStage2 {
 );
 
         }
+        //endregion
 
         scene.lights.add(new PointLight(new Color(255, 255, 255), new Point(-50,0 , 100))
                 .setKL(0.001).setKQ(0.0005));
@@ -368,7 +360,7 @@ public class TestBoundaryVolumeHierarchyStage2 {
         Camera.Builder cameraBuilder = Camera.getBuilder()
                 .setDirection(directionVector, upVector) // Corrected perpendicular vectors
                 .setRayTracer(new SimpleRayTracer(scene))
-                .setLocation(new Point(-500, 0, 0)) // Camera is placed to get a clear view
+                .setLocation(new Point(-100, 0, 0)) // Camera is placed to get a clear view
                 .setVpDistance(250)
                 .setVpSize(400, 400)
                 .setImageWriter(new ImageWriter("deeplyNestedGeometryScene", 800, 800));

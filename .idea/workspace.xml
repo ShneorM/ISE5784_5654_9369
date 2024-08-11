@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="minip 2 finished until (included) stage 1">
+    <list default="true" id="e5cceaaf-c0c5-48c7-9821-b44857685865" name="Changes" comment="minip2 all finished but working on a potentially better tree building">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/BoundingBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/BoundingBox.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parsers/XmlParser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/BVHAcceleration/TeapotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TeapotTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/BVHAcceleration/TestAutomaticBuildingOfHierarchyStage3.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TestAutomaticBuildingOfHierarchyStage3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unittests/BVHAcceleration/TestBoundaryVolumeHierarchyStage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TestBoundaryVolumeHierarchyStage2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/BVHAcceleration/TestConservativeBoundaryRegionStage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/BVHAcceleration/TestConservativeBoundaryRegionStage1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unittests/geometries/GeometriesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/geometries/GeometriesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/unittests/renderer/ReflectionRefractionTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +159,7 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestAutomaticBuildingOfHierarchyStage3.compareTeapotScene">
+  <component name="RunManager" selected="JUnit.TestBoundaryVolumeHierarchyStage2.compareNestedGeometryToFlatGeometry">
     <configuration name="TestAutomaticBuildingOfHierarchyStage3.comparePingPongTableScene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
@@ -193,7 +192,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestConservativeBoundaryRegionStage1.comparePingPongTableScene" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestBoundaryVolumeHierarchyStage2.compareNestedGeometryToFlatGeometry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5784_5654_9369" />
       <extension name="coverage">
         <pattern>
@@ -202,8 +201,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="BVHAcceleration" />
-      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TestConservativeBoundaryRegionStage1" />
-      <option name="METHOD_NAME" value="comparePingPongTableScene" />
+      <option name="MAIN_CLASS_NAME" value="BVHAcceleration.TestBoundaryVolumeHierarchyStage2" />
+      <option name="METHOD_NAME" value="compareNestedGeometryToFlatGeometry" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -243,11 +242,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestBoundaryVolumeHierarchyStage2.compareNestedGeometryToFlatGeometry" />
         <item itemvalue="JUnit.TestAutomaticBuildingOfHierarchyStage3.compareTeapotScene" />
         <item itemvalue="JUnit.TestConservativeBoundaryRegionStage1.compareTeapotScene" />
         <item itemvalue="JUnit.TestConservativeBoundaryRegionStage1.compareTeaPotScene" />
         <item itemvalue="JUnit.TestAutomaticBuildingOfHierarchyStage3.comparePingPongTableScene" />
-        <item itemvalue="JUnit.TestConservativeBoundaryRegionStage1.comparePingPongTableScene" />
       </list>
     </recent_temporary>
   </component>
@@ -548,7 +547,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723327936907</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="minip2 all finished but working on a potentially better tree building">
+      <option name="closed" value="true" />
+      <created>1723333909297</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1723333909297</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -564,7 +571,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Stage1" />
     <MESSAGE value="TDD with geometries Shapes" />
     <MESSAGE value="JTP" />
     <MESSAGE value="add test of FindIntersections in Sphere" />
@@ -589,7 +595,8 @@
     <MESSAGE value="earlier in 7.2" />
     <MESSAGE value="complete tag 7" />
     <MESSAGE value="minip 2 finished until (included) stage 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="minip 2 finished until (included) stage 1" />
+    <MESSAGE value="minip2 all finished but working on a potentially better tree building" />
+    <option name="LAST_COMMIT_MESSAGE" value="minip2 all finished but working on a potentially better tree building" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -601,7 +608,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/geometries/Geometries.java</url>
-          <line>95</line>
+          <line>96</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -616,7 +623,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/geometries/Geometries.java</url>
-          <line>170</line>
+          <line>230</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -626,9 +633,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/unittests/BVHAcceleration/TestBoundaryVolumeHierarchyStage2.java</url>
-          <line>310</line>
+          <line>301</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="27" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
