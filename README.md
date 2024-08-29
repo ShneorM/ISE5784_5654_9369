@@ -31,11 +31,11 @@ In addition to the core features, the project includes the following advanced en
 # Graphics Project Images
 
 ## Implemented with BVH Architecture
-![teapot](https://github.com/user-attachments/assets/0c568b11-26cd-47d1-9a47-0ec62d67eed5)
+<img src="https://github.com/user-attachments/assets/0c568b11-26cd-47d1-9a47-0ec62d67eed5" alt="teapot" width="400"/>
 
 ## Implemented with Reflection and Refraction
-![pingPongTable](https://github.com/user-attachments/assets/ee15fcea-cb3a-4c63-a78f-504011768f47)
+<img src="https://github.com/user-attachments/assets/ee15fcea-cb3a-4c63-a78f-504011768f47" alt="pingPongTable" width="400"/>
 
 ## Implemented with Super Sampling and Soft Shadow
-![shadowTrianglesSphereSoft](https://github.com/user-attachments/assets/2c64506d-9ed5-4285-84b6-7ddd5f1bc048)
+<img src="https://github.com/user-attachments/assets/2c64506d-9ed5-4285-84b6-7ddd5f1bc048" alt="shadowTrianglesSphereSoft" width="400"/>
 
